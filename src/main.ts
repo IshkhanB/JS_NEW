@@ -1,10 +1,45 @@
 import './style.scss'
 console.log('Hello world')
-console.log(5+9/15)
-for(let i = 0; i<204; i++ )
-{
-  console.log(i)
+console.log(typeof 12)
+console.log(typeof 12)
+console.log(typeof '23')
+console.log(typeof true)
+console.log(typeof [])
+
+
+// console.log(isNaN(1))
+// console.log(isNaN(0))
+// console.log(isNaN(NaN))
+// console.log(isNaN(null))
+// console.log(isNaN(undefined))
+// console.log(isNaN(+undefined))
+
+console.log(undefined == null)
+console.log(undefined === null)
+console.log(null == '/n0/n')
+let num = 1
+if (num == 1) {
+  for(let i = 0; i < 5; i++) {
+    console.log('Yes')
+  }
+} else {
+  console.log(num)
 }
+
+
+// for(let i = 0; i<204; i++ )
+// {
+//   console.log(i)
+// }
+// let newVar =12
+// let newVar2 =125
+// let newVar3 =142
+// let newVar4 ='sdljkfl'
+
+// if( newVar>=newVar2)
+// {
+//   console.log(newVar)
+// }else{newVar2}
 
 
 
