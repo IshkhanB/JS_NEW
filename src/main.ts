@@ -1,12 +1,13 @@
 import './style.scss'
 console.log('Hello world')
-console.log(5+9/15)
-for(let i = 0; i<204; i++ )
+console.log(5+9/2)
+for(let i = 0; i<24; i++ )
 {
-  console.log(i)
+  console.log(i + 1)
 }
 
 
+console.log('Hello world')
 
 
 
