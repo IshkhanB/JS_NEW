@@ -1,15 +1,88 @@
 import './style.scss'
-console.log('Hello world')
-console.log(5+9/2)
-for(let i = 0; i<24; i++ )
-{
-  console.log(i + 1)
-}
+// console.log('Hello world')
+// console.log(5+9/2)
+// for(let i = 0; i<24; i++ )
+// {
+//   console.log(i + 1)
+// }
+
+// console.log('Hello world')
 
 
-console.log('Hello world')
+// // Домашнее задание 2. Задание 1. Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
+// let userAge = 30
+// if(userAge <= 12){
+// console.log('Ребенок')
+// }else if(userAge > 12 && userAge<18){
+// console.log('Подросток')
+// }else if(userAge >= 18 && userAge < 60){
+// console.log('Взрослый')
+// }else if(userAge >=60){
+//     console.log('Пенсионер')
+//   }
+
+// // Домашнее задание 2. Задание 3. Запросить у пользователя трехзначное и число и проверить, есть ли в нем одинаковые цифры.
+// let front = 345
+// let front1 = front % 10
+// let front2 = (front % 100 - front1) / 10
+// let front3 = (front - (front % 100)) / 100
+// //Первый правильный вариант
+// // if(front1==front2 || front1==front3 || front2==front3){
+// // console.log('Yes')
+// // }else{console.log('No')}
+// //Второй мой вариант
+// if(front3==front2){
+// console.log(`Повторяется ${front3} число`)
+// }else if(front1==front3){
+// console.log(`Повторяется ${front3} число`)
+// }else if(front2==front1){
+// console.log(`Повторяется ${front2} число`)
+// }else{console.log('Совпадений нет')}
+
+// // Домашнее задание 2. Задание 4. Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100
+// let yearVis = 2024
+// let resVis = (yearVis % 4 ? "Обычный год" : 'Високосный год')
+// console.log(resVis)
+
+// Домашнее задание 2. Задание 5. Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
 
 
+// // Домашнее задание 2. Задание 6. Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+// const EUR = 100.44 // 1 Евро = 100,44 Российского рубля
+// const USD = 92.75 // 1 Доллар США = 92,75 Российского рубля
+// const AUD = 60.84 // 1 Австралийский доллар = 60,84 Российского рубля
+// const AZN = 54.56 // 1 Азербайджанский манат = 54,56 Российского рубля
+// const AMD = 0.22 // 1 Армянский драм = 0,22938 Российского рубля
+// const BYN = 28.56 // 1 Белорусский рубль = 28,56 Российского рубля
+// const BGN = 51.26 // 1 Болгарский лев = 51,26 Российского рубля
+// const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
+// const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
+// const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
+
+// let numValu = 98
+// let numRub = 10
+// switch(numRub){
+//   case 1: console.log(EUR*numValu)
+//   break;
+//   case 2: console.log(USD*numValu)
+//   break;
+//   case 3: console.log(AUD*numValu)
+//   break;
+//   case 4: console.log(AZN*numValu)
+//   break;
+//   case 5: console.log(AMD*numValu)
+//   break;
+//   case 6: console.log(BYN*numValu)
+//   break;
+//   case 7: console.log(BGN*numValu)
+//   break;
+//   case 8: console.log(BRL*numValu)
+//   break;
+//   case 9: console.log(HUF*numValu)
+//   break;
+//   case 10: console.log(HKD*numValu)
+//   break;
+// }
 
 
 // document.write('<div id="main" style="background: lightblue;"> Hello world </div>')
@@ -120,7 +193,7 @@ console.log('Hello world')
 // let userRes3 = userRes1 - userRes2
 // alert('Второе число: ' + userRes3 / 10)
 
-// // Практика 1. Задание 9. Запросите у пользователя пятизначное число и переме- стите последнюю цифру в начало (из числа 12345 должно получиться число 51234).
+// // Практика 1. Задание 9. Запросите у пользователя пятизначное число и переместите последнюю цифру в начало (из числа 12345 должно получиться число 51234).
 // let userNumFive = parseInt(prompt('Введите пяти значное число: ', 0))
 // let num1 = userNumFive % 10
 // let num2 = (userNumFive - num1) / 10
