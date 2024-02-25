@@ -58,31 +58,31 @@ import './style.scss'
 // const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
 // const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
 // const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
-
 // let numValu = 98
-// let numRub = 10
+// let numRub = 3
 // switch(numRub){
-//   case 1: console.log(EUR*numValu)
+//   case 1: console.log(`${EUR*numValu} рублей`)
 //   break;
-//   case 2: console.log(USD*numValu)
+//   case 2: console.log(`${USD*numValu} рублей`)
 //   break;
-//   case 3: console.log(AUD*numValu)
+//   case 3: console.log(`${AUD*numValu} рублей`)
 //   break;
-//   case 4: console.log(AZN*numValu)
+//   case 4: console.log(`${AZN*numValu} рублей`)
 //   break;
-//   case 5: console.log(AMD*numValu)
+//   case 5: console.log(`${AMD*numValu} рублей`)
 //   break;
-//   case 6: console.log(BYN*numValu)
+//   case 6: console.log(`${BYN*numValu} рублей`)
 //   break;
-//   case 7: console.log(BGN*numValu)
+//   case 7: console.log(`${BGN*numValu} рублей`)
 //   break;
-//   case 8: console.log(BRL*numValu)
+//   case 8: console.log(`${BRL*numValu} рублей`)
 //   break;
-//   case 9: console.log(HUF*numValu)
+//   case 9: console.log(`${HUF*numValu} рублей`)
 //   break;
-//   case 10: console.log(HKD*numValu)
+//   case 10: console.log(`${HKD*numValu} рублей`)
 //   break;
 // }
+
 
 
 // document.write('<div id="main" style="background: lightblue;"> Hello world </div>')
