@@ -83,7 +83,7 @@ import './style.scss'
 //   break;
 // }
 
-
+// Домашнее задание 2. Задание 7.
 
 // document.write('<div id="main" style="background: lightblue;"> Hello world </div>')
 
