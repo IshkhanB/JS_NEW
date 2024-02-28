@@ -83,34 +83,65 @@ import './style.scss'
 //   break;
 // }
 
-// Домашнее задание 2. Задание 7.
+// // Домашнее задание 2. Задание 7. Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
+// let sumUser = 250
+// if (sumUser >= 200 && sumUser < 300) {
+//   console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 3} руб`)
+// }
+// if (sumUser >= 300 && sumUser < 500) {
+//   console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 5} руб`)
+// }
+// if (sumUser > 700) {
+//   console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 7} руб`)
+// }
+
+// // Домашнее задание 2. Задание 8. Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+// let userKrug = 25 //круг
+// let userKvad = 50 //кмадрат
+// let resKrugKvad = userKrug / 2 / 3.14159 < userKvad / 4 / 2 ? 'Окружность может поместиться в указанный квадрат' : 'Окружность не может поместиться в указанный квадрат'
+// console.log(resKrugKvad)
+
+// Домашнее задание 2. Задание 9.Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
+//не знаю пока как решить 
+// Домашнее задание 2. Задание 10.Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
+//не знаю пока как решить 
+
+
+// // Практика 2. Задание 1.Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
+// let numUserOpred = 0
+// if (numUserOpred === 0) {
+//   console.log('Число равно 0 ')
+// } else if (numUserOpred === Math.abs(numUserOpred)) {
+//   console.log('Число положительное')
+// } else {
+//   console.log('Число отрицательное')
+// }
+// // let a = 5
+// // let b = -5
+// // let c = Math.abs(a)
+// // console.log(a)
+
+
+
 
 // document.write('<div id="main" style="background: lightblue;"> Hello world </div>')
-
 // a = 25
-
 // var a = 0
 // console.log(a)
 // var a = 2
 // console.log(a)
-
 // // cоздание переменной
 // let newVar = 5
 // newVar = 15
-
 // let noVal
 // noVal = 'g'
 // console.log(noVal)
-
 // let theValue
-
 // // cоздание константы
 // const DAY_IN_WEEK = 7
 // // Ошибка не можем изменять константы
 // // DAY_IN_WEEK = 8
-
 // const countedSum = a + newVar
-
 // console.log('10 + 5 =', 10+5)
 // console.log('10 - 5 =', 10-5)
 // console.log('10 * 5 =', 10*5)
@@ -118,24 +149,16 @@ import './style.scss'
 // console.log('10 ** 5 =', 10**5) //возведение в степень
 // console.log('10 % 5 =', 10%5)   //остаток от деления
 // console.log('3 % 2 =', 3%2)   //остаток от деления
-
 // // let userInput = prompt('Введите число', 10)
 // // console.log(userInput)
 // // console.log(typeof userInput)
 // // userInput = parseInt(userInput)
 // // console.log(userInput)
 // // console.log(typeof userInput)
-
-
 // console.log('456')
 // console.log(456)
-
 // console.log((5-5%2)/2)
-
 // alert('Вы ввели ' + userInput)
-
-
-
 // console.log('Hello world')
 // // var a так не делаем
 // let userIput = prompt('dd', 23)
