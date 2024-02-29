@@ -107,7 +107,7 @@ import './style.scss'
 //не знаю пока как решить
 
 
-// // Практика 2. Задание 1.Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
+// // Практика 2. Задание 1. Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
 // let numUserOpred = 0
 // if (numUserOpred === 0) {
 //   console.log('Число равно 0 ')
@@ -121,7 +121,30 @@ import './style.scss'
 // // let c = Math.abs(a)
 // // console.log(a)
 
+// // Практика 2. Задание 2. Запросить у пользователя его возраст и проверить корректность введенных данных (0–120 лет).
+// let userAge = 30
+// if(userAge > 0 && userAge < 18){
+//     console.log('Вы еще молодой')
+// }else if(userAge >= 18 && userAge < 65){
+// console.log('Вы взрослый')
+// }else if(userAge >= 65 && userAge < 120){
+//     console.log('Вы пожилой')
+//     }
 
+// // Практика 2. Задание 3. Запросить у пользователя число и вывести его модуль (|7| = 7, |-7| = 7).
+// let modylUser = -9
+// console.log(Math.abs(modylUser))
+
+// // Практика 2. Задание 4. Запросить у пользователя время (часы, минуты, секунды) и проверить корректность введенных данных.
+// let hourUser = 7
+// let minuteUser = 35
+// let secondUser = 14
+// if ((hourUser >= 0 && hourUser <= 12)&&(minuteUser >= 0 && minuteUser <=60) && (secondUser >= 0 && secondUser <=60))
+// {
+//     console.log('Коректное время')
+// }else{
+//     console.log('Не коректное время') 
+// }
 
 
 // document.write('<div id="main" style="background: lightblue;"> Hello world </div>')
