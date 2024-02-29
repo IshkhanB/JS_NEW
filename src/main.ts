@@ -98,14 +98,27 @@ import './style.scss'
 // Домашнее задание 3. Задание 2. Запросить 2 числа и найти только наибольший общий делитель.
 let numUser = 15
 let numUser2 = 75
-let text = ' '
+let res = 0
 let min = numUser < numUser2 ? numUser : numUser2
-for(let i = min;i>0;i++)
+for(let i = 0;i>min;i++)
 {
-
+ if (num1 % min == 0 && num2%min == 0){
+  res = min
+ }
 }
+console.log(res)
 }
+{
 // Домашнее задание 3. Задание 3. Запросить у пользователя число и вывести все делители этого числа.
+let numUser =445
+let text = ' '
+for(let i = 0; i<numUser;i++){
+ if (numUser % i==0){
+text += i + ' '
+ }
+}
+console.log(text)
+}
 
 // Домашнее задание 3. Задание 4.
 
