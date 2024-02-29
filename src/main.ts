@@ -58,7 +58,6 @@ import './style.scss'
 // const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
 // const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
 // const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
-
 // let numValu = 98
 // let numRub = 10
 // switch(numRub){
@@ -84,6 +83,10 @@ import './style.scss'
 //   break;
 // }
 
+// Домашнее задание 2. Задание 6.
+
+
+
 
 // document.write('<div id="main" style="background: lightblue;"> Hello world </div>')
 
@@ -101,16 +104,13 @@ import './style.scss'
 // let noVal
 // noVal = 'g'
 // console.log(noVal)
-
 // let theValue
-
 // // cоздание константы
 // const DAY_IN_WEEK = 7
 // // Ошибка не можем изменять константы
 // // DAY_IN_WEEK = 8
 
 // const countedSum = a + newVar
-
 // console.log('10 + 5 =', 10+5)
 // console.log('10 - 5 =', 10-5)
 // console.log('10 * 5 =', 10*5)
@@ -125,16 +125,10 @@ import './style.scss'
 // // userInput = parseInt(userInput)
 // // console.log(userInput)
 // // console.log(typeof userInput)
-
-
 // console.log('456')
 // console.log(456)
-
 // console.log((5-5%2)/2)
-
 // alert('Вы ввели ' + userInput)
-
-
 
 // console.log('Hello world')
 // // var a так не делаем
