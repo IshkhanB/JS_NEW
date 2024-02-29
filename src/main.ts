@@ -83,6 +83,7 @@ import './style.scss'
   }
   let o = 5
   let t = 7
+
 }
 {
   // Домашнее задание 3. Задание 1. Подсчитать сумму всех чисел в заданном пользователем диапазоне.
@@ -95,73 +96,107 @@ import './style.scss'
   console.log(userRes)
 }
 {
-// Домашнее задание 3. Задание 2. Запросить 2 числа и найти только наибольший общий делитель.
-let numUser = 15
-let numUser2 = 75
-let res = 0
-let min = numUser < numUser2 ? numUser : numUser2
-for(let i = 0;i>min;i++)
+  // Домашнее задание 3. Задание 2. Запросить 2 числа и найти только наибольший общий делитель.
+  let numUser = 15
+  let numUser2 = 75
+  let res = 0
+  let min = numUser < numUser2 ? numUser : numUser2
+  for (let i = 0; i <= min; i++) {
+    if (numUser % i == 0 && numUser2 % i == 0) {
+      res = i
+      console.log(res)
+    }
+  }
+  console.log(res)
+}
+
 {
- if (num1 % min == 0 && num2%min == 0){
-  res = min
- }
-}
-console.log(res)
+  // Домашнее задание 3. Задание 3. Запросить у пользователя число и вывести все делители этого числа.
+  let numUser = 4454
+  let text = ''
+  for (let i = 0; i < numUser; i++) {
+    if (numUser % i == 0) {
+      text += i + '_'
+    }
+  }
+  text += numUser
+  console.log(text)
 }
 {
-// Домашнее задание 3. Задание 3. Запросить у пользователя число и вывести все делители этого числа.
-let numUser =445
-let text = ' '
-for(let i = 0; i<numUser;i++){
- if (numUser % i==0){
-text += i + ' '
- }
+  // Домашнее задание 3. Задание 4.
+
 }
-console.log(text)
+{
+  // Домашнее задание 3. Задание 5.
+
+}
+{
+  // Домашнее задание 3. Задание 6.
+
+}
+{
+  // Домашнее задание 3. Задание 7.
+
+}
+{
+  // Домашнее задание 3. Задание 8.
+
+}
+{
+  // Домашнее задание 3. Задание 9.
+
+}
+{
+  // Домашнее задание 3. Задание 10.
+
 }
 
-// Домашнее задание 3. Задание 4.
-
-// Домашнее задание 3. Задание 5.
-
-// Домашнее задание 3. Задание 6.
-
-// Домашнее задание 3. Задание 7.
-
-// Домашнее задание 3. Задание 8.
-
-// Домашнее задание 3. Задание 9.
-
-// Домашнее задание 3. Задание 10.
-
-// Практика 3. Задание 1.Вывести # столько раз, сколько указал пользователь.
-let numUser77 = 77
-for (let i = 0; i < numUser77; i++) {
-  console.log('#')
+{// Практика 3. Задание 1.Вывести # столько раз, сколько указал пользователь.
+  let numUser77 = 20
+  let text = ''
+  let i = 0
+  for (i = 1; i < numUser77; i++) {
+    text += `${i}#` + '_'
+  }
+  text += `${i}#`
+  console.log(text)
 }
 {
   // Практика 3. Задание 2.Пользователь ввел число, а на экран вывелись все числа от введенного до 0
-  let userNum5 = 9
-  // userNum5 == userNum5 + 1
-  // while (userNum5) {
-  //   userNum5--
-  //   console.log(userNum5)
-  // }
-  for (let i = userNum5; i >= 0; i--) {
+  let userNum5 = 20
+  while (userNum5) {
+    userNum5--
+    console.log(userNum5 + 1)
+  }
+  userNum5 = 13
+  for (let i = userNum5; i >= 0; --i) {
     console.log(i)
-    
+
   }
 }
 {
   // Практика 3. Задание 3.Запросить число и степень. Возвести число в указанную степень и вывести результат.
+  let userNum = 13
+  let userStp = 6
+  let res = 1
+  for (let i = 0; i < userStp; i++) {
+    res *= userNum
+  }
+  console.log(res)
 }
 {
   // Практика 3. Задание 4.Запросить 2 числа и найти все общие делители.
-  let numUser1 = 234
+  let numUser1 = 232
   let numUser12 = 544
-  let text = ' '
+  let text = '_'
   let min = numUser1 < numUser12 ? numUser1 : numUser12
-
+  let i = 0
+  for (i = 1; i <= min; i++) {
+    if (numUser1 % i == 0 && numUser12 % i == 0) {
+      text += i + '_'
+    }
+  }
+  console.log(text)
 }
 {
   // Практика 3. Задание 5. Посчитать факториал введенного пользователем числа.
@@ -172,13 +207,27 @@ for (let i = 0; i < numUser77; i++) {
   }
   console.log(resFact)
 }
-// Практика 3. Задание 6.
+{
+  // // Практика 3. Задание 6.Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
+  // let num = 0
+  // do {
+  //   let userNum = prompt('Решите пример (2 + 2 * 2)', 'Введите ответ')
+  //   num = Number(userNum)
+  //   console.log('Не верно')
+  // } while (num != 6)
+  // console.log(`Верно ответ ${num} `)
+}
 {
   // Практика 3. Задание 7.Делить число 1000 на 2 до тех пор, пока не получится число меньше 50 Вывести это число и сколько делений произвели.
   let num1 = 1000
   let num2 = 2
-  let res = 0
-  // while()
+  let r = 0
+
+  while (num1 > 50) {
+    r++
+    num1 /= num2
+  }
+  console.log(`Число меньше 50 = ${num1}, а делений произвели ${r} раз`)
 
 }
 {
