@@ -1,80 +1,170 @@
 import './style.scss'
-console.log('Hello world')
-console.log(typeof 12)
-console.log(typeof 12)
-console.log(typeof '23')
-console.log(typeof true)
-console.log(typeof [])
-
-
-// console.log(isNaN(1))
-// console.log(isNaN(0))
-// console.log(isNaN(NaN))
-// console.log(isNaN(null))
-// console.log(isNaN(undefined))
-// console.log(isNaN(+undefined))
-
-console.log(undefined == null)
-console.log(undefined === null)
-console.log(null == '/n0/n')
-let num = 1
-if (num == 1) {
-  for(let i = 0; i < 5; i++) {
-    console.log('Yes')
-  }
-} else {
-  console.log(num)
-}
-
-
-//learm.js
-
-
-// for(let i = 0; i<204; i++ )
+// console.log('Hello world')
+// console.log(5+9/2)
+// for(let i = 0; i<24; i++ )
 // {
-//   console.log(i)
+//   console.log(i + 1)
 // }
-// let newVar =12
-// let newVar2 =125
-// let newVar3 =142
-// let newVar4 ='sdljkfl'
 
-// if( newVar>=newVar2)
+// console.log('Hello world')
+
+
+// // Домашнее задание 2. Задание 1. Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
+// let userAge = 30
+// if(userAge <= 12){
+// console.log('Ребенок')
+// }else if(userAge > 12 && userAge<18){
+// console.log('Подросток')
+// }else if(userAge >= 18 && userAge < 60){
+// console.log('Взрослый')
+// }else if(userAge >=60){
+//     console.log('Пенсионер')
+//   }
+
+// // Домашнее задание 2. Задание 3. Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
+// let front = 345
+// let front1 = front % 10
+// let front2 = (front % 100 - front1) / 10
+// let front3 = (front - (front % 100)) / 100
+// //Первый правильный вариант
+// // if(front1==front2 || front1==front3 || front2==front3){
+// // console.log('Yes')
+// // }else{console.log('No')}
+// //Второй мой вариант
+// if (front3 == front2) {
+//   console.log(`Повторяется ${front3} число`)
+// } else if (front1 == front3) {
+//   console.log(`Повторяется ${front3} число`)
+// } else if (front2 == front1) {
+//   console.log(`Повторяется ${front2} число`)
+// } else { console.log('Совпадений нет') }
+
+// // Домашнее задание 2. Задание 4. Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100
+// let yearVis = 2024
+// let resVis = (yearVis % 4 ? "Обычный год" : 'Високосный год')
+// console.log(resVis)
+
+// Домашнее задание 2. Задание 5. Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+
+
+// // Домашнее задание 2. Задание 6. Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+// const EUR = 100.44 // 1 Евро = 100,44 Российского рубля
+// const USD = 92.75 // 1 Доллар США = 92,75 Российского рубля
+// const AUD = 60.84 // 1 Австралийский доллар = 60,84 Российского рубля
+// const AZN = 54.56 // 1 Азербайджанский манат = 54,56 Российского рубля
+// const AMD = 0.22 // 1 Армянский драм = 0,22938 Российского рубля
+// const BYN = 28.56 // 1 Белорусский рубль = 28,56 Российского рубля
+// const BGN = 51.26 // 1 Болгарский лев = 51,26 Российского рубля
+// const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
+// const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
+// const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
+// let numValu = 98
+// let numRub = 3
+// switch(numRub){
+//   case 1: console.log(`${EUR*numValu} рублей`)
+//   break;
+//   case 2: console.log(`${USD*numValu} рублей`)
+//   break;
+//   case 3: console.log(`${AUD*numValu} рублей`)
+//   break;
+//   case 4: console.log(`${AZN*numValu} рублей`)
+//   break;
+//   case 5: console.log(`${AMD*numValu} рублей`)
+//   break;
+//   case 6: console.log(`${BYN*numValu} рублей`)
+//   break;
+//   case 7: console.log(`${BGN*numValu} рублей`)
+//   break;
+//   case 8: console.log(`${BRL*numValu} рублей`)
+//   break;
+//   case 9: console.log(`${HUF*numValu} рублей`)
+//   break;
+//   case 10: console.log(`${HKD*numValu} рублей`)
+//   break;
+// }
+
+// // Домашнее задание 2. Задание 7. Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
+// let sumUser = 250
+// if (sumUser >= 200 && sumUser < 300) {
+//   console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 3} руб`)
+// }
+// if (sumUser >= 300 && sumUser < 500) {
+//   console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 5} руб`)
+// }
+// if (sumUser > 700) {
+//   console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 7} руб`)
+// }
+
+// // Домашнее задание 2. Задание 8. Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+// let userKrug = 25 //круг
+// let userKvad = 50 //кмадрат
+// let resKrugKvad = userKrug / 2 / 3.14159 < userKvad / 4 / 2 ? 'Окружность может поместиться в указанный квадрат' : 'Окружность не может поместиться в указанный квадрат'
+// console.log(resKrugKvad)
+
+// Домашнее задание 2. Задание 9.Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
+//не знаю пока как решить
+// Домашнее задание 2. Задание 10.Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
+//не знаю пока как решить
+
+
+// // Практика 2. Задание 1. Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
+// let numUserOpred = 0
+// if (numUserOpred === 0) {
+//   console.log('Число равно 0 ')
+// } else if (numUserOpred === Math.abs(numUserOpred)) {
+//   console.log('Число положительное')
+// } else {
+//   console.log('Число отрицательное')
+// }
+// // let a = 5
+// // let b = -5
+// // let c = Math.abs(a)
+// // console.log(a)
+
+// // Практика 2. Задание 2. Запросить у пользователя его возраст и проверить корректность введенных данных (0–120 лет).
+// let userAge = 30
+// if(userAge > 0 && userAge < 18){
+//     console.log('Вы еще молодой')
+// }else if(userAge >= 18 && userAge < 65){
+// console.log('Вы взрослый')
+// }else if(userAge >= 65 && userAge < 120){
+//     console.log('Вы пожилой')
+//     }
+
+// // Практика 2. Задание 3. Запросить у пользователя число и вывести его модуль (|7| = 7, |-7| = 7).
+// let modylUser = -9
+// console.log(Math.abs(modylUser))
+
+// // Практика 2. Задание 4. Запросить у пользователя время (часы, минуты, секунды) и проверить корректность введенных данных.
+// let hourUser = 7
+// let minuteUser = 35
+// let secondUser = 14
+// if ((hourUser >= 0 && hourUser <= 12)&&(minuteUser >= 0 && minuteUser <=60) && (secondUser >= 0 && secondUser <=60))
 // {
-//   console.log(newVar)
-// }else{newVar2}
-
-
-
-
+//     console.log('Коректное время')
+// }else{
+//     console.log('Не коректное время') 
+// }
 
 
 // document.write('<div id="main" style="background: lightblue;"> Hello world </div>')
-
 // a = 25
-
 // var a = 0
 // console.log(a)
 // var a = 2
 // console.log(a)
-
 // // cоздание переменной
 // let newVar = 5
 // newVar = 15
-
 // let noVal
 // noVal = 'g'
 // console.log(noVal)
-
 // let theValue
-
 // // cоздание константы
 // const DAY_IN_WEEK = 7
 // // Ошибка не можем изменять константы
 // // DAY_IN_WEEK = 8
-
 // const countedSum = a + newVar
-
 // console.log('10 + 5 =', 10+5)
 // console.log('10 - 5 =', 10-5)
 // console.log('10 * 5 =', 10*5)
@@ -82,23 +172,16 @@ if (num == 1) {
 // console.log('10 ** 5 =', 10**5) //возведение в степень
 // console.log('10 % 5 =', 10%5)   //остаток от деления
 // console.log('3 % 2 =', 3%2)   //остаток от деления
-
 // // let userInput = prompt('Введите число', 10)
 // // console.log(userInput)
 // // console.log(typeof userInput)
 // // userInput = parseInt(userInput)
 // // console.log(userInput)
 // // console.log(typeof userInput)
-
-
 // console.log('456')
 // console.log(456)
-
 // console.log((5-5%2)/2)
-
 // alert('Вы ввели ' + userInput)
-
-
 
 // console.log('Hello world')
 // // var a так не делаем
@@ -157,7 +240,7 @@ if (num == 1) {
 // let userRes3 = userRes1 - userRes2
 // alert('Второе число: ' + userRes3 / 10)
 
-// // Практика 1. Задание 9. Запросите у пользователя пятизначное число и переме- стите последнюю цифру в начало (из числа 12345 должно получиться число 51234).
+// // Практика 1. Задание 9. Запросите у пользователя пятизначное число и переместите последнюю цифру в начало (из числа 12345 должно получиться число 51234).
 // let userNumFive = parseInt(prompt('Введите пяти значное число: ', 0))
 // let num1 = userNumFive % 10
 // let num2 = (userNumFive - num1) / 10
