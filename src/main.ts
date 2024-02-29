@@ -27,6 +27,9 @@ if (num == 1) {
 }
 
 
+//learm.js
+
+
 // for(let i = 0; i<204; i++ )
 // {
 //   console.log(i)
