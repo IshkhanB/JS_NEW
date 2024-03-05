@@ -8,81 +8,82 @@ import './style.scss'
 
 // console.log('Hello world')
 {
-  let n = 3
-  for (let i = 0; i < n; i++) {
-    console.log('Hello world')
-  }
-
-  while (n) {
-    console.log('Hello worold')
-    n--
-  }
-  let i = 0
-  do {
-    console.log('Hello worold')
-    i++
-  } while (i < 1)
-
-  let arr = [1, 2, 3, 4, 5, 6, 7, 8]
-
-  for (let i = 0; i < 50; i++) {
-    arr[i] = (Math.random() * 99) + 1
-  }
-  for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i])
-    if (arr[i] == 5) {
-      break
-    }
-  }
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == 5) {
-      continue
-    }
-    console.log(arr[i])
-  }
-
-  cicl1: for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5; j++) {
-      console.log('hello world')
-      if (i == 2 && j == 3) {
-        break cicl1
-      }
-    }
-  }
-  for (let i = 1; i <= 20; i++) {
-    if (i % 2 == 0) {
-      console.log(i)
-    }
-  }
-  console.log(i)
-  for (i = 0; i < 20; i++) {
-    if (i % 2 == 0) {
-    } else {
-      console.log(i)
-
-    }
-  }
-  console.log(i)
-  i = 10
-  while (i) {
-    if (i % 2 == 0) {
-    } else {
-      console.log(i)
+    let n = 3
+    for (let i = 0; i < n; i++) {
+        console.log('Hello world')
     }
 
-    i--
-  }
-  i = 10
-  while (i) {
-    if (i % 2 == 0) {
-      console.log(i)
-    } else {
+    while (n) {
+        console.log('Hello worold')
+        n--
     }
-    i--
+    let i = 0
+    do {
+        console.log('Hello worold')
+        i++
+    } while (i < 1)
 
-  }
-  let o = 5
-  let t = 7
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8]
+
+    for (let i = 0; i < 50; i++) {
+        arr[i] = (Math.random() * 99) + 1
+    }
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+        if (arr[i] == 5) {
+            break
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == 5) {
+            continue
+        }
+        console.log(arr[i])
+    }
+
+    cicl1: for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            console.log('hello world')
+            if (i == 2 && j == 3) {
+                break cicl1
+            }
+        }
+    }
+    for (let i = 1; i <= 20; i++) {
+        if (i % 2 == 0) {
+            console.log(i)
+        }
+    }
+    console.log(i)
+    for (i = 0; i < 20; i++) {
+        if (i % 2 == 0) {
+        } else {
+            console.log(i)
+
+        }
+    }
+    console.log(i)
+    i = 10
+    while (i) {
+        if (i % 2 == 0) {
+        } else {
+            console.log(i)
+        }
+
+        i--
+    }
+    i = 10
+    while (i) {
+        if (i % 2 == 0) {
+            console.log(i)
+        } else {
+        }
+        i--
+
+    }
+    // let o = 5
+    // let t = 7
+
 }
 
 {
@@ -92,192 +93,274 @@ import './style.scss'
   // Домашнее задание 4. Задание 1.
 }
 {
-  // Домашнее задание 3. Задание 1. Подсчитать сумму всех чисел в заданном пользователем диапазоне.
-  let userNum1 = 23
-  let userNum2 = 35
-  let userRes = userNum1
-  for (let i = userNum1; i < userNum2; i++) {
-    userRes += userNum2
-  }
-  console.log(userRes)
-}
-// Домашнее задание 3. Задание 2. Запросить 2 числа и найти только наибольший общий делитель.
-
-
-// Домашнее задание 3. Задание 3. Запросить у пользователя число и вывести все делители этого числа.
-
-// Домашнее задание 3. Задание 4.
-
-// Домашнее задание 3. Задание 5.
-
-// Домашнее задание 3. Задание 6.
-
-// Домашнее задание 3. Задание 7.
-
-// Домашнее задание 3. Задание 8.
-
-// Домашнее задание 3. Задание 9.
-
-// Домашнее задание 3. Задание 10.
-
-// Практика 3. Задание 1.Вывести # столько раз, сколько указал пользователь.
-let numUser77 = 77
-for (let i = 0; i < numUser77; i++) {
-  console.log('#')
+    // Домашнее задание 3. Задание 1. Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+    let userNum1 = 23
+    let userNum2 = 35
+    let userRes = userNum1
+    for (let i = userNum1; i < userNum2; i++) {
+        userRes += userNum2
+    }
+    console.log(userRes)
 }
 {
-  // Практика 3. Задание 2.Пользователь ввел число, а на экран вывелись все числа от введенного до 0
-  let userNum5 = 9
-  // userNum5 == userNum5 + 1
-  // while (userNum5) {
-  //   userNum5--
-  //   console.log(userNum5)
-  // }
-  for (let i = userNum5; i >= 0; i--) {
-    console.log(i)
-    
-  }
+    // Домашнее задание 3. Задание 2. Запросить 2 числа и найти только наибольший общий делитель.
+    let numUser = 15
+    let numUser2 = 75
+    let res = 0
+    let min = numUser < numUser2 ? numUser : numUser2
+    for (let i = 0; i <= min; i++) {
+        if (numUser % i == 0 && numUser2 % i == 0) {
+            res = i
+            console.log(res)
+        }
+    }
+    console.log(res)
+}
+
+{
+    // Домашнее задание 3. Задание 3. Запросить у пользователя число и вывести все делители этого числа.
+    let numUser = 4454
+    let text = ''
+    for (let i = 0; i < numUser; i++) {
+        if (numUser % i == 0) {
+            text += i + '_'
+        }
+    }
+    text += numUser
+    console.log(text)
 }
 {
-  // Практика 3. Задание 3.Запросить число и степень. Возвести число в указанную степень и вывести результат.
-}
-{
-  // Практика 3. Задание 4.Запросить 2 числа и найти все общие делители.
-  let numUser1 = 234
-  let numUser12 = 544
-  let text = ' '
-  let min = numUser1 < numUser12 ? numUser1 : numUser12
+    // Домашнее задание 3. Задание 4.
 
 }
 {
-  // Практика 3. Задание 5. Посчитать факториал введенного пользователем числа.
-  let numUser1 = 5
-  let resFact = 1
-  for (let i = 1; i <= numUser1; i++) {
-    resFact *= i
-  }
-  console.log(resFact)
-}
-// Практика 3. Задание 6.
-{
-  // Практика 3. Задание 7.Делить число 1000 на 2 до тех пор, пока не получится число меньше 50 Вывести это число и сколько делений произвели.
-  let num1 = 1000
-  let num2 = 2
-  let res = 0
-  // while()
+    // Домашнее задание 3. Задание 5.
 
 }
 {
-  // Практика 3. Задание 8.Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.
+    // Домашнее задание 3. Задание 6.
 
 }
 {
-  // Практика 3. Задание 9.Вывести каждый 4-й элемент из указанного пользователем диапазона. Пользователь указывает минимальное и максимальное значения диапазона.
+    // Домашнее задание 3. Задание 7.
 
 }
 {
-  // Практика 3. Задание 10. Запросить число и проверить, простое ли оно. Простое число делится без остатка только на себя и на единицу.
+    // Домашнее задание 3. Задание 8.
+
+}
+{
+    // Домашнее задание 3. Задание 9.
+
+}
+{
+    // Домашнее задание 3. Задание 10.
+
+}
+
+{// Практика 3. Задание 1.Вывести # столько раз, сколько указал пользователь.
+    let numUser77 = 20
+    let text = ''
+    let i = 0
+    for (i = 1; i < numUser77; i++) {
+        text += `${i}#` + '_'
+    }
+    text += `${i}#`
+    console.log(text)
+}
+{
+    // Практика 3. Задание 2.Пользователь ввел число, а на экран вывелись все числа от введенного до 0
+    let userNum5 = 20
+    while (userNum5) {
+        userNum5--
+        console.log(userNum5 + 1)
+    }
+    userNum5 = 13
+    for (let i = userNum5; i >= 0; --i) {
+        console.log(i)
+
+    }
+}
+{
+    // Практика 3. Задание 3.Запросить число и степень. Возвести число в указанную степень и вывести результат.
+    let userNum = 13
+    let userStp = 6
+    let res = 1
+    for (let i = 0; i < userStp; i++) {
+        res *= userNum
+    }
+    console.log(res)
+}
+{
+    // Практика 3. Задание 4.Запросить 2 числа и найти все общие делители.
+    let numUser1 = 232
+    let numUser12 = 544
+    let text = '_'
+    let min = numUser1 < numUser12 ? numUser1 : numUser12
+    let i = 0
+    for (i = 1; i <= min; i++) {
+        if (numUser1 % i == 0 && numUser12 % i == 0) {
+            text += i + '_'
+        }
+    }
+    console.log(text)
+}
+{
+    // Практика 3. Задание 5. Посчитать факториал введенного пользователем числа.
+    let numUser1 = 5
+    let resFact = 1
+    for (let i = 1; i <= numUser1; i++) {
+        resFact *= i
+    }
+    console.log(resFact)
+}
+{
+    // // Практика 3. Задание 6.Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
+    // let num = 0
+    // do {
+    //   let userNum = prompt('Решите пример (2 + 2 * 2)', 'Введите ответ')
+    //   num = Number(userNum)
+    //   console.log('Не верно')
+    // } while (num != 6)
+    // console.log(`Верно ответ ${num} `)
+}
+{
+    // Практика 3. Задание 7.Делить число 1000 на 2 до тех пор, пока не получится число меньше 50 Вывести это число и сколько делений произвели.
+    let num1 = 1000
+    let num2 = 2
+    let r = 0
+
+    while (num1 > 50) {
+        r++
+        num1 /= num2
+    }
+    console.log(`Число меньше 50 = ${num1}, а делений произвели ${r} раз`)
+
+}
+{
+    // Практика 3. Задание 8.Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.
+    let numUser = 8
+    let res = '_'
+    for (let i = 1; i <= 100; i++) {
+        if (i % numUser == 0) {
+            res += i + '_'
+        }
+    }
+    console.log(res)
+}
+{
+    // Практика 3. Задание 9.Вывести каждый 4-й элемент из указанного пользователем диапазона. Пользователь указывает минимальное и максимальное значения диапазона.
+    // let numUser1 = 459
+    // let numUser2 = 859
+    // let i = numUser1 < numUser2 ? numUser1 : numUser2
+    // let n = numUser1 < numUser2 ? numUser2 : numUser1
+    // for (; i < n; i+4){
+    // console.log(i)
+    // }
+}
+{
+    // Практика 3. Задание 10. Запросить число и проверить, простое ли оно. Простое число делится без остатка только на себя и на единицу.
 
 }
 
 
 {
-  // Домашнее задание 2. Задание 1. Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
-  let userAge = 30
-  if (userAge <= 12) {
-    console.log('Ребенок')
-  } else if (userAge > 12 && userAge < 18) {
-    console.log('Подросток')
-  } else if (userAge >= 18 && userAge < 60) {
-    console.log('Взрослый')
-  } else if (userAge >= 60) {
-    console.log('Пенсионер')
-  }
+    // Домашнее задание 2. Задание 1. Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
+    let userAge = 30
+    if (userAge <= 12) {
+        console.log('Ребенок')
+    } else if (userAge > 12 && userAge < 18) {
+        console.log('Подросток')
+    } else if (userAge >= 18 && userAge < 60) {
+        console.log('Взрослый')
+    } else if (userAge >= 60) {
+        console.log('Пенсионер')
+    }
 }
 {
-  // Домашнее задание 2. Задание 3. Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
-  let front = 345
-  let front1 = front % 10
-  let front2 = (front % 100 - front1) / 10
-  let front3 = (front - (front % 100)) / 100
-  //Первый правильный вариант
-  // if(front1==front2 || front1==front3 || front2==front3){
-  // console.log('Yes')
-  // }else{console.log('No')}
-  //Второй мой вариант
-  if (front3 == front2) {
-    console.log(`Повторяется ${front3} число`)
-  } else if (front1 == front3) {
-    console.log(`Повторяется ${front3} число`)
-  } else if (front2 == front1) {
-    console.log(`Повторяется ${front2} число`)
-  } else { console.log('Совпадений нет') }
+    // Домашнее задание 2. Задание 3. Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
+    let front = 345
+    let front1 = front % 10
+    let front2 = (front % 100 - front1) / 10
+    let front3 = (front - (front % 100)) / 100
+    //Первый правильный вариант
+    // if(front1==front2 || front1==front3 || front2==front3){
+    // console.log('Yes')
+    // }else{console.log('No')}
+    //Второй мой вариант
+    if (front3 == front2) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front1 == front3) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front2 == front1) {
+        console.log(`Повторяется ${front2} число`)
+    } else { console.log('Совпадений нет') }
 }
 {
-  // Домашнее задание 2. Задание 4. Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100
-  let yearVis = 2024
-  let resVis = (yearVis % 4 ? "Обычный год" : 'Високосный год')
-  console.log(resVis)
+    // Домашнее задание 2. Задание 4. Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100
+    let yearVis = 2024
+    let resVis = (yearVis % 4 ? "Обычный год" : 'Високосный год')
+    console.log(resVis)
 }
 {
-  //Домашнее задание 2. Задание 5. Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+    //Домашнее задание 2. Задание 5. Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
 }
 {
-  // Домашнее задание 2. Задание 6. Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в ответ соответствующую сумму.
-  const EUR = 100.44 // 1 Евро = 100,44 Российского рубля
-  const USD = 92.75 // 1 Доллар США = 92,75 Российского рубля
-  const AUD = 60.84 // 1 Австралийский доллар = 60,84 Российского рубля
-  const AZN = 54.56 // 1 Азербайджанский манат = 54,56 Российского рубля
-  const AMD = 0.22 // 1 Армянский драм = 0,22938 Российского рубля
-  const BYN = 28.56 // 1 Белорусский рубль = 28,56 Российского рубля
-  const BGN = 51.26 // 1 Болгарский лев = 51,26 Российского рубля
-  const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
-  const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
-  const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
-  let numValu = 98
-  let numRub = 3
-  switch (numRub) {
-    case 1: console.log(`${EUR * numValu} рублей`)
-      break;
-    case 2: console.log(`${USD * numValu} рублей`)
-      break;
-    case 3: console.log(`${AUD * numValu} рублей`)
-      break;
-    case 4: console.log(`${AZN * numValu} рублей`)
-      break;
-    case 5: console.log(`${AMD * numValu} рублей`)
-      break;
-    case 6: console.log(`${BYN * numValu} рублей`)
-      break;
-    case 7: console.log(`${BGN * numValu} рублей`)
-      break;
-    case 8: console.log(`${BRL * numValu} рублей`)
-      break;
-    case 9: console.log(`${HUF * numValu} рублей`)
-      break;
-    case 10: console.log(`${HKD * numValu} рублей`)
-      break;
-  }
+    // Домашнее задание 2. Задание 6. Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+    const EUR = 100.44 // 1 Евро = 100,44 Российского рубля
+    const USD = 92.75 // 1 Доллар США = 92,75 Российского рубля
+    const AUD = 60.84 // 1 Австралийский доллар = 60,84 Российского рубля
+    const AZN = 54.56 // 1 Азербайджанский манат = 54,56 Российского рубля
+    const AMD = 0.22 // 1 Армянский драм = 0,22938 Российского рубля
+    const BYN = 28.56 // 1 Белорусский рубль = 28,56 Российского рубля
+    const BGN = 51.26 // 1 Болгарский лев = 51,26 Российского рубля
+    const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
+    const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
+    const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
+    let numValu = 98
+    let numRub = 3
+    switch (numRub) {
+        case 1: console.log(`${EUR * numValu} рублей`)
+            break;
+        case 2: console.log(`${USD * numValu} рублей`)
+            break;
+        case 3: console.log(`${AUD * numValu} рублей`)
+            break;
+        case 4: console.log(`${AZN * numValu} рублей`)
+            break;
+        case 5: console.log(`${AMD * numValu} рублей`)
+            break;
+        case 6: console.log(`${BYN * numValu} рублей`)
+            break;
+        case 7: console.log(`${BGN * numValu} рублей`)
+            break;
+        case 8: console.log(`${BRL * numValu} рублей`)
+            break;
+        case 9: console.log(`${HUF * numValu} рублей`)
+            break;
+        case 10: console.log(`${HKD * numValu} рублей`)
+            break;
+    }
 }
 {
-  // Домашнее задание 2. Задание 7. Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
-  let sumUser = 250
-  if (sumUser >= 200 && sumUser < 300) {
-    console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 3} руб`)
-  }
-  if (sumUser >= 300 && sumUser < 500) {
-    console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 5} руб`)
-  }
-  if (sumUser > 700) {
-    console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 7} руб`)
-  }
+    // Домашнее задание 2. Задание 7. Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
+    let sumUser = 250
+    if (sumUser >= 200 && sumUser < 300) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 3} руб`)
+    }
+    if (sumUser >= 300 && sumUser < 500) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 5} руб`)
+    }
+    if (sumUser > 700) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 7} руб`)
+    }
 }
 {
-  // Домашнее задание 2. Задание 8. Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
-  let userKrug = 25 //круг
-  let userKvad = 50 //кмадрат
-  let resKrugKvad = userKrug / 2 / 3.14159 < userKvad / 4 / 2 ? 'Окружность может поместиться в указанный квадрат' : 'Окружность не может поместиться в указанный квадрат'
-  console.log(resKrugKvad)
+    // Домашнее задание 2. Задание 8. Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+    let userKrug = 25 //круг
+    let userKvad = 50 //кмадрат
+    let resKrugKvad = userKrug / 2 / 3.14159 < userKvad / 4 / 2 ? 'Окружность может поместиться в указанный квадрат' : 'Окружность не может поместиться в указанный квадрат'
+    console.log(resKrugKvad)
 }
 // Домашнее задание 2. Задание 9.Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа.За каждый правильный ответ начисляется 2 балла.После вопросов выведите пользователю количество набранных баллов.
 // не знаю пока как решить
@@ -285,46 +368,46 @@ for (let i = 0; i < numUser77; i++) {
 // не знаю пока как решить
 
 {
-  // Практика 2. Задание 1. Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
-  let numUserOpred = 0
-  if (numUserOpred === 0) {
-    console.log('Число равно 0 ')
-  } else if (numUserOpred === Math.abs(numUserOpred)) {
-    console.log('Число положительное')
-  } else {
-    console.log('Число отрицательное')
-  }
-  // let a = 5
-  // let b = -5
-  // let c = Math.abs(a)
-  // console.log(a)
+    // Практика 2. Задание 1. Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
+    let numUserOpred = 0
+    if (numUserOpred === 0) {
+        console.log('Число равно 0 ')
+    } else if (numUserOpred === Math.abs(numUserOpred)) {
+        console.log('Число положительное')
+    } else {
+        console.log('Число отрицательное')
+    }
+    // let a = 5
+    // let b = -5
+    // let c = Math.abs(a)
+    // console.log(a)
 }
 {
-  // Практика 2. Задание 2. Запросить у пользователя его возраст и проверить корректность введенных данных (0–120 лет).
-  let userAge = 30
-  if (userAge > 0 && userAge < 18) {
-    console.log('Вы еще молодой')
-  } else if (userAge >= 18 && userAge < 65) {
-    console.log('Вы взрослый')
-  } else if (userAge >= 65 && userAge < 120) {
-    console.log('Вы пожилой')
-  }
+    // Практика 2. Задание 2. Запросить у пользователя его возраст и проверить корректность введенных данных (0–120 лет).
+    let userAge = 30
+    if (userAge > 0 && userAge < 18) {
+        console.log('Вы еще молодой')
+    } else if (userAge >= 18 && userAge < 65) {
+        console.log('Вы взрослый')
+    } else if (userAge >= 65 && userAge < 120) {
+        console.log('Вы пожилой')
+    }
 }
 {
-  // Практика 2. Задание 3. Запросить у пользователя число и вывести его модуль (|7| = 7, |-7| = 7).
-  let modylUser = -9
-  console.log(Math.abs(modylUser))
+    // Практика 2. Задание 3. Запросить у пользователя число и вывести его модуль (|7| = 7, |-7| = 7).
+    let modylUser = -9
+    console.log(Math.abs(modylUser))
 }
 {
-  // Практика 2. Задание 4. Запросить у пользователя время (часы, минуты, секунды) и проверить корректность введенных данных.
-  let hourUser = 7
-  let minuteUser = 35
-  let secondUser = 14
-  if ((hourUser >= 0 && hourUser <= 12) && (minuteUser >= 0 && minuteUser <= 60) && (secondUser >= 0 && secondUser <= 60)) {
-    console.log('Коректное время')
-  } else {
-    console.log('Не коректное время')
-  }
+    // Практика 2. Задание 4. Запросить у пользователя время (часы, минуты, секунды) и проверить корректность введенных данных.
+    let hourUser = 7
+    let minuteUser = 35
+    let secondUser = 14
+    if ((hourUser >= 0 && hourUser <= 12) && (minuteUser >= 0 && minuteUser <= 60) && (secondUser >= 0 && secondUser <= 60)) {
+        console.log('Коректное время')
+    } else {
+        console.log('Не коректное время')
+    }
 }
 
 
