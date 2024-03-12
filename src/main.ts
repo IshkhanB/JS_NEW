@@ -119,10 +119,41 @@ import './style.scss'
     console.log(funcC1(486, 14))
 
 }
+{//12.03.24.
+    const object = {
+        a:345,
+        b:35,
+        c:4,
+    }
+console.log(object)
+console.log(object.a)
+console.log(object["a"])
+console.log(object['b'])
+console.log(object[`c`])
+
+const newObject = {
+    a:1,b:2,c:3,d:'hello'
+}
+let h =' '
+// function myObj(object:object):string{
+//     if(!object){
+//         console.log(object)
+//         return h
+//     }else{
+//         console.log(object)
+//         return h += myObj(object)
+//     }
+// }
+// console.log(myObj(newObject))
+
+for (let key in object){
+    console.log(key)
+}
+}
 
 {
     // Практика 5. Задание 1. Написать функцию, которая вычисляет факториал заданного числа.
-    
+
     // function getFact(n: number): number {
     //     let i = 1
     //     if (n <= i) {
