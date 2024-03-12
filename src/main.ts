@@ -140,6 +140,7 @@ import './style.scss'
 }
 {
     // Практика 5. Задание 2. Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
+
     function getPorydok(min: number, max: number): string {
         let num = ' '
         console.log(min)
@@ -172,13 +173,37 @@ import './style.scss'
 {
     // Практика 5. Задание 4.Написать функцию, которая считает сумму цифр числа. 
     // Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
+
+    let sum = 0
+    function getSum(n: number) {
+        if (n == 1) {
+            console.log(sum)
+            return sum
+        } else {
+            n=Math.trunc(n % 10)
+            sum += getSum(n)
+            console.log(sum)
+            return sum
+        }
+    }
+    console.log(getSum(123))
 }
 {
     // Практика 5. Задание 5.Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок. 
     // Например: число 4 – (((()))).
-    function grtScob(n:number){
-    
+    let m = ''
+    function getScob(n: number) {
+        console.log(n)
+        if (n == 0) {
+            return m
+        } else {
+            m += '{' + getScob(n - 1) + '}'
+            console.log(n)
+
+            return m
+        }
     }
+    console.log(getScob(5))
 }
 {
     // Домашнее задание 5. Задание 1. Написать функцию возведения числа в степень.
