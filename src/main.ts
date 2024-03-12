@@ -122,6 +122,7 @@ import './style.scss'
 
 {
     // Практика 5. Задание 1. Написать функцию, которая вычисляет факториал заданного числа.
+    
     // function getFact(n: number): number {
     //     let i = 1
     //     if (n <= i) {
@@ -147,37 +148,33 @@ import './style.scss'
         return min - 1 == max ? num : num += min + getPorydok(min + 1, max)
     }
 
-    // function getPorydokR(min: number, max: number):string {
-    //     let dev = ' '
-    //     // console.log(max)
-    //     // console.log(num)
-    //     // return min == max ? num : num += (max - getPorydokR(min, max-1))
-    //     if (min - 1 == max) {
-    //         return dev
-    //     } else {
-    //         console.log(dev)
-    //         dev += getPorydok(min, max-1)            
-    //     }
+    function getPorydokR(min: number, max: number):string {
+        let dev = ' '
+        // console.log(max)
+        // console.log(num)
+        // return min == max ? num : num += (max - getPorydokR(min, max-1))
+        if (min - 1 == max) {
+            return dev
+        } else {
+            dev += max + getPorydokR(min, max-1)            
+        }
 
-    //     return dev
-    // }
-    // console.log(getPorydokR(4, 15))
+        return dev
+    }
+    console.log(getPorydokR(4, 15))
 
     console.log(getPorydok(4, 15))
 }
 {
     // Практика 5. Задание 3. Написать функцию, которая выводит переданное ей число задом наперед. 
     // Например: число 1234 вывести как 4321
-    let sum = ' '
-    function getRev(n: number) {
+    function getRev(n: number):number {
         if (n <= 9) {
             console.log(n)
             return n
         } else {
-            console.log(sum)
-            sum+= sum + getRev(Math.trunc(n % 10))   
-            console.log(n)
-            return sum
+            
+            return +((n%10).toString() + getRev(Math.trunc(n / 10)))   
         }
         console.log(n)
     }
@@ -187,19 +184,14 @@ import './style.scss'
     // Практика 5. Задание 4. Написать функцию, которая считает сумму цифр числа. 
     // Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
 
-//     let sum = 0
-//     function getSum(n: number) {
-//         if (n == 0) {
-//             console.log(n)
-//             return n
-//         } else {
-//             n += Math.trunc(n % 10)
-//             sum += getSum(n)
-//             console.log(sum)
-//             return n
-//         }
-//     }
-//     console.log(getSum(123))
+    function getSum(n: number):number {
+        if (n < 10) {
+            return n
+        } else {
+            return n%10+getSum(Math.trunc(n / 10))
+        }
+    }
+    console.log(getSum(123))
 }
   
 {
