@@ -168,25 +168,38 @@ import './style.scss'
 {
     // Практика 5. Задание 3. Написать функцию, которая выводит переданное ей число задом наперед. 
     // Например: число 1234 вывести как 4321
-
-}
-{
-    // Практика 5. Задание 4.Написать функцию, которая считает сумму цифр числа. 
-    // Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
-
-    let sum = 0
-    function getSum(n: number) {
-        if (n == 1) {
-            console.log(sum)
-            return sum
+    let sum = ' '
+    function getRev(n: number) {
+        if (n <= 9) {
+            console.log(n)
+            return n
         } else {
-            n=Math.trunc(n % 10)
-            sum += getSum(n)
             console.log(sum)
+            sum+= sum + getRev(Math.trunc(n % 10))   
+            console.log(n)
             return sum
         }
+        console.log(n)
     }
-    console.log(getSum(123))
+    console.log(getRev(1234))
+}
+{
+    // Практика 5. Задание 4. Написать функцию, которая считает сумму цифр числа. 
+    // Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
+
+//     let sum = 0
+//     function getSum(n: number) {
+//         if (n == 0) {
+//             console.log(n)
+//             return n
+//         } else {
+//             n += Math.trunc(n % 10)
+//             sum += getSum(n)
+//             console.log(sum)
+//             return n
+//         }
+//     }
+//     console.log(getSum(123))
 }
 {
     // Практика 5. Задание 5.Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок. 
