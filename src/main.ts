@@ -121,34 +121,69 @@ import './style.scss'
 }
 {//12.03.24.
     const object = {
-        a:345,
-        b:35,
-        c:4,
+        a: 345,
+        b: 35,
+        c: 4,
     }
-console.log(object)
-console.log(object.a)
-console.log(object["a"])
-console.log(object['b'])
-console.log(object[`c`])
+    console.log(object)
+    console.log(object.a)
+    console.log(object["a"])
+    console.log(object['b'])
+    console.log(object[`c`])
 
-const newObject = {
-    a:1,b:2,c:3,d:'hello'
-}
-let h =' '
-// function myObj(object:object):string{
-//     if(!object){
-//         console.log(object)
-//         return h
-//     }else{
-//         console.log(object)
-//         return h += myObj(object)
-//     }
-// }
-// console.log(myObj(newObject))
+    const newObject = {
+        a: 1, b: 2, c: 3, d: 'hello'
+    }
+    let h = ' '
+    // function myObj(object:object):string{
+    //     if(!object){
+    //         console.log(object)
+    //         return h
+    //     }else{
+    //         console.log(object)
+    //         return h += myObj(object)
+    //     }
+    // }
+    // console.log(myObj(newObject))
 
-for (let key in object){
-    console.log(key)
+    for (let key in object) {
+        console.log(key)
+    }
 }
+{//14.03.24.
+    type Car = {
+        manuf: string,
+        brand: string,
+        ageString: string
+        speedStr: string,
+        maxSpeedStr: string,
+        age: number,
+        speed: number,
+        maxSpeed: number,
+    }
+    const myCar: Car = {
+        manuf: 'BMW',
+        brand: 'M5',
+        ageString: 'Year',
+        speedStr: 'Average speed',
+        age: 2017,
+        maxSpeed: 340,
+        maxSpeedStr: 'Max speed',
+        speed: 100,
+    }
+
+    function getMyCar(car: Car) {
+        return car.manuf + ' ' + car.brand + '\n' + car.ageString + ' ' + car.age + '\n' + car['maxSpeedStr'] + ' ' + car['maxSpeed'] + '\n' + car.speedStr + ' ' + car.speed
+    }
+
+    console.log(getMyCar(myCar))
+
+    function getHourDist(car: Car, dist: number) {
+        let time = dist / car.speed
+        let resTime = time % 4 == 0 ? (Math.trunc((dist / car.speed) / 4) - 1) : (Math.trunc((dist / car.speed) / 4))
+        return time + resTime
+    }
+    console.log(getHourDist(myCar, 1900))
 }
 
 {
@@ -179,7 +214,7 @@ for (let key in object){
         return min - 1 == max ? num : num += min + getPorydok(min + 1, max)
     }
 
-    function getPorydokR(min: number, max: number):string {
+    function getPorydokR(min: number, max: number): string {
         let dev = ' '
         // console.log(max)
         // console.log(num)
@@ -187,7 +222,7 @@ for (let key in object){
         if (min - 1 == max) {
             return dev
         } else {
-            dev += max + getPorydokR(min, max-1)            
+            dev += max + getPorydokR(min, max - 1)
         }
 
         return dev
@@ -199,13 +234,13 @@ for (let key in object){
 {
     // Практика 5. Задание 3. Написать функцию, которая выводит переданное ей число задом наперед. 
     // Например: число 1234 вывести как 4321
-    function getRev(n: number):number {
+    function getRev(n: number): number {
         if (n <= 9) {
             console.log(n)
             return n
         } else {
-            
-            return +((n%10).toString() + getRev(Math.trunc(n / 10)))   
+
+            return +((n % 10).toString() + getRev(Math.trunc(n / 10)))
         }
         console.log(n)
     }
@@ -215,16 +250,16 @@ for (let key in object){
     // Практика 5. Задание 4. Написать функцию, которая считает сумму цифр числа. 
     // Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
 
-    function getSum(n: number):number {
+    function getSum(n: number): number {
         if (n < 10) {
             return n
         } else {
-            return n%10+getSum(Math.trunc(n / 10))
+            return n % 10 + getSum(Math.trunc(n / 10))
         }
     }
     console.log(getSum(123))
 }
-  
+
 {
     // Практика 5. Задание 5.Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок. 
     // Например: число 4 – (((()))).
@@ -318,7 +353,7 @@ for (let key in object){
     function getProst(a: number) {
         for (let i = 2; i < a; i++) {
             if (a % i == 0) {
-                return 'Не простое число'
+                return 'не простое число'
             }
         }
         return 'Простое число'
