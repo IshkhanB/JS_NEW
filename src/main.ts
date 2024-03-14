@@ -131,10 +131,10 @@ import './style.scss'
     console.log(object['b'])
     console.log(object[`c`])
 
-    const newObject = {
-        a: 1, b: 2, c: 3, d: 'hello'
-    }
-    let h = ' '
+    // const newObject = {
+    //     a: 1, b: 2, c: 3, d: 'hello'
+    // }
+    // let h = ' '
     // function myObj(object:object):string{
     //     if(!object){
     //         console.log(object)
