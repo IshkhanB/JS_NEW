@@ -187,6 +187,82 @@ import './style.scss'
 }
 
 {
+    // Практика 6. Задание 1. Создать объект, описывающий прямоугольник (хранит координаты левой верхней и правой нижней точек), и написать следующие функции для работы с таким объектом.
+    type Rectangle = {
+        topLeft?: object,
+        topRight?: object,
+        bottomRight?: object,
+        bottomLeft?: object,
+        x1?: number,
+        y1?: number,
+        x2?: number,
+        y2?: number,
+
+
+
+    }
+
+    const myRect: Rectangle = {
+        topLeft: {
+            x1: 0,
+            y1: 0,
+        },
+        bottomRight: {
+            x2: 7,
+            y2: 12,
+        },
+
+
+    }
+
+
+
+    // 1.Функция принимает объект-прямоугольник и выводит информацию о нем (где какая точка расположена).
+    function getInfo(rect: Rectangle) {
+
+
+        console.log(rect.topLeft, rect.bottomRight)
+
+    }
+    getInfo(myRect)
+
+    // 2.Функция принимает объект-прямоугольник и возвращает его ширину.
+    function getRectWhit(rect: Rectangle) {
+        return rect.topLeft?.y1 < rect.bottomRight?.y2 ? rect.bottomRight?.y2 - rect.topLeft?.y1 : rect.topLeft?.y1 - rect.bottomRight?.y2
+    }
+    console.log(getRectWhit(myRect))
+    // 3.Функция принимает объект-прямоугольник и возвращает его высоту.
+    function getRectHig(rect: Rectangle) {
+        return rect.topLeft?.x1 < rect.bottomRight?.x2 ? rect.bottomRight?.x2 - rect.topLeft?.x1 : rect.topLeft?.x1 - rect.bottomRight?.x2
+    }
+    console.log(getRectHig(myRect))
+    // 4.Функция принимает объект-прямоугольник и возвращает его площадь.
+    function getRectPloshad(rect: Rectangle) {
+        return getRectHig(rect) * getRectWhit(rect)
+    }
+    console.log(getRectPloshad(myRect))
+    // 5.Функция принимает объект-прямоугольник и возвращает его периметр.
+    function getRectPerimetr(rect: Rectangle) {
+        return (getRectHig(rect) + getRectWhit(rect)) * 2
+    }
+    console.log(getRectPerimetr(myRect))
+
+    // 6.Функция изменения ширины прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить ширину.
+    
+    // 7.Функция изменения высоты прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить высоту.
+
+    // 8.Функция изменения ширины и высоты прямоугольника. Она принимает объект-прямоугольник и два значения для изменения ширины и высоты.
+
+    // 9.Функция смещения прямоугольника по оси X. Она принимает объект-прямоугольник и на сколько единиц его сдвинуть.
+
+    // 10. Функция смещения прямоугольника по оси Y. Она принимает объект-прямоугольник и на сколько единиц его сдвинуть.
+
+    // 11. Функция смещения прямоугольника и по оси X и по оси Y. Она принимает объект-прямоугольник и два значения: сдвиг по оси X и сдвиг по оси Y.
+
+    // 12. Функция для проверки, находится ли точка внутри прямоугольника. Она принимает объект-прямоугольник и координаты точки.
+
+}
+{
     // Практика 5. Задание 1. Написать функцию, которая вычисляет факториал заданного числа.
 
     // function getFact(n: number): number {
