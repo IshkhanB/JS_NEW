@@ -1,4 +1,11 @@
 import './style.scss'
+{
+// Метрика 
+// google аналитика   page speed
+// вебмастер  
+    
+    
+}
 // console.log('Hello world')
 // console.log(5+9/2)
 // for(let i = 0; i<24; i++ )
@@ -186,20 +193,27 @@ import './style.scss'
     console.log(getHourDist(myCar, 1900))
 }
 
+
+{ // 21.03.24.
+const myArr = [3,4,67,324,1,3,443,556,6,7,87,54]
+
+
+}
+
 {
     // Практика 6. Задание 1. Создать объект, описывающий прямоугольник (хранит координаты левой верхней и правой нижней точек), и написать следующие функции для работы с таким объектом.
+    
+    
+    
     type Rectangle = {
-        topLeft?: object,
-        topRight?: object,
-        bottomRight?: object,
-        bottomLeft?: object,
-        x1?: number,
-        y1?: number,
-        x2?: number,
-        y2?: number,
-
-
-
+        topLeft: {
+            x1: number,
+            y1: number,
+        },
+        bottomRight: {
+            x2: number,
+            y2: number,
+        },
     }
 
     const myRect: Rectangle = {
@@ -248,7 +262,11 @@ import './style.scss'
     console.log(getRectPerimetr(myRect)) 
 
     // 6.Функция изменения ширины прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить ширину.
+    let a = 5
+    function chanRect(rect:Rectangle, num:Number){
 
+    }
+    chanRect(myRect,a)
     // 7.Функция изменения высоты прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить высоту.
 
     // 8.Функция изменения ширины и высоты прямоугольника. Она принимает объект-прямоугольник и два значения для изменения ширины и высоты.
