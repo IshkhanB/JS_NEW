@@ -245,7 +245,7 @@ import './style.scss'
     function getRectPerimetr(rect: Rectangle) {
         return (getRectHig(rect) + getRectWhit(rect)) * 2
     }
-    console.log(getRectPerimetr(myRect))
+    console.log(getRectPerimetr(myRect)) 
 
     // 6.Функция изменения ширины прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить ширину.
 
