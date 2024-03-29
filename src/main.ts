@@ -15,7 +15,7 @@ const toBuyList: product[] = [
   { name: 'мясо', count: 1, isBuyed: false },
   { name: 'сыр', count: 1, isBuyed: true },
 ]
-
+toBuyList:toBuyList+= {'помидор', 4, false}
 const toBuyListOl = document.getElementById('toBuyList') as HTMLOListElement
 
 function renderBuyList(arr: product[]) {
@@ -177,7 +177,7 @@ cancBuyedButton.addEventListener('click', function () {
     for (let j = 0; j < 5; j++) {
       console.log('hello world')
       if (i == 2 && j == 3) {
-        break cicl1
+        break cicl1 // ? отмна первого цикла 
       }
     }
   }
