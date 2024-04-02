@@ -1,133 +1,251 @@
 import './style.scss'
 
+{
 
-type product = {
-  name: string,
-  count: number,
-  isBuyed: boolean,
+    // 1.1.  Написать функцию возвращающюю массив целых чисел от 0 до 10
+    function getArrNumber(start = 0, end = start + 10) {
+        const arr = []
+        for (let i = 0; i < end - start; i++) {
+            arr[i] = i + start
+            // arr[i] = Math.trunc(Math.random() * 10)        
+        }
+        return arr
+    }
+
+    console.log(getArrNumber())
+
+    // 1.2.  Добавить в функцию параметры опциональные параметры начального и конечного значения массива
+    //     (если конечный элемент массива не передат, то он больше нечального на 10) . Вызвать функцию несаколько раз
+
+    console.log(getArrNumber(10))
+    console.log(getArrNumber(10))
+    console.log(getArrNumber(0, 23))
+    console.log(getArrNumber(0, 23))
+    console.log(getArrNumber(45, 5))
+    console.log(getArrNumber(45, 5))
+    console.log(getArrNumber(10, 20))
+    console.log(getArrNumber(10, 20))
+
+
+    // 1.3*. Написать функцию возвращающюю массив случайных целых чисел. Функция принимает 1 параметр, количество элементов в будущем массиве
+
+    function getRandArrNumber(num = 10, min = 0, max = 10) {
+        const arr = []
+        for (let i = 0; i < num; i++) {
+            arr[i] = Math.trunc(Math.random() * (max - min) + min)
+        }
+        return arr
+    }
+    console.log(getRandArrNumber(1))
+    console.log(getRandArrNumber(10, 45, 50))
+    console.log(getRandArrNumber(10, 45, 50))
+    console.log(getRandArrNumber(10, 45, 50))
+    console.log(getRandArrNumber(10, 45, 50))
+
+    // 2.1. В файле html создать пустой div с произвольным id
+    // 2.2. Получить объект div'а в js при помощи метода document.getElementById(ваш id) as HTMLDivElement
+    const divHello = document.getElementById('newDiv') as HTMLDivElement
+
+
+    // 2.3. Вывесли в полученный div текст, "Привет, пользователь"
+    divHello.innerHTML = "Привет, пользователь"
+    // 2.4. Написать функцию, которая возвращает текст "Привет, пользователь" или "Привет, <имяПользователя>" в зависимости от переданных параметров и использовать её в задании 2.3.
+    function hello(name = "пользователь") {
+        divHello.innerHTML = `Привет, ${name}`
+    }
+    hello()
+    hello('zemlianin')
+    hello('***zemlianin***')
+
+
+
+    type ClassRoom = {
+        name: string,
+        department: string,
+        salary: number
+    }
+
+    // Есть массив объектов
+    const employees: ClassRoom[] = [
+        { name: 'Федотова Арина Глебовна', department: 'ads', salary: 2100 },
+        { name: 'Голикова Мария Филипповна', department: 'prog', salary: 3500 },
+        { name: 'Панин Александр Германович', department: 'ads', salary: 2100 },
+        { name: 'Романов Эмиль Макарович', department: 'prog', salary: 3100 },
+        { name: 'Смирнов Никита Александрович', department: 'prog', salary: 3800 },
+        { name: 'Александрова Майя Вячеславовна', department: 'prog', salary: 4500 },
+        { name: 'Крылов Богдан Максимович', department: 'disign', salary: 2100 },
+        { name: 'Мухина Айша Константиновна', department: 'disign', salary: 2100 },
+    ]
+
+
+
+    // Все функции вызывать несколько раз с разными параметрами
+    // 3.1. Создать функцию, принимающую массив работников, и возвращающую массив уникальных отделов (department)
+    function getDepart(arr: ClassRoom[]) {
+        for (let el of arr) {
+            // return { el department }
+        }
+    }
+    getDepart(employees)
+
+    // 3.2. Написать функцию, принимающую массив работников и ключ объекта, по которому сделать сортировку массива
+    // Учесть, что строковые параметры сортируются при помощи метода localeCompare, а числовые,- вычитанием
+
+    // 3.3. Написать функцию, аналогичную описанной в задании 2.2., но сортирующую в обратном порядке
+
+    // 3.4. Написать функцию, принимающую массив работников и имя, и возвращающую объект сотрудника или undefined
+
+    // 3.5. Написать функцию, принимающую массив работников и название отдела, и возвращающую новый массив, содержащий только сотрудников переданного отдела
+
+    // 3.6. Написать функцию, принимающую массив работников и возвращающую сумму зарплат. Вызвать функцию по каждому отделу и по общему массиву
+
+    // 3.7. В HTML создать div для кнопок, задать ему id и получить объект div'a в js, аналогично заданию 2.2.
+    // 3.8. Так же как в 3.7 создать ul (as HTMLUListElement) для вывода списка и div для вывода суммы зарплат
+
+    // 3.9. Используя массив, полученный в 3.1. Вывести кнопки с названиями отделов + кнопку "Все отделы"
+    //      использовать data-атрибут (data-dep), в который поместить название отдела. Для кнопки "Все отделы" data-dep="all"
+    // 3.10. Используя div, полученный в задании 3.7
+    // div37.addEventListener('click', function (e) {
+    //   const target = e.target as HTMLElement
+    //   if (target.tagName == 'BUTTON' && target.dataset.dep) {
+    //      в зависимости от значения dep выводить в список (ul 3.8) тех сотрудников, которые работают в данном отделе, либо всех, если target.dataset.dep=='all'. Используем логическое ветвление и уже написанные функции
+    //      в div (3.8) выводить сумму зарплат
+    //   }
+    // })
 }
 
-const toBuyList: product[] = [
-  { name: 'картофель', count: 5, isBuyed: false },
-  { name: 'лук', count: 1, isBuyed: false },
-  { name: 'соль', count: 1, isBuyed: true },
-  { name: 'приправа', count: 1, isBuyed: false },
-  { name: 'мясо', count: 1, isBuyed: false },
-  { name: 'сыр', count: 1, isBuyed: true },
-]
-toBuyList:toBuyList+= {'помидор', 4, false}
-const toBuyListOl = document.getElementById('toBuyList') as HTMLOListElement
+{
 
-function renderBuyList(arr: product[]) {
-  let html = ''
-  for (let el of arr) {
-    if (!el.isBuyed) {
-      html += `<li style="color:red"> ${el.name} ${el.count} </li>`
+    // Продукты
+    type product = {
+        name: string,
+        count: number,
+        isBuyed: boolean,
     }
-  }
-  for (let el of arr) {
-    if (el.isBuyed) {
-      html += `<li style="color:gren"> ${el.name} ${el.count} </li>`
+
+    const toBuyList: product[] = [
+        { name: 'картофель', count: 5, isBuyed: false },
+        { name: 'лук', count: 1, isBuyed: false },
+        { name: 'соль', count: 1, isBuyed: true },
+        { name: 'приправа', count: 1, isBuyed: false },
+        { name: 'мясо', count: 1, isBuyed: false },
+        { name: 'сыр', count: 1, isBuyed: true },
+    ]
+    // toBuyList:toBuyList {'помидор', 4, false}
+
+    const toBuyListOl = document.getElementById('toBuyList') as HTMLOListElement
+
+    function renderBuyList(arr: product[]) {
+        let html = ''
+        for (let el of arr) {
+            if (!el.isBuyed) {
+                html += `<li style="color:red"> ${el.name} ${el.count} </li>`
+            }
+        }
+        for (let el of arr) {
+            if (el.isBuyed) {
+                html += `<li style="color:green"> ${el.name} ${el.count} </li>`
+            }
+        }
+        toBuyListOl.innerHTML = html
     }
-  }
-  toBuyListOl.innerHTML = html
+
+    renderBuyList(toBuyList)
+
+    const productNameInput = document.getElementById('productName') as HTMLInputElement
+    const productCountInput = document.getElementById('productCount') as HTMLInputElement
+    const addProductButton = document.getElementById('addProduct') as HTMLButtonElement
+    const reduceProductButton = document.getElementById('reduceProduct') as HTMLButtonElement
+
+    // добавить
+
+    function addToBuylist(arr: product[], name: string, count: number) {
+        let inList = false
+        for (let el of arr) {
+            if (el.name == name && !el.isBuyed) {
+                el.count += count
+                inList = true
+            }
+        }
+        if (!inList && name) {
+            arr.push({ name, count, isBuyed: false })
+        }
+        renderBuyList(arr)
+    }
+
+    addProductButton.addEventListener('click', function () {
+        addToBuylist(toBuyList, productNameInput.value, +productCountInput.value,)
+        productNameInput.value = ''
+        productCountInput.value = ''
+    })
+
+    // удалить
+
+    function reduceToBuylist(arr: product[], name: string, count: number) {
+        let inList = false
+        for (let el of arr) {
+            if (el.name == name) {
+                el.count -= count
+                inList = true
+            }
+        }
+        // if (!inList) {
+        //   arr.push({ name, count, isBuyed: false })
+        // }
+        renderBuyList(arr)
+    }
+
+    reduceProductButton.addEventListener('click', function () {
+        reduceToBuylist(toBuyList, productNameInput.value, +productCountInput.value,)
+        productNameInput.value = ''
+        productCountInput.value = ''
+    })
+
+
+    const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
+    const cancBuyedButton = document.getElementById('cancBuyed') as HTMLButtonElement
+
+    // отметить
+
+    function setBuyed(arr: product[], name: string,) {
+        for (let el of arr) {
+            if (el.name == name) {
+                el.isBuyed = true
+            }
+        }
+        renderBuyList(arr)
+    }
+    setBuyedButton.addEventListener('click', function () {
+        setBuyed(toBuyList, productNameInput.value)
+        productNameInput.value = ''
+        productCountInput.value = ''
+    })
+
+    // отменить
+
+    function cancBuyed(arr: product[], name: string,) {
+        for (let el of arr) {
+            if (el.name == name) {
+                el.isBuyed = false
+            }
+        }
+        renderBuyList(arr)
+    }
+    cancBuyedButton.addEventListener('click', function () {
+        cancBuyed(toBuyList, productNameInput.value)
+        productNameInput.value = ''
+        productCountInput.value = ''
+    })
 }
-
-renderBuyList(toBuyList)
-
-const productNameInput = document.getElementById('productName') as HTMLInputElement
-const productCountInput = document.getElementById('productCount') as HTMLInputElement
-const addProductButton = document.getElementById('addProduct') as HTMLButtonElement
-const reduceProductButton = document.getElementById('reduceProduct') as HTMLButtonElement
-
-// добавить
-
-function addToBuylist(arr: product[], name: string, count: number) {
-  let inList = false
-  for (let el of arr) {
-    if (el.name == name && !el.isBuyed) {
-      el.count += count
-      inList = true
-    }
-  }
-  if (!inList && name) {
-    arr.push({ name, count, isBuyed: false })
-  }
-  renderBuyList(arr)
-}
-
-addProductButton.addEventListener('click', function () {
-  addToBuylist(toBuyList, productNameInput.value, +productCountInput.value,)
-  productNameInput.value = ''
-  productCountInput.value = ''
-})
-
-// удалить
-
-function reduceToBuylist(arr: product[], name: string, count: number) {
-  let inList = false
-  for (let el of arr) {
-    if (el.name == name) {
-      el.count -= count
-      inList = true
-    }
-  }
-  //   if (!inList) {
-  //     arr.push({ name, count, isBuyed: false })
-  //   }
-  renderBuyList(arr)
-}
-
-reduceProductButton.addEventListener('click', function () {
-  reduceToBuylist(toBuyList, productNameInput.value, +productCountInput.value,)
-  productNameInput.value = ''
-  productCountInput.value = ''
-})
-
-
-const setBuyedButton = document.getElementById('setBuyed') as HTMLButtonElement
-const cancBuyedButton = document.getElementById('cancBuyed') as HTMLButtonElement
-
-// отметить
-
-function setBuyed(arr: product[], name: string,) {
-  for (let el of arr) {
-    if (el.name == name) {
-      el.isBuyed = true
-    }
-  }
-  renderBuyList(arr)
-}
-setBuyedButton.addEventListener('click', function () {
-  setBuyed(toBuyList, productNameInput.value)
-  productNameInput.value = ''
-  productCountInput.value = ''
-})
-
-// отменить
-
-function cancBuyed(arr: product[], name: string,) {
-  for (let el of arr) {
-    if (el.name == name) {
-      el.isBuyed = false
-    }
-  }
-  renderBuyList(arr)
-}
-cancBuyedButton.addEventListener('click', function () {
-  cancBuyed(toBuyList, productNameInput.value)
-  productNameInput.value = ''
-  productCountInput.value = ''
-})
 
 
 
 
 
 {
-  // Метрика 
-  // google аналитика   page speed
-  // вебмастер  
+    // Метрика 
+    // google аналитика   page speed
+    // вебмастер  
 
 
 }
@@ -140,789 +258,789 @@ cancBuyedButton.addEventListener('click', function () {
 
 // console.log('Hello world')
 {
-  let n = 3
-  for (let i = 0; i < n; i++) {
-    console.log('Hello world')
-  }
-
-  while (n) {
-    console.log('Hello worold')
-    n--
-  }
-  let i = 0
-  do {
-    console.log('Hello worold')
-    i++
-  } while (i < 1)
-
-  let arr = [1, 2, 3, 4, 5, 6, 7, 8]
-
-  for (let i = 0; i < 50; i++) {
-    arr[i] = (Math.random() * 99) + 1
-  }
-  for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i])
-    if (arr[i] == 5) {
-      break
-    }
-  }
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == 5) {
-      continue
-    }
-    console.log(arr[i])
-  }
-
-  cicl1: for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5; j++) {
-      console.log('hello world')
-      if (i == 2 && j == 3) {
-        break cicl1 // ? отмна первого цикла 
-      }
-    }
-  }
-  for (let i = 1; i <= 20; i++) {
-    if (i % 2 == 0) {
-      console.log(i)
-    }
-  }
-  console.log(i)
-  for (i = 0; i < 20; i++) {
-    if (i % 2 == 0) {
-    } else {
-      console.log(i)
-
-    }
-  }
-  console.log(i)
-  i = 10
-  while (i) {
-    if (i % 2 == 0) {
-    } else {
-      console.log(i)
+    let n = 3
+    for (let i = 0; i < n; i++) {
+        console.log('Hello world')
     }
 
-    i--
-  }
-  i = 10
-  while (i) {
-    if (i % 2 == 0) {
-      console.log(i)
-    } else {
+    while (n) {
+        console.log('Hello worold')
+        n--
     }
-    i--
+    let i = 0
+    do {
+        console.log('Hello worold')
+        i++
+    } while (i < 1)
 
-  }
-  // let o = 5
-  // let t = 7
-  function getSum(a = 0, b = 0) {
-    return a + b
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8]
 
-  }
-  function getMax(a = 0, b = 0) {
-    return a > b ? a : b
-
-  }
-  function getMin(a = 0, b = 0) {
-    return a < b ? a : b
-
-  }
-  function getSumRes(...rest: number[]) {
-    let sum = 0
-    for (let i = 0; i < arguments.length; i++) {
-      sum += rest[i]
+    for (let i = 0; i < 50; i++) {
+        arr[i] = (Math.random() * 99) + 1
     }
-    return sum
-  }
-  console.log(getSumRes(1, 2, 3, 4, 5, 6, 7, 8, 9))
-  console.log(getMax(4))
-  console.log(getMin(4))
-  console.log(getSum(5, 9))
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i])
+        if (arr[i] == 5) {
+            break
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == 5) {
+            continue
+        }
+        console.log(arr[i])
+    }
 
-  function funcC(a: number, b: number) {
-    console.log('Hello')
-    return a + b
-  }
-  console.log(funcC(4, 8))
-  function funcC1(a = 10, b = 4) {
-    console.log('Hello')
-    return a + b
-  }
-  console.log(funcC1(486, 14))
+    cicl1: for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            console.log('hello world')
+            if (i == 2 && j == 3) {
+                break cicl1 // ? отмна первого цикла 
+            }
+        }
+    }
+    for (let i = 1; i <= 20; i++) {
+        if (i % 2 == 0) {
+            console.log(i)
+        }
+    }
+    console.log(i)
+    for (i = 0; i < 20; i++) {
+        if (i % 2 == 0) {
+        } else {
+            console.log(i)
+
+        }
+    }
+    console.log(i)
+    i = 10
+    while (i) {
+        if (i % 2 == 0) {
+        } else {
+            console.log(i)
+        }
+
+        i--
+    }
+    i = 10
+    while (i) {
+        if (i % 2 == 0) {
+            console.log(i)
+        } else {
+        }
+        i--
+
+    }
+    // let o = 5
+    // let t = 7
+    function getSum(a = 0, b = 0) {
+        return a + b
+
+    }
+    function getMax(a = 0, b = 0) {
+        return a > b ? a : b
+
+    }
+    function getMin(a = 0, b = 0) {
+        return a < b ? a : b
+
+    }
+    function getSumRes(...rest: number[]) {
+        let sum = 0
+        for (let i = 0; i < arguments.length; i++) {
+            sum += rest[i]
+        }
+        return sum
+    }
+    console.log(getSumRes(1, 2, 3, 4, 5, 6, 7, 8, 9))
+    console.log(getMax(4))
+    console.log(getMin(4))
+    console.log(getSum(5, 9))
+
+    function funcC(a: number, b: number) {
+        console.log('Hello')
+        return a + b
+    }
+    console.log(funcC(4, 8))
+    function funcC1(a = 10, b = 4) {
+        console.log('Hello')
+        return a + b
+    }
+    console.log(funcC1(486, 14))
 
 }
 {//12.03.24.
-  const object = {
-    a: 345,
-    b: 35,
-    c: 4,
-  }
-  console.log(object)
-  console.log(object.a)
-  console.log(object["a"])
-  console.log(object['b'])
-  console.log(object[`c`])
+    const object = {
+        a: 345,
+        b: 35,
+        c: 4,
+    }
+    console.log(object)
+    console.log(object.a)
+    console.log(object["a"])
+    console.log(object['b'])
+    console.log(object[`c`])
 
-  // const newObject = {
-  //     a: 1, b: 2, c: 3, d: 'hello'
-  // }
-  // let h = ' '
-  // function myObj(object:object):string{
-  //     if(!object){
-  //         console.log(object)
-  //         return h
-  //     }else{
-  //         console.log(object)
-  //         return h += myObj(object)
-  //     }
-  // }
-  // console.log(myObj(newObject))
+    // const newObject = {
+    //     a: 1, b: 2, c: 3, d: 'hello'
+    // }
+    // let h = ' '
+    // function myObj(object:object):string{
+    //     if(!object){
+    //         console.log(object)
+    //         return h
+    //     }else{
+    //         console.log(object)
+    //         return h += myObj(object)
+    //     }
+    // }
+    // console.log(myObj(newObject))
 
-  for (let key in object) {
-    console.log(key)
-  }
+    for (let key in object) {
+        console.log(key)
+    }
 }
 {//14.03.24.
-  type Car = {
-    manuf: string,
-    brand: string,
-    ageString: string
-    speedStr: string,
-    maxSpeedStr: string,
-    age: number,
-    speed: number,
-    maxSpeed: number,
-  }
-  const myCar: Car = {
-    manuf: 'BMW',
-    brand: 'M5',
-    ageString: 'Year',
-    speedStr: 'Average speed',
-    age: 2017,
-    maxSpeed: 340,
-    maxSpeedStr: 'Max speed',
-    speed: 100,
-  }
+    type Car = {
+        manuf: string,
+        brand: string,
+        ageString: string
+        speedStr: string,
+        maxSpeedStr: string,
+        age: number,
+        speed: number,
+        maxSpeed: number,
+    }
+    const myCar: Car = {
+        manuf: 'BMW',
+        brand: 'M5',
+        ageString: 'Year',
+        speedStr: 'Average speed',
+        age: 2017,
+        maxSpeed: 340,
+        maxSpeedStr: 'Max speed',
+        speed: 100,
+    }
 
-  function getMyCar(car: Car) {
-    return car.manuf + ' ' + car.brand + '\n' + car.ageString + ' ' + car.age + '\n' + car['maxSpeedStr'] + ' ' + car['maxSpeed'] + '\n' + car.speedStr + ' ' + car.speed
-  }
+    function getMyCar(car: Car) {
+        return car.manuf + ' ' + car.brand + '\n' + car.ageString + ' ' + car.age + '\n' + car['maxSpeedStr'] + ' ' + car['maxSpeed'] + '\n' + car.speedStr + ' ' + car.speed
+    }
 
-  console.log(getMyCar(myCar))
+    console.log(getMyCar(myCar))
 
-  function getHourDist(car: Car, dist: number) {
-    let time = dist / car.speed
-    let resTime = time % 4 == 0 ? (Math.trunc((dist / car.speed) / 4) - 1) : (Math.trunc((dist / car.speed) / 4))
-    return time + resTime
-  }
-  console.log(getHourDist(myCar, 1900))
+    function getHourDist(car: Car, dist: number) {
+        let time = dist / car.speed
+        let resTime = time % 4 == 0 ? (Math.trunc((dist / car.speed) / 4) - 1) : (Math.trunc((dist / car.speed) / 4))
+        return time + resTime
+    }
+    console.log(getHourDist(myCar, 1900))
 }
 
 
 { // 21.03.24.
-  const myArr = [3, 4, 67, 324, 1, 3, 443, 556, 6, 7, 87, 54]
+    const myArr = [3, 4, 67, 324, 1, 3, 443, 556, 6, 7, 87, 54]
 
 
 }
 
 {
-  // Практика 6. Задание 1. Создать объект, описывающий прямоугольник (хранит координаты левой верхней и правой нижней точек), и написать следующие функции для работы с таким объектом.
+    // Практика 6. Задание 1. Создать объект, описывающий прямоугольник (хранит координаты левой верхней и правой нижней точек), и написать следующие функции для работы с таким объектом.
 
 
 
-  type Rectangle = {
-    topLeft: {
-      x1: number,
-      y1: number,
-    },
-    bottomRight: {
-      x2: number,
-      y2: number,
-    },
-  }
-
-  const myRect: Rectangle = {
-    topLeft: {
-      x1: 0,
-      y1: 0,
-    },
-    bottomRight: {
-      x2: 7,
-      y2: 12,
-    },
-
-
-  }
-
-
-
-  // 1.Функция принимает объект-прямоугольник и выводит информацию о нем (где какая точка расположена).
-  function getInfo(rect: Rectangle) {
-
-
-    console.log(rect.topLeft, rect.bottomRight)
-
-  }
-  getInfo(myRect)
-
-  // 2.Функция принимает объект-прямоугольник и возвращает его ширину.
-  function getRectWhit(rect: Rectangle) {
-    return rect.topLeft?.y1 < rect.bottomRight?.y2 ? rect.bottomRight?.y2 - rect.topLeft?.y1 : rect.topLeft?.y1 - rect.bottomRight?.y2
-  }
-  console.log(getRectWhit(myRect))
-  // 3.Функция принимает объект-прямоугольник и возвращает его высоту.
-  function getRectHig(rect: Rectangle) {
-    return rect.topLeft?.x1 < rect.bottomRight?.x2 ? rect.bottomRight?.x2 - rect.topLeft?.x1 : rect.topLeft?.x1 - rect.bottomRight?.x2
-  }
-  console.log(getRectHig(myRect))
-  // 4.Функция принимает объект-прямоугольник и возвращает его площадь.
-  function getRectPloshad(rect: Rectangle) {
-    return getRectHig(rect) * getRectWhit(rect)
-  }
-  console.log(getRectPloshad(myRect))
-  // 5.Функция принимает объект-прямоугольник и возвращает его периметр.
-  function getRectPerimetr(rect: Rectangle) {
-    return (getRectHig(rect) + getRectWhit(rect)) * 2
-  }
-  console.log(getRectPerimetr(myRect))
-
-  // 6.Функция изменения ширины прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить ширину.
-  let a = 5
-  function chanRect(rect: Rectangle, num: Number) {
-
-  }
-  chanRect(myRect, a)
-  // 7.Функция изменения высоты прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить высоту.
-
-  // 8.Функция изменения ширины и высоты прямоугольника. Она принимает объект-прямоугольник и два значения для изменения ширины и высоты.
-
-  // 9.Функция смещения прямоугольника по оси X. Она принимает объект-прямоугольник и на сколько единиц его сдвинуть.
-
-  // 10. Функция смещения прямоугольника по оси Y. Она принимает объект-прямоугольник и на сколько единиц его сдвинуть.
-
-  // 11. Функция смещения прямоугольника и по оси X и по оси Y. Она принимает объект-прямоугольник и два значения: сдвиг по оси X и сдвиг по оси Y.
-
-  // 12. Функция для проверки, находится ли точка внутри прямоугольника. Она принимает объект-прямоугольник и координаты точки.
-
-}
-{
-  // Практика 5. Задание 1. Написать функцию, которая вычисляет факториал заданного числа.
-
-  // function getFact(n: number): number {
-  //     let i = 1
-  //     if (n <= i) {
-  //         console.log(n)
-  //         return n
-  //     } else {
-  //         console.log(n)
-  //         return n = n * getFact(n-1)
-  //     }
-  // }
-  function getFact(n: number): number {
-
-    return n <= 1 ? 1 : n = n * getFact(n - 1)
-  }
-  console.log(getFact(5))
-}
-{
-  // Практика 5. Задание 2. Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
-
-  function getPorydok(min: number, max: number): string {
-    let num = ' '
-    console.log(min)
-    return min - 1 == max ? num : num += min + getPorydok(min + 1, max)
-  }
-
-  function getPorydokR(min: number, max: number): string {
-    let dev = ' '
-    // console.log(max)
-    // console.log(num)
-    // return min == max ? num : num += (max - getPorydokR(min, max-1))
-    if (min - 1 == max) {
-      return dev
-    } else {
-      dev += max + getPorydokR(min, max - 1)
+    type Rectangle = {
+        topLeft: {
+            x1: number,
+            y1: number,
+        },
+        bottomRight: {
+            x2: number,
+            y2: number,
+        },
     }
 
-    return dev
-  }
-  console.log(getPorydokR(4, 15))
+    const myRect: Rectangle = {
+        topLeft: {
+            x1: 0,
+            y1: 0,
+        },
+        bottomRight: {
+            x2: 7,
+            y2: 12,
+        },
 
-  console.log(getPorydok(4, 15))
-}
-{
-  // Практика 5. Задание 3. Написать функцию, которая выводит переданное ей число задом наперед. 
-  // Например: число 1234 вывести как 4321
-  function getRev(n: number): number {
-    if (n <= 9) {
-      console.log(n)
-      return n
-    } else {
 
-      return +((n % 10).toString() + getRev(Math.trunc(n / 10)))
     }
-    console.log(n)
-  }
-  console.log(getRev(1234))
-}
-{
-  // Практика 5. Задание 4. Написать функцию, которая считает сумму цифр числа. 
-  // Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
 
-  function getSum(n: number): number {
-    if (n < 10) {
-      return n
-    } else {
-      return n % 10 + getSum(Math.trunc(n / 10))
+
+
+    // 1.Функция принимает объект-прямоугольник и выводит информацию о нем (где какая точка расположена).
+    function getInfo(rect: Rectangle) {
+
+
+        console.log(rect.topLeft, rect.bottomRight)
+
     }
-  }
-  console.log(getSum(123))
-}
+    getInfo(myRect)
 
-{
-  // Практика 5. Задание 5.Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок. 
-  // Например: число 4 – (((()))).
-  let m = ''
-  function getScob(n: number) {
-    console.log(n)
-    if (n == 0) {
-      return m
-    } else {
-      m += '{' + getScob(n - 1) + '}'
-      console.log(n)
-
-      return m
+    // 2.Функция принимает объект-прямоугольник и возвращает его ширину.
+    function getRectWhit(rect: Rectangle) {
+        return rect.topLeft?.y1 < rect.bottomRight?.y2 ? rect.bottomRight?.y2 - rect.topLeft?.y1 : rect.topLeft?.y1 - rect.bottomRight?.y2
     }
-  }
-  console.log(getScob(5))
-}
-{
-  // Домашнее задание 5. Задание 1. Написать функцию возведения числа в степень.
-  function getStepin(x: number, n: number): number {
-    if (n == 1) {
-      return x;
-    } else {
-      return x * getStepin(x, n - 1);
+    console.log(getRectWhit(myRect))
+    // 3.Функция принимает объект-прямоугольник и возвращает его высоту.
+    function getRectHig(rect: Rectangle) {
+        return rect.topLeft?.x1 < rect.bottomRight?.x2 ? rect.bottomRight?.x2 - rect.topLeft?.x1 : rect.topLeft?.x1 - rect.bottomRight?.x2
     }
-  }
-  // function getStepin(x: number, n: number):number {
-  //     return n == 1 ? x : x * getStepin(x, n - 1)
-  // }
-  console.log(getStepin(4, 5))
-}
-{
-  // Домашнее задание 5. Задание 2. Написать функцию поиска наибольшего общего делителя.
-
-}
-{
-  // Домашнее задание 5. Задание 3. Написать функцию для поиска максимальной цифры в числе.
-}
-{
-  // Домашнее задание 5. Задание 4.Написать функцию, которая определяет простое ли переданное число.
-}
-{
-  // Домашнее задание 5. Задание 5.Написать функцию для вывода всех множителей переданного числа в возрастающем порядке. 
-  // Например: число 18 – множители 2 * 3 * 3
-
-}
-{
-  // Домашнее задание 5. Задание 6. Написать функцию, которая возвращает число Фибоначчи по переданному порядковому номеру. Числа Фибоначчи: 1, 1, 2, 3, 5, 8, 13… Ряд основывается на том, что каждое число равно сумме двух предыдущих чисел. 
-  // Например: порядковый номер 3 – число 2, порядковый номер 6 – число 8
-
-}
-
-{
-  // Практика 4. Задание 1. Написать функцию, которая принимает 2 числа и возвращает меньшее из них.
-  function getMin(a = 0, b = 0) {
-    return a < b ? a : b
-  }
-  console.log(getMin(4))
-}
-{
-  // Практика 4. Задание 2. Написать функцию, которая возводит переданное число в указанную степень.
-  function getDegree(a: number, b: number) {
-    let mult = a
-    for (let i = 0; i < b; i++) {
-      mult *= a
+    console.log(getRectHig(myRect))
+    // 4.Функция принимает объект-прямоугольник и возвращает его площадь.
+    function getRectPloshad(rect: Rectangle) {
+        return getRectHig(rect) * getRectWhit(rect)
     }
-    return mult
-  }
-  console.log(getDegree(2, 3))
-}
-{
-  // Практика 4. Задание 3.Написать функцию, которая принимает 2 числа и знак (+ - * /), считает пример и возвращает результат.
-  function getResult(a: number, b: number, c: string) {
-
-    switch (c) {
-      case '+': return a + b
-        break
-      case '-': return a - b
-        break
-      case '*': return a * b
-        break
-      case '/': return a / b
-        break
-      default: return 'Не коректные даные!'
+    console.log(getRectPloshad(myRect))
+    // 5.Функция принимает объект-прямоугольник и возвращает его периметр.
+    function getRectPerimetr(rect: Rectangle) {
+        return (getRectHig(rect) + getRectWhit(rect)) * 2
     }
-  }
-  console.log(getResult(5, 5, ' '))
-}
-{
-  //   // Практика 4. Задание 4.Написать функцию, которая проверяет, является ли переданное ей число простым.
-  function getProst(a: number) {
-    for (let i = 2; i < a; i++) {
-      if (a % i == 0) {
-        return 'не простое число'
-      }
+    console.log(getRectPerimetr(myRect))
+
+    // 6.Функция изменения ширины прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить ширину.
+    let a = 5
+    function chanRect(rect: Rectangle, num: Number) {
+
     }
-    return 'Простое число'
-  }
-  console.log(getProst(15))
+    chanRect(myRect, a)
+    // 7.Функция изменения высоты прямоугольника. Она принимает объект-прямоугольник и на сколько единиц изменить высоту.
+
+    // 8.Функция изменения ширины и высоты прямоугольника. Она принимает объект-прямоугольник и два значения для изменения ширины и высоты.
+
+    // 9.Функция смещения прямоугольника по оси X. Она принимает объект-прямоугольник и на сколько единиц его сдвинуть.
+
+    // 10. Функция смещения прямоугольника по оси Y. Она принимает объект-прямоугольник и на сколько единиц его сдвинуть.
+
+    // 11. Функция смещения прямоугольника и по оси X и по оси Y. Она принимает объект-прямоугольник и два значения: сдвиг по оси X и сдвиг по оси Y.
+
+    // 12. Функция для проверки, находится ли точка внутри прямоугольника. Она принимает объект-прямоугольник и координаты точки.
+
 }
 {
-  // Практика 4. Задание 5.Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. Вызовите функцию для всех чисел от 2 до 9
-  function getResUmn(a: number) {
-    let st = ''
-    if (a < 10 && a > 1) {
+    // Практика 5. Задание 1. Написать функцию, которая вычисляет факториал заданного числа.
 
-      for (let i = 2; i <= 9; i++) {
-        st += ` ${i} * ${a} = ${i * a}; \n`
-      }
-      return st
+    // function getFact(n: number): number {
+    //     let i = 1
+    //     if (n <= i) {
+    //         console.log(n)
+    //         return n
+    //     } else {
+    //         console.log(n)
+    //         return n = n * getFact(n-1)
+    //     }
+    // }
+    function getFact(n: number): number {
+
+        return n <= 1 ? 1 : n = n * getFact(n - 1)
     }
-    return 'Вы вели не верное число \n Введите число от 2 до 9'
-  }
-  console.log(getResUmn(1))
-  console.log(getResUmn(2))
-  console.log(getResUmn(3))
-  console.log(getResUmn(4))
-  console.log(getResUmn(5))
-  console.log(getResUmn(6))
-  console.log(getResUmn(7))
-  console.log(getResUmn(8))
-  console.log(getResUmn(9))
-  console.log(getResUmn(10))
+    console.log(getFact(5))
 }
 {
-  // Практика 4. Задание 6.Написать функцию, которая реализует работу оператора %. Функция принимает 2 параметра и возвращает остаток от деления первого параметра на второй.
-  //                       В функции использовать только + - * /, оператор % не использовать.
-  function getProccent(a: number, b: number) {
+    // Практика 5. Задание 2. Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
 
-    let numD = Math.trunc(a / b)
-    // console.log(numD)
-    let result = a - b * numD
-    // console.log(result)
-    if (result)
-      return result
-    return 'Остатка нет'
-  }
-  console.log(getProccent(16, 5))
-}
-{
-  // Практика 4. Задание 7.Написать функцию, которая принимает от 1 до 5 чисел и возвращает их сумму.
-  function getSumRes(...rest: number[]) {
-    let sum = 0
-    for (let i = 0; i < arguments.length; i++) {
-      sum += rest[i]
+    function getPorydok(min: number, max: number): string {
+        let num = ' '
+        console.log(min)
+        return min - 1 == max ? num : num += min + getPorydok(min + 1, max)
     }
-    return sum
-  }
-  console.log(getSumRes(1, 2, 3, 4, 5))
-}
-{
-  // Практика 4. Задание 8. Написать функцию, которая принимает от 1 до 5 чисел и возвращает большее из них.
-  function getMaxRes(...rest: number[]) {
-    let max = 0
-    for (let i = 0; i < arguments.length; i++) {
-      if (max < rest[i]) {
-        max = rest[i]
-      }
+
+    function getPorydokR(min: number, max: number): string {
+        let dev = ' '
+        // console.log(max)
+        // console.log(num)
+        // return min == max ? num : num += (max - getPorydokR(min, max-1))
+        if (min - 1 == max) {
+            return dev
+        } else {
+            dev += max + getPorydokR(min, max - 1)
+        }
+
+        return dev
     }
-    return max
-  }
-  console.log(getMaxRes(1, 2, 9, 4, 5))
-}
-{
-  // Практика 4. Задание 9.Написать функцию, которая выводит все четные или нечетные числа, в указанном пользователем диапазоне. Какие числа выводить, определяется третьим параметром типа bool (true – четные, false – нечетные).
-  //function getChetNo(a:number,b:number,c)
-}
-{
-  // Практика 4. Задание 10.
+    console.log(getPorydokR(4, 15))
 
+    console.log(getPorydok(4, 15))
 }
 {
-  // Домашнее задание 4. Задание 1.
-}
-{
-  // Домашнее задание 3. Задание 1. Подсчитать сумму всех чисел в заданном пользователем диапазоне.
-  let userNum1 = 23
-  let userNum2 = 35
-  let userRes = userNum1
-  for (let i = userNum1; i < userNum2; i++) {
-    userRes += userNum2
-  }
-  console.log(userRes)
-}
-{
-  // Домашнее задание 3. Задание 2. Запросить 2 числа и найти только наибольший общий делитель.
-  let numUser = 15
-  let numUser2 = 75
-  let res = 0
-  let min = numUser < numUser2 ? numUser : numUser2
-  for (let i = 0; i <= min; i++) {
-    if (numUser % i == 0 && numUser2 % i == 0) {
-      res = i
-      console.log(res)
+    // Практика 5. Задание 3. Написать функцию, которая выводит переданное ей число задом наперед. 
+    // Например: число 1234 вывести как 4321
+    function getRev(n: number): number {
+        if (n <= 9) {
+            console.log(n)
+            return n
+        } else {
+
+            return +((n % 10).toString() + getRev(Math.trunc(n / 10)))
+        }
+        console.log(n)
     }
-  }
-  console.log(res)
-
+    console.log(getRev(1234))
 }
-
 {
-  // Домашнее задание 3. Задание 3. Запросить у пользователя число и вывести все делители этого числа.
-  let numUser = 4454
-  let text = ''
-  for (let i = 0; i < numUser; i++) {
-    if (numUser % i == 0) {
-      text += i + '_'
+    // Практика 5. Задание 4. Написать функцию, которая считает сумму цифр числа. 
+    // Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
+
+    function getSum(n: number): number {
+        if (n < 10) {
+            return n
+        } else {
+            return n % 10 + getSum(Math.trunc(n / 10))
+        }
     }
-  }
-  text += numUser
-  console.log(text)
+    console.log(getSum(123))
+}
+
+{
+    // Практика 5. Задание 5.Написать функцию, которая принимает число и выводит соответствующее количество вложенных пар круглых скобок. 
+    // Например: число 4 – (((()))).
+    let m = ''
+    function getScob(n: number) {
+        console.log(n)
+        if (n == 0) {
+            return m
+        } else {
+            m += '{' + getScob(n - 1) + '}'
+            console.log(n)
+
+            return m
+        }
+    }
+    console.log(getScob(5))
 }
 {
-  // Домашнее задание 3. Задание 4.
+    // Домашнее задание 5. Задание 1. Написать функцию возведения числа в степень.
+    function getStepin(x: number, n: number): number {
+        if (n == 1) {
+            return x;
+        } else {
+            return x * getStepin(x, n - 1);
+        }
+    }
+    // function getStepin(x: number, n: number):number {
+    //     return n == 1 ? x : x * getStepin(x, n - 1)
+    // }
+    console.log(getStepin(4, 5))
+}
+{
+    // Домашнее задание 5. Задание 2. Написать функцию поиска наибольшего общего делителя.
 
 }
 {
-  // Домашнее задание 3. Задание 5.
+    // Домашнее задание 5. Задание 3. Написать функцию для поиска максимальной цифры в числе.
+}
+{
+    // Домашнее задание 5. Задание 4.Написать функцию, которая определяет простое ли переданное число.
+}
+{
+    // Домашнее задание 5. Задание 5.Написать функцию для вывода всех множителей переданного числа в возрастающем порядке. 
+    // Например: число 18 – множители 2 * 3 * 3
 
 }
 {
-  // Домашнее задание 3. Задание 6.
+    // Домашнее задание 5. Задание 6. Написать функцию, которая возвращает число Фибоначчи по переданному порядковому номеру. Числа Фибоначчи: 1, 1, 2, 3, 5, 8, 13… Ряд основывается на том, что каждое число равно сумме двух предыдущих чисел. 
+    // Например: порядковый номер 3 – число 2, порядковый номер 6 – число 8
+
+}
+
+{
+    // Практика 4. Задание 1. Написать функцию, которая принимает 2 числа и возвращает меньшее из них.
+    function getMin(a = 0, b = 0) {
+        return a < b ? a : b
+    }
+    console.log(getMin(4))
+}
+{
+    // Практика 4. Задание 2. Написать функцию, которая возводит переданное число в указанную степень.
+    function getDegree(a: number, b: number) {
+        let mult = a
+        for (let i = 0; i < b; i++) {
+            mult *= a
+        }
+        return mult
+    }
+    console.log(getDegree(2, 3))
+}
+{
+    // Практика 4. Задание 3.Написать функцию, которая принимает 2 числа и знак (+ - * /), считает пример и возвращает результат.
+    function getResult(a: number, b: number, c: string) {
+
+        switch (c) {
+            case '+': return a + b
+                break
+            case '-': return a - b
+                break
+            case '*': return a * b
+                break
+            case '/': return a / b
+                break
+            default: return 'Не коректные даные!'
+        }
+    }
+    console.log(getResult(5, 5, ' '))
+}
+{
+    //   // Практика 4. Задание 4.Написать функцию, которая проверяет, является ли переданное ей число простым.
+    function getProst(a: number) {
+        for (let i = 2; i < a; i++) {
+            if (a % i == 0) {
+                return 'не простое число'
+            }
+        }
+        return 'Простое число'
+    }
+    console.log(getProst(15))
+}
+{
+    // Практика 4. Задание 5.Написать функцию, которая принимает число и выводит таблицу умножения для этого числа. Вызовите функцию для всех чисел от 2 до 9
+    function getResUmn(a: number) {
+        let st = ''
+        if (a < 10 && a > 1) {
+
+            for (let i = 2; i <= 9; i++) {
+                st += ` ${i} * ${a} = ${i * a}; \n`
+            }
+            return st
+        }
+        return 'Вы вели не верное число \n Введите число от 2 до 9'
+    }
+    console.log(getResUmn(1))
+    console.log(getResUmn(2))
+    console.log(getResUmn(3))
+    console.log(getResUmn(4))
+    console.log(getResUmn(5))
+    console.log(getResUmn(6))
+    console.log(getResUmn(7))
+    console.log(getResUmn(8))
+    console.log(getResUmn(9))
+    console.log(getResUmn(10))
+}
+{
+    // Практика 4. Задание 6.Написать функцию, которая реализует работу оператора %. Функция принимает 2 параметра и возвращает остаток от деления первого параметра на второй.
+    //                       В функции использовать только + - * /, оператор % не использовать.
+    function getProccent(a: number, b: number) {
+
+        let numD = Math.trunc(a / b)
+        // console.log(numD)
+        let result = a - b * numD
+        // console.log(result)
+        if (result)
+            return result
+        return 'Остатка нет'
+    }
+    console.log(getProccent(16, 5))
+}
+{
+    // Практика 4. Задание 7.Написать функцию, которая принимает от 1 до 5 чисел и возвращает их сумму.
+    function getSumRes(...rest: number[]) {
+        let sum = 0
+        for (let i = 0; i < arguments.length; i++) {
+            sum += rest[i]
+        }
+        return sum
+    }
+    console.log(getSumRes(1, 2, 3, 4, 5))
+}
+{
+    // Практика 4. Задание 8. Написать функцию, которая принимает от 1 до 5 чисел и возвращает большее из них.
+    function getMaxRes(...rest: number[]) {
+        let max = 0
+        for (let i = 0; i < arguments.length; i++) {
+            if (max < rest[i]) {
+                max = rest[i]
+            }
+        }
+        return max
+    }
+    console.log(getMaxRes(1, 2, 9, 4, 5))
+}
+{
+    // Практика 4. Задание 9.Написать функцию, которая выводит все четные или нечетные числа, в указанном пользователем диапазоне. Какие числа выводить, определяется третьим параметром типа bool (true – четные, false – нечетные).
+    //function getChetNo(a:number,b:number,c)
+}
+{
+    // Практика 4. Задание 10.
 
 }
 {
-  // Домашнее задание 3. Задание 7.
+    // Домашнее задание 4. Задание 1.
+}
+{
+    // Домашнее задание 3. Задание 1. Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+    let userNum1 = 23
+    let userNum2 = 35
+    let userRes = userNum1
+    for (let i = userNum1; i < userNum2; i++) {
+        userRes += userNum2
+    }
+    console.log(userRes)
+}
+{
+    // Домашнее задание 3. Задание 2. Запросить 2 числа и найти только наибольший общий делитель.
+    let numUser = 15
+    let numUser2 = 75
+    let res = 0
+    let min = numUser < numUser2 ? numUser : numUser2
+    for (let i = 0; i <= min; i++) {
+        if (numUser % i == 0 && numUser2 % i == 0) {
+            res = i
+            console.log(res)
+        }
+    }
+    console.log(res)
+
+}
+
+{
+    // Домашнее задание 3. Задание 3. Запросить у пользователя число и вывести все делители этого числа.
+    let numUser = 4454
+    let text = ''
+    for (let i = 0; i < numUser; i++) {
+        if (numUser % i == 0) {
+            text += i + '_'
+        }
+    }
+    text += numUser
+    console.log(text)
+}
+{
+    // Домашнее задание 3. Задание 4.
 
 }
 {
-  // Домашнее задание 3. Задание 8.
+    // Домашнее задание 3. Задание 5.
 
 }
 {
-  // Домашнее задание 3. Задание 9.
+    // Домашнее задание 3. Задание 6.
 
 }
 {
-  // Домашнее задание 3. Задание 10.
+    // Домашнее задание 3. Задание 7.
+
+}
+{
+    // Домашнее задание 3. Задание 8.
+
+}
+{
+    // Домашнее задание 3. Задание 9.
+
+}
+{
+    // Домашнее задание 3. Задание 10.
 
 }
 
 {// Практика 3. Задание 1.Вывести # столько раз, сколько указал пользователь.
-  let numUser77 = 20
-  let text = ''
-  let i = 0
-  for (i = 1; i < numUser77; i++) {
-    text += `${i}#` + '_'
-  }
-  text += `${i}#`
-  console.log(text)
-}
-{
-  // Практика 3. Задание 2.Пользователь ввел число, а на экран вывелись все числа от введенного до 0
-  let userNum5 = 20
-  while (userNum5) {
-    userNum5--
-    console.log(userNum5 + 1)
-  }
-  userNum5 = 13
-  for (let i = userNum5; i >= 0; --i) {
-    console.log(i)
-
-  }
-}
-{
-  // Практика 3. Задание 3.Запросить число и степень. Возвести число в указанную степень и вывести результат.
-  let userNum = 13
-  let userStp = 6
-  let res = 1
-  for (let i = 0; i < userStp; i++) {
-    res *= userNum
-  }
-  console.log(res)
-}
-{
-  // Практика 3. Задание 4.Запросить 2 числа и найти все общие делители.
-  let numUser1 = 232
-  let numUser12 = 544
-  let text = '_'
-  let min = numUser1 < numUser12 ? numUser1 : numUser12
-  let i = 0
-  for (i = 1; i <= min; i++) {
-    if (numUser1 % i == 0 && numUser12 % i == 0) {
-      text += i + '_'
+    let numUser77 = 20
+    let text = ''
+    let i = 0
+    for (i = 1; i < numUser77; i++) {
+        text += `${i}#` + '_'
     }
-  }
-  console.log(text)
+    text += `${i}#`
+    console.log(text)
 }
 {
-  // Практика 3. Задание 5. Посчитать факториал введенного пользователем числа.
-  let numUser1 = 5
-  let resFact = 1
-  for (let i = 1; i <= numUser1; i++) {
-    resFact *= i
-  }
-  console.log(resFact)
-}
-{
-  // // Практика 3. Задание 6.Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
-  // let num = 0
-  // do {
-  //   let userNum = prompt('Решите пример (2 + 2 * 2)', 'Введите ответ')
-  //   num = Number(userNum)
-  //   console.log('Не верно')
-  // } while (num != 6)
-  // console.log(`Верно ответ ${num} `)
-}
-{
-  // Практика 3. Задание 7.Делить число 1000 на 2 до тех пор, пока не получится число меньше 50 Вывести это число и сколько делений произвели.
-  let num1 = 1000
-  let num2 = 2
-  let r = 0
-
-  while (num1 > 50) {
-    r++
-    num1 /= num2
-  }
-  console.log(`Число меньше 50 = ${num1}, а делений произвели ${r} раз`)
-
-}
-{
-  // Практика 3. Задание 8.Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.
-  let numUser = 8
-  let res = '_'
-  for (let i = 1; i <= 100; i++) {
-    if (i % numUser == 0) {
-      res += i + '_'
+    // Практика 3. Задание 2.Пользователь ввел число, а на экран вывелись все числа от введенного до 0
+    let userNum5 = 20
+    while (userNum5) {
+        userNum5--
+        console.log(userNum5 + 1)
     }
-  }
-  console.log(res)
+    userNum5 = 13
+    for (let i = userNum5; i >= 0; --i) {
+        console.log(i)
+
+    }
 }
 {
-  // Практика 3. Задание 9.Вывести каждый 4-й элемент из указанного пользователем диапазона. Пользователь указывает минимальное и максимальное значения диапазона.
-  // let numUser1 = 459
-  // let numUser2 = 859
-  // let i = numUser1 < numUser2 ? numUser1 : numUser2
-  // let n = numUser1 < numUser2 ? numUser2 : numUser1
-  // for (; i < n; i+4){
-  // console.log(i)
-  // }
+    // Практика 3. Задание 3.Запросить число и степень. Возвести число в указанную степень и вывести результат.
+    let userNum = 13
+    let userStp = 6
+    let res = 1
+    for (let i = 0; i < userStp; i++) {
+        res *= userNum
+    }
+    console.log(res)
 }
 {
-  // Практика 3. Задание 10. Запросить число и проверить, простое ли оно. Простое число делится без остатка только на себя и на единицу.
+    // Практика 3. Задание 4.Запросить 2 числа и найти все общие делители.
+    let numUser1 = 232
+    let numUser12 = 544
+    let text = '_'
+    let min = numUser1 < numUser12 ? numUser1 : numUser12
+    let i = 0
+    for (i = 1; i <= min; i++) {
+        if (numUser1 % i == 0 && numUser12 % i == 0) {
+            text += i + '_'
+        }
+    }
+    console.log(text)
+}
+{
+    // Практика 3. Задание 5. Посчитать факториал введенного пользователем числа.
+    let numUser1 = 5
+    let resFact = 1
+    for (let i = 1; i <= numUser1; i++) {
+        resFact *= i
+    }
+    console.log(resFact)
+}
+{
+    // // Практика 3. Задание 6.Предлагать пользователю решить пример 2 + 2 * 2 до тех пор, пока он не решит его правильно.
+    // let num = 0
+    // do {
+    //   let userNum = prompt('Решите пример (2 + 2 * 2)', 'Введите ответ')
+    //   num = Number(userNum)
+    //   console.log('Не верно')
+    // } while (num != 6)
+    // console.log(`Верно ответ ${num} `)
+}
+{
+    // Практика 3. Задание 7.Делить число 1000 на 2 до тех пор, пока не получится число меньше 50 Вывести это число и сколько делений произвели.
+    let num1 = 1000
+    let num2 = 2
+    let r = 0
+
+    while (num1 > 50) {
+        r++
+        num1 /= num2
+    }
+    console.log(`Число меньше 50 = ${num1}, а делений произвели ${r} раз`)
+
+}
+{
+    // Практика 3. Задание 8.Вывести все числа от 1 до 100, которые кратные указанному пользователем числу.
+    let numUser = 8
+    let res = '_'
+    for (let i = 1; i <= 100; i++) {
+        if (i % numUser == 0) {
+            res += i + '_'
+        }
+    }
+    console.log(res)
+}
+{
+    // Практика 3. Задание 9.Вывести каждый 4-й элемент из указанного пользователем диапазона. Пользователь указывает минимальное и максимальное значения диапазона.
+    // let numUser1 = 459
+    // let numUser2 = 859
+    // let i = numUser1 < numUser2 ? numUser1 : numUser2
+    // let n = numUser1 < numUser2 ? numUser2 : numUser1
+    // for (; i < n; i+4){
+    // console.log(i)
+    // }
+}
+{
+    // Практика 3. Задание 10. Запросить число и проверить, простое ли оно. Простое число делится без остатка только на себя и на единицу.
 
 }
 
 
 {
-  // Домашнее задание 2. Задание 1. Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
-  let userAge = 30
-  if (userAge <= 12) {
-    console.log('Ребенок')
-  } else if (userAge > 12 && userAge < 18) {
-    console.log('Подросток')
-  } else if (userAge >= 18 && userAge < 60) {
-    console.log('Взрослый')
-  } else if (userAge >= 60) {
-    console.log('Пенсионер')
-  }
+    // Домашнее задание 2. Задание 1. Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
+    let userAge = 30
+    if (userAge <= 12) {
+        console.log('Ребенок')
+    } else if (userAge > 12 && userAge < 18) {
+        console.log('Подросток')
+    } else if (userAge >= 18 && userAge < 60) {
+        console.log('Взрослый')
+    } else if (userAge >= 60) {
+        console.log('Пенсионер')
+    }
 }
 {
-  // Домашнее задание 2. Задание 3. Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
-  let front = 345
-  let front1 = front % 10
-  let front2 = (front % 100 - front1) / 10
-  let front3 = (front - (front % 100)) / 100
-  //Первый правильный вариант
-  // if(front1==front2 || front1==front3 || front2==front3){
-  // console.log('Yes')
-  // }else{console.log('No')}
-  //Второй мой вариант
-  if (front3 == front2) {
-    console.log(`Повторяется ${front3} число`)
-  } else if (front1 == front3) {
-    console.log(`Повторяется ${front3} число`)
-  } else if (front2 == front1) {
-    console.log(`Повторяется ${front2} число`)
-  } else { console.log('Совпадений нет') }
+    // Домашнее задание 2. Задание 3. Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
+    let front = 345
+    let front1 = front % 10
+    let front2 = (front % 100 - front1) / 10
+    let front3 = (front - (front % 100)) / 100
+    //Первый правильный вариант
+    // if(front1==front2 || front1==front3 || front2==front3){
+    // console.log('Yes')
+    // }else{console.log('No')}
+    //Второй мой вариант
+    if (front3 == front2) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front1 == front3) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front2 == front1) {
+        console.log(`Повторяется ${front2} число`)
+    } else { console.log('Совпадений нет') }
 }
 {
-  // Домашнее задание 2. Задание 4. Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100
-  let yearVis = 2024
-  let resVis = (yearVis % 4 ? "Обычный год" : 'Високосный год')
-  console.log(resVis)
+    // Домашнее задание 2. Задание 4. Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100
+    let yearVis = 2024
+    let resVis = (yearVis % 4 ? "Обычный год" : 'Високосный год')
+    console.log(resVis)
 }
 {
-  //Домашнее задание 2. Задание 5. Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+    //Домашнее задание 2. Задание 5. Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
 }
 {
-  // Домашнее задание 2. Задание 6. Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в ответ соответствующую сумму.
-  const EUR = 100.44 // 1 Евро = 100,44 Российского рубля
-  const USD = 92.75 // 1 Доллар США = 92,75 Российского рубля
-  const AUD = 60.84 // 1 Австралийский доллар = 60,84 Российского рубля
-  const AZN = 54.56 // 1 Азербайджанский манат = 54,56 Российского рубля
-  const AMD = 0.22 // 1 Армянский драм = 0,22938 Российского рубля
-  const BYN = 28.56 // 1 Белорусский рубль = 28,56 Российского рубля
-  const BGN = 51.26 // 1 Болгарский лев = 51,26 Российского рубля
-  const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
-  const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
-  const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
-  let numValu = 98
-  let numRub = 3
-  switch (numRub) {
-    case 1: console.log(`${EUR * numValu} рублей`)
-      break;
-    case 2: console.log(`${USD * numValu} рублей`)
-      break;
-    case 3: console.log(`${AUD * numValu} рублей`)
-      break;
-    case 4: console.log(`${AZN * numValu} рублей`)
-      break;
-    case 5: console.log(`${AMD * numValu} рублей`)
-      break;
-    case 6: console.log(`${BYN * numValu} рублей`)
-      break;
-    case 7: console.log(`${BGN * numValu} рублей`)
-      break;
-    case 8: console.log(`${BRL * numValu} рублей`)
-      break;
-    case 9: console.log(`${HUF * numValu} рублей`)
-      break;
-    case 10: console.log(`${HKD * numValu} рублей`)
-      break;
-  }
+    // Домашнее задание 2. Задание 6. Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+    const EUR = 100.44 // 1 Евро = 100,44 Российского рубля
+    const USD = 92.75 // 1 Доллар США = 92,75 Российского рубля
+    const AUD = 60.84 // 1 Австралийский доллар = 60,84 Российского рубля
+    const AZN = 54.56 // 1 Азербайджанский манат = 54,56 Российского рубля
+    const AMD = 0.22 // 1 Армянский драм = 0,22938 Российского рубля
+    const BYN = 28.56 // 1 Белорусский рубль = 28,56 Российского рубля
+    const BGN = 51.26 // 1 Болгарский лев = 51,26 Российского рубля
+    const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
+    const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
+    const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
+    let numValu = 98
+    let numRub = 3
+    switch (numRub) {
+        case 1: console.log(`${EUR * numValu} рублей`)
+            break;
+        case 2: console.log(`${USD * numValu} рублей`)
+            break;
+        case 3: console.log(`${AUD * numValu} рублей`)
+            break;
+        case 4: console.log(`${AZN * numValu} рублей`)
+            break;
+        case 5: console.log(`${AMD * numValu} рублей`)
+            break;
+        case 6: console.log(`${BYN * numValu} рублей`)
+            break;
+        case 7: console.log(`${BGN * numValu} рублей`)
+            break;
+        case 8: console.log(`${BRL * numValu} рублей`)
+            break;
+        case 9: console.log(`${HUF * numValu} рублей`)
+            break;
+        case 10: console.log(`${HKD * numValu} рублей`)
+            break;
+    }
 }
 {
-  // Домашнее задание 2. Задание 7. Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
-  let sumUser = 250
-  if (sumUser >= 200 && sumUser < 300) {
-    console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 3} руб`)
-  }
-  if (sumUser >= 300 && sumUser < 500) {
-    console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 5} руб`)
-  }
-  if (sumUser > 700) {
-    console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 7} руб`)
-  }
+    // Домашнее задание 2. Задание 7. Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
+    let sumUser = 250
+    if (sumUser >= 200 && sumUser < 300) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 3} руб`)
+    }
+    if (sumUser >= 300 && sumUser < 500) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 5} руб`)
+    }
+    if (sumUser > 700) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 7} руб`)
+    }
 }
 {
-  // Домашнее задание 2. Задание 8. Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
-  let userKrug = 25 //круг
-  let userKvad = 50 //кмадрат
-  let resKrugKvad = userKrug / 2 / 3.14159 < userKvad / 4 / 2 ? 'Окружность может поместиться в указанный квадрат' : 'Окружность не может поместиться в указанный квадрат'
-  console.log(resKrugKvad)
+    // Домашнее задание 2. Задание 8. Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+    let userKrug = 25 //круг
+    let userKvad = 50 //кмадрат
+    let resKrugKvad = userKrug / 2 / 3.14159 < userKvad / 4 / 2 ? 'Окружность может поместиться в указанный квадрат' : 'Окружность не может поместиться в указанный квадрат'
+    console.log(resKrugKvad)
 }
 // Домашнее задание 2. Задание 9.Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа.За каждый правильный ответ начисляется 2 балла.После вопросов выведите пользователю количество набранных баллов.
 // не знаю пока как решить
@@ -930,46 +1048,46 @@ cancBuyedButton.addEventListener('click', function () {
 // не знаю пока как решить
 
 {
-  // Практика 2. Задание 1. Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
-  let numUserOpred = 0
-  if (numUserOpred === 0) {
-    console.log('Число равно 0 ')
-  } else if (numUserOpred === Math.abs(numUserOpred)) {
-    console.log('Число положительное')
-  } else {
-    console.log('Число отрицательное')
-  }
-  // let a = 5
-  // let b = -5
-  // let c = Math.abs(a)
-  // console.log(a)
+    // Практика 2. Задание 1. Запросить у пользователя число и определить, оно положительное, отрицательное или ноль.
+    let numUserOpred = 0
+    if (numUserOpred === 0) {
+        console.log('Число равно 0 ')
+    } else if (numUserOpred === Math.abs(numUserOpred)) {
+        console.log('Число положительное')
+    } else {
+        console.log('Число отрицательное')
+    }
+    // let a = 5
+    // let b = -5
+    // let c = Math.abs(a)
+    // console.log(a)
 }
 {
-  // Практика 2. Задание 2. Запросить у пользователя его возраст и проверить корректность введенных данных (0–120 лет).
-  let userAge = 30
-  if (userAge > 0 && userAge < 18) {
-    console.log('Вы еще молодой')
-  } else if (userAge >= 18 && userAge < 65) {
-    console.log('Вы взрослый')
-  } else if (userAge >= 65 && userAge < 120) {
-    console.log('Вы пожилой')
-  }
+    // Практика 2. Задание 2. Запросить у пользователя его возраст и проверить корректность введенных данных (0–120 лет).
+    let userAge = 30
+    if (userAge > 0 && userAge < 18) {
+        console.log('Вы еще молодой')
+    } else if (userAge >= 18 && userAge < 65) {
+        console.log('Вы взрослый')
+    } else if (userAge >= 65 && userAge < 120) {
+        console.log('Вы пожилой')
+    }
 }
 {
-  // Практика 2. Задание 3. Запросить у пользователя число и вывести его модуль (|7| = 7, |-7| = 7).
-  let modylUser = -9
-  console.log(Math.abs(modylUser))
+    // Практика 2. Задание 3. Запросить у пользователя число и вывести его модуль (|7| = 7, |-7| = 7).
+    let modylUser = -9
+    console.log(Math.abs(modylUser))
 }
 {
-  // Практика 2. Задание 4. Запросить у пользователя время (часы, минуты, секунды) и проверить корректность введенных данных.
-  let hourUser = 7
-  let minuteUser = 35
-  let secondUser = 14
-  if ((hourUser >= 0 && hourUser <= 12) && (minuteUser >= 0 && minuteUser <= 60) && (secondUser >= 0 && secondUser <= 60)) {
-    console.log('Коректное время')
-  } else {
-    console.log('Не коректное время')
-  }
+    // Практика 2. Задание 4. Запросить у пользователя время (часы, минуты, секунды) и проверить корректность введенных данных.
+    let hourUser = 7
+    let minuteUser = 35
+    let secondUser = 14
+    if ((hourUser >= 0 && hourUser <= 12) && (minuteUser >= 0 && minuteUser <= 60) && (secondUser >= 0 && secondUser <= 60)) {
+        console.log('Коректное время')
+    } else {
+        console.log('Не коректное время')
+    }
 }
 
 
