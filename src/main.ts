@@ -36,11 +36,13 @@ import './style.scss'
         }
         return arr
     }
+    const arr = [...getArrNumber(10,34)]
     console.log(getRandArrNumber(1))
     console.log(getRandArrNumber(10, 45, 50))
     console.log(getRandArrNumber(10, 45, 50))
     console.log(getRandArrNumber(10, 45, 50))
     console.log(getRandArrNumber(10, 45, 50))
+    console.log(arr)
 
     // 2.1. В файле html создать пустой div с произвольным id
     // 2.2. Получить объект div'а в js при помощи метода document.getElementById(ваш id) as HTMLDivElement
@@ -56,6 +58,7 @@ import './style.scss'
     hello()
     hello('zemlianin')
     hello('***zemlianin***')
+
 
 
 
@@ -85,13 +88,42 @@ import './style.scss'
         for (let el of arr) {
             // return { el department }
         }
+
     }
     getDepart(employees)
 
     // 3.2. Написать функцию, принимающую массив работников и ключ объекта, по которому сделать сортировку массива
     // Учесть, что строковые параметры сортируются при помощи метода localeCompare, а числовые,- вычитанием
 
+    {
+        const myArr = [1, 3, 4, 1, 5, 6, 7, 9, 8, 34, 21]
+        console.log(myArr)
+        myArr.sort((a, b) => a - b)
+        console.log(myArr)
+
+        const myArr2 = ['1', '4', '6', '2']
+        console.log(myArr2)
+        myArr2.sort((a, b) => a.localeCompare(b))
+        console.log(myArr2)
+
+
+        const arr:number=[]
+
+    }
+
+
+
+
+
+    function sortArrJob(arr: ClassRoom[], key: string) {
+        // arr.key.sort()
+        arr[0].key.sort()
+    }
+    console.log(employees[0].name)
+    sortArrJob(employees, 'name')
+
     // 3.3. Написать функцию, аналогичную описанной в задании 2.2., но сортирующую в обратном порядке
+
 
     // 3.4. Написать функцию, принимающую массив работников и имя, и возвращающую объект сотрудника или undefined
 
