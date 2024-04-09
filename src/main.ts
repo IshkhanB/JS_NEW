@@ -36,7 +36,7 @@ import './style.scss'
         }
         return arr
     }
-    const arr = [...getArrNumber(10,34)]
+    const arr = [...getArrNumber(10, 34)]
     console.log(getRandArrNumber(1))
     console.log(getRandArrNumber(10, 45, 50))
     console.log(getRandArrNumber(10, 45, 50))
@@ -87,7 +87,9 @@ import './style.scss'
     function getDepart(arr: ClassRoom[]) {
         for (let el of arr) {
             // return { el department }
+
         }
+
 
     }
     getDepart(employees)
@@ -107,20 +109,18 @@ import './style.scss'
         console.log(myArr2)
 
 
-        const arr:number=[]
-
     }
 
 
 
 
 
-    function sortArrJob(arr: ClassRoom[], key: string) {
-        // arr.key.sort()
-        arr[0].key.sort()
-    }
-    console.log(employees[0].name)
-    sortArrJob(employees, 'name')
+    // function sortArrJob(arr: ClassRoom[], key: string) {
+    //     // arr.key.sort()
+    //     arr[0].name.sort()
+    // }
+    // console.log(employees[0].name)
+    // sortArrJob(employees, 'name')
 
     // 3.3. Написать функцию, аналогичную описанной в задании 2.2., но сортирующую в обратном порядке
 
@@ -144,6 +144,71 @@ import './style.scss'
     //      в div (3.8) выводить сумму зарплат
     //   }
     // })
+}
+
+{
+    
+    type ClassRoom = {
+        name: string,
+        department: string,
+        salary: number
+    }
+
+    // Есть массив объектов
+    const employees: ClassRoom[] = [
+        { name: 'Федотова Арина Глебовна', department: 'ads', salary: 2100 },
+        { name: 'Голикова Мария Филипповна', department: 'prog', salary: 3500 },
+        { name: 'Панин Александр Германович', department: 'ads', salary: 2100 },
+        { name: 'Романов Эмиль Макарович', department: 'prog', salary: 3100 },
+        { name: 'Смирнов Никита Александрович', department: 'prog', salary: 3800 },
+        { name: 'Александрова Майя Вячеславовна', department: 'prog', salary: 4500 },
+        { name: 'Крылов Богдан Максимович', department: 'disign', salary: 2100 },
+        { name: 'Мухина Айша Константиновна', department: 'disign', salary: 2100 },
+    ]
+
+    const toListDiv = document.getElementById('toList') as HTMLOListElement
+
+    function renderBuyList(arr:ClassRoom) {
+        let html = ''
+        for (let el=0;el<arr.name.length;el++) {
+            
+                html += `<li style="color:red"> ${arr.name} ${arr.department} ${arr.salary} </li>`
+            
+        }
+        // for (let el of arr) {
+        //     if (el.isBuyed) {
+        //         html += `<li style="color:green"> ${el.name} ${el.count} </li>`
+        //     }
+        // }
+        toListDiv.innerHTML = html
+    }
+
+
+
+
+
+let a = 'hello'
+let b = 'world'
+let c = 1.23445
+let c2 = 1.23465
+let d = 1_343_544
+let d2 = 9999999999999999 //после 15 (9) уже не точно 
+let pi = Math().pi
+
+console.log(c.toFixed(2))
+console.log(c2.toFixed(2))
+console.log(b.endsWith('2'))
+console.log(a.toLocaleUpperCase())
+console.log(a.toLowerCase())
+//@ts-ignore
+console.log(a.indexOf())
+console.log(d)
+console.log(d2)
+
+
+
+
+
 }
 
 {
