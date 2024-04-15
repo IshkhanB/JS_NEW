@@ -1,4 +1,31 @@
 import './style.scss'
+// ДЗ 
+// 1. Написать функцию, которая принимает строку и выводит статистику о ней: количество букв, количество цифр и количество других знаков.
+  let str = '1 To be or not to be, that\'s the question. 2 Worthy of 3 To accept the blows of fate, 4 Or it is necessary to resist 5 And in mortal combat with a whole sea of troubles 60 End them? 61 Die. 77 Forget yourself.'
+  console.log(str)
+  // const arrAll = str.split('')
+  function allNum(str:string){
+    let arrStr = str.split('')
+    for(let el in arrStr)
+    {
+      
+    }
+    console.log(str.replace(/[^0-9]/g, ','))
+    console.log(arrStr)
+}
+console.log(allNum(str))
+  console.log(allNum(str))
+
+  
+// 2. Написать функцию, которая принимает двузначное число и возвращает его в текстовом виде. Например: 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.
+// 3. Написать функцию, которая заменяет в полученной строке большие буквы на маленькие, маленькие – на большие, а цифры – на знак нижнего подчеркивания.
+// 4. Написать функцию, которая преобразует названия css-стилей с дефисом в название в СamelСase стиле: font-size в fontSize, background-color в backgroundColor, text-align в textAlign.
+// 5. Написать функцию, которая принимает словосочетание и превращает его в аббревиатуру. Например: cascading style sheets в CSS, объектно-ориентированное программирование в ООП.
+// 6. Написать функцию, которая принимает любое количество строк, объединяет их в одну длинную строку и возвращает ее.
+// 7. Написать функцию – калькулятор. Функция принимает строку с примером, определяет, какое действие необходимо выполнить (+ - * /), переводит операнды в числа, решает пример и возвращает результат.
+// 8. Написать функцию, которая получает url и выводит подробную информацию о нем. Например: url “https://itstep.org/ua/about”, информация “протокол: https, домен: itstep.org, путь: /ua/about”.
+// 9. Написать функцию, которая принимает строку и разделитель и возвращает массив подстрок, разбитых с помощью указанного разделителя. Например: строка “10/08/2020”, разделитель “/”, результат: “10”, “08”, “2020”. Выполняя задание, не используйте функцию split().
+// 10. Написать функцию вывода текста по заданному шаблону. Функция принимает первым параметром шаблон, в тексте которого может использоваться %, после символа % указывается индекс входного параметра. При выводе вместо %индекс необходимо вывести значение соответствующего входного параметра. Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10, 8, 2020) должна вывести “Today is Monday 10.8.2020”.
 // ПРАКТИКА
 
 // 1 Написать функцию, которая принимает 2 строки и сравнивает их длину. Функция возвращает 1, если в первой строке больше символов, чем во второй; -1 – если во второй больше символов, чем в первой; или 0 – если строки одинаковой длины.
@@ -16,7 +43,7 @@ import './style.scss'
 {
     function upFirstWord(str: string) {
         return str = str[0].toUpperCase() + str.slice(1)
-        return str
+       
     }
     console.log(upFirstWord('ishkhan'))
 }
@@ -341,10 +368,13 @@ import './style.scss'
         str = str[0].toUpperCase() + str.slice(1)
         return str
     }
+    
     console.log(upFirstWord('hello'))
     console.log(upFirstWord('hello, world'))
     // console.log(str.)
+    let str1 = '1 To be or not to be, that\'s the question. 2 Worthy of 3 To accept the blows of fate, 4 Or it is necessary to resist 5 And in mortal combat with a whole sea of troubles 60 End them? 61 Die. 77 Forget yourself.'
 
+    console.log(str1.replace(/[^0-9]/g, ',').replace(/\D/g,' '))
 
 }
 
