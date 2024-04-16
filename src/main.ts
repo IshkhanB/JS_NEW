@@ -1,16 +1,73 @@
 import './style.scss'
+
+// DZ 
+
+//1.Написать функцию, которая принимает строку и выводит статистику о ней: количество букв, количество цифр и количество других знаков.
+{
+    let str = '5Lorem ips)(um dolor sit amet2  consec.tet5ur adipisicing .e6lit. Elige/ndi p8laceat cumque qu/ib0usdam fugiat iusto0 porr/o soluta ul/2lam dese/runt 23mo/lestias quisq5uam ipsam36 laborum3 aper7iam vo8luptatem9 nisi am et   9  at re4p5rehe45nderit, repellendus aspernatur?'
+    function schot(str: string) {
+
+        let num = str.split('').join(' ').replaceAll(/[a-z,A-z,!-/ , :-@]/g, '').replaceAll(' ', '')
+        let char = str.split('').join(' ').replaceAll(/[0-9, !-/ , :-@]/g, '').replaceAll(' ', '')
+        let symv = str.split('').join(' ').replaceAll(/[a-z,A-z,0-9]/g, '').replaceAll(' ', '')
+        return `Количество букв = ${char.length}, Количество цифр = ${num.length}, Количество других знаков = ${symv.length}`
+    }
+
+    console.log(schot(str))
+}
+// 2. Написать функцию, которая принимает двузначное число и возвращает его в текстовом виде. Например: 35 – тридцать пять, 89 – восемьдесят девять, 12 – двенадцать.
+{
+    function propis(num: number) {
+        let str1 = 'ноль один два три четыре пять шесть семь восемь девять десять'.split(' ')
+        let str2 = ' одиннадцать двенадцать тринадцать четырнадцать пятнадцать шестнадцать семнадцать восемнадцать девятнадцать'.split(' ')
+        let str3 = '  двадцать тридцать сорок пятьдесят шестьдесят семьдесят восемьдесят девяносто'.split(' ')
+        if (num >= 0 && num <= 10) {
+            return str1[num]
+        }
+        if (num % 10 == 0) {
+            return str3[num / 10]
+        }
+        if (num > 10 && num <= 19) {
+            return str2[num - 10]
+        }
+        if (num >= 20 && num <= 99) {
+            return str3[(Math.trunc(num / 10))] + ' ' + str1[num % 10]
+        }
+    }
+    console.log(propis(66))
+
+}
+// 3. Написать функцию, которая заменяет в полученной строке большие буквы на маленькие, маленькие – на большие, а цифры – на знак нижнего подчеркивания.
+{
+    let str = 'Lorem ips )( um dolor sit amet 2  Consec.tet5ur adipisicing .e6lit. Elige/ndi p8laceat cumque qu/ib0usdam fugiat iusto0 porr/o soluta ul/2lam dese/runt 23mo/lestias quisq5uam ipsam36 laborum3 aper7iam vo8luptatem9 nisi am et   9  at re4p5rehe45nderit, repellendus aspernatur?'
+    function dontUn(str:string){
+        let str2 = str.split('')
+        for(let el in str2){
+            if(+str2[el] >= 0 && +str2[el] <=9){
+                str[el].replace(/0-9/g,'_' )
+                console.log(str[el])
+            }
+         }
+        // return str = str.toLowerCase() + str.slice(1).toUpperCase()
+        
+    
+    }
+    console.log(dontUn(str))
+}
+
+
 // ПРАКТИКА
 
 // 1 Написать функцию, которая принимает 2 строки и сравнивает их длину. Функция возвращает 1, если в первой строке больше символов, чем во второй; -1 – если во второй больше символов, чем в первой; или 0 – если строки одинаковой длины.
 {
-    let str ='hello'
-    let string ='world'
-    function lengthWord(str1:string,str2:string){
-        if(str1.length>str2.length)return 1
-        if(str1.length<str2.length)return -1
-        if(str1.length==str2.length)return 0
+    let str = 'hello'
+    let string = 'world'
+    function lengthWord(str1: string, str2: string) {
+        if (str1.length > str2.length) return 1
+        if (str1.length < str2.length) return -1
+        if (str1.length == str2.length) return 0
     }
-    console.log(lengthWord(str,string))
+    console.log(lengthWord(str, string))
 }
 // 2 Написать функцию, которая переводит в верхний регистр первый символ переданной строки.
 {
@@ -22,12 +79,39 @@ import './style.scss'
 }
 // 3 Написать функцию, которая считает количество гласных букв в переданной строке.
 {
-    function allGlasChar(str:string){
-        const gl = 'AaEeYyUuIiOo'
+    let str = 'hello saafdsA '
+    function allGlasChar(str: string) {
+        const gl = 'AaEeYyUuIiOo'.split('')
+        let str1 = str.split('')
+        let stt = 0
+        for (let el in gl) {
+            for (let el2 in str1) {
+                if (str[el2] == gl[el]) {
+                    stt++
+                }
+            }
+        }
+        return stt
     }
+    console.log(allGlasChar(str))
+
+
+
+
+
+    str = 'widget with id'
+    console.log(str.indexOf('Widget'))
+    console.log(str.indexOf('widget'))
+    console.log(str.indexOf('w', 1))
+    console.log("Midget".startsWith("id"))
+
 }
 // 4 Написать функцию для проверки спама в переданной строке. Функция возвращает true, если строка содержит спам. Спамом считать следующие слова: 100% бесплатно, увеличение продаж, только сегодня, не удаляйте, ххх. Функция должна быть нечувствительна к регистру.
+{
+    let str = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi placeat cumque quibusdam fugiat iusto porro soluta ullam deserunt molestias quisquam ipsam laborum aperiam voluptatem nisi amet at reprehenderit, repellendus aspernatur?'
 
+
+}
 // 5 Написать функцию сокращения строки. Функция принимает строку и ее максимальную длину. Если длина строки больше, чем максимальная, то необходимо отбросить лишние символы, добавив вместо них троеточие. Например: truncate(“Hello, world!”, 8) должна вернуть “Hello...”.
 
 // 6 Написать функцию, которая проверяет, является ли переданная строка палиндромом.
@@ -347,6 +431,7 @@ import './style.scss'
 
 
 }
+
 
 {
 
