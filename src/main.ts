@@ -39,18 +39,19 @@ import './style.scss'
 }
 // 3. Написать функцию, которая заменяет в полученной строке большие буквы на маленькие, маленькие – на большие, а цифры – на знак нижнего подчеркивания.
 {
-    let str = 'Lorem ips )( um dolor sit amet 2  Consec.tet5ur adipisicing .e6lit. Elige/ndi p8laceat cumque qu/ib0usdam fugiat iusto0 porr/o soluta ul/2lam dese/runt 23mo/lestias quisq5uam ipsam36 laborum3 aper7iam vo8luptatem9 nisi am et   9  at re4p5rehe45nderit, repellendus aspernatur?'
-    function dontUn(str:string){
+    let str = '5Lorem ips )( um dolor sit amet 2  Consec.tet5ur adipisicing'// .e6lit. Elige/ndi p8laceat cumque qu/ib0usdam fugiat iusto0 porr/o soluta ul/2lam dese/runt 23mo/lestias quisq5uam ipsam36 laborum3 aper7iam vo8luptatem9 nisi am et   9  at re4p5rehe45nderit, repellendus aspernatur?'
+    function dontUn(str: string) {
         let str2 = str.split('')
-        for(let el in str2){
-            if(+str2[el] >= 0 && +str2[el] <=9){
-                str[el].replace(/0-9/g,'_' )
-                console.log(str[el])
+        let str3 = str.replaceAll(/0-9/g, ' ')
+        for (let el in str2) {
+            if (+str3[el] >= 0 && +str3[el] <= 9) {
+                str3[el].replace(/0-9/g, ' ').replaceAll(' ', ' ')
+                console.log(str3[el])
             }
-         }
+        }
         // return str = str.toLowerCase() + str.slice(1).toUpperCase()
-        
-    
+
+        return str3
     }
     console.log(dontUn(str))
 }
@@ -73,7 +74,7 @@ import './style.scss'
 {
     function upFirstWord(str: string) {
         return str = str[0].toUpperCase() + str.slice(1)
-       
+
     }
     console.log(upFirstWord('ishkhan'))
 }
@@ -425,13 +426,13 @@ import './style.scss'
         str = str[0].toUpperCase() + str.slice(1)
         return str
     }
-    
+
     console.log(upFirstWord('hello'))
     console.log(upFirstWord('hello, world'))
     // console.log(str.)
     let str1 = '1 To be or not to be, that\'s the question. 2 Worthy of 3 To accept the blows of fate, 4 Or it is necessary to resist 5 And in mortal combat with a whole sea of troubles 60 End them? 61 Die. 77 Forget yourself.'
 
-    console.log(str1.replace(/[^0-9]/g, ',').replace(/\D/g,' '))
+    console.log(str1.replace(/[^0-9]/g, ',').replace(/\D/g, ' '))
 
 }
 
