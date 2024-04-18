@@ -4,9 +4,7 @@ import './style.scss'
 let calcullator = {
     a: 12,
     b: 3,
-    read(){
-        
-    }
+    read:() =>  a+b
 }
 
 }
