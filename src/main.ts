@@ -1,5 +1,16 @@
 import './style.scss'
 
+{
+let calcullator = {
+    a: 12,
+    b: 3,
+    read(){
+        
+    }
+}
+
+}
+
 // ! DZ 
 
 //? 1.Написать функцию, которая принимает строку и выводит статистику о ней: количество букв, количество цифр и количество других знаков.
@@ -39,15 +50,17 @@ import './style.scss'
 }
 //? 3.Написать функцию, которая заменяет в полученной строке большие буквы на маленькие, маленькие – на большие, а цифры – на знак нижнего подчеркивания.
 {
-    let str = '5Lorem ips )( um dolor sit amet 2  Consec.tet5ur adipisicing'// .e6lit. Elige/ndi p8laceat cumque qu/ib0usdam fugiat iusto0 porr/o soluta ul/2lam dese/runt 23mo/lestias quisq5uam ipsam36 laborum3 aper7iam vo8luptatem9 nisi am et   9  at re4p5rehe45nderit, repellendus aspernatur?'
+    let str = '5Lorem ips )( um dolor sit amet 2  Consec.tet5ur adipisicing 6'// .e6lit. Elige/ndi p8laceat cumque qu/ib0usdam fugiat iusto0 porr/o soluta ul/2lam dese/runt 23mo/lestias quisq5uam ipsam36 laborum3 aper7iam vo8luptatem9 nisi am et   9  at re4p5rehe45nderit, repellendus aspernatur?'
     function dontUn(str: string) {
         let str2 = str.split('')
         let str3 = str.replaceAll(/0-9/g, ' ')
         for (let el in str2) {
-            if (+str3[el] >= 0 && +str3[el] <= 9) {
-                str3[el].replace(/0-9/g, ' ').replaceAll(' ', ' ')
+            console.log(str3[el])
+            if (+str3[el]) {
+                str3[el].replaceAll(/0-9/g, '_')
                 console.log(str3[el])
             }
+            console.log(str3[el])
         }
         // return str = str.toLowerCase() + str.slice(1).toUpperCase()
 
@@ -110,6 +123,8 @@ import './style.scss'
 //? 4 Написать функцию для проверки спама в переданной строке. Функция возвращает true, если строка содержит спам. Спамом считать следующие слова: 100% бесплатно, увеличение продаж, только сегодня, не удаляйте, ххх. Функция должна быть нечувствительна к регистру.
 {
     let str = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi placeat cumque quibusdam fugiat iusto porro soluta ullam deserunt molestias quisquam ipsam laborum aperiam voluptatem nisi amet at reprehenderit, repellendus aspernatur?'
+    let num = 2 
+    str.split('')
 
 
 }
