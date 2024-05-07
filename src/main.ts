@@ -1435,6 +1435,9 @@ import './style.scss'
     }
 }
 
+// ! ===========================================================================================================================================================================
+// ! ===========================================================================================================================================================================
+
 {
     //Class
     class User {
@@ -1647,7 +1650,7 @@ import './style.scss'
     let new1 = new Date()
     console.log(new1)
     console.log(new1.getTime())
-    console.log(new1.getDay())
+    console.log(new1.getDay().toString().padStart(2,'0'))
     console.log(new1.getTimezoneOffset())
     new1.setFullYear(2024)
     new1.setMonth(4)
@@ -1707,10 +1710,59 @@ import './style.scss'
     }
     console.log(getSecondsToTomorrow())
 
-    function formatDate(date: Date) {
+    // function formatDate(date: Date) {
         
+    // }
+
+
+
+}
+{// 07.05.2024.
+
+    // tag: string
+    // isSingle: boolean
+    // text: string
+    // atributes = [] as any[]
+    // styles = [] as any[]
+    // elements = [] as HtmlElement[]
+    // constructor(tag: string, text = '') {
+    //     const singleArr = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr']
+    //     this.tag = tag
+    //     this.text = text
+    //     this.isSingle = singleArr.includes(tag) ? true : false
+    // }
+    // constructor(tag: string, text = '') {
+    //     const singleArr = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'keygen', 'link', 'meta', 'param', 'source', 'track', 'wbr']
+    //     this.tag = tag
+    //     this.text = text
+    //     this.isSingle = singleArr.includes(tag) ? true : false
+    // }
+
+class Car{
+    marka: string
+    probeg: number
+    age:number 
+    constructor(marka:string, probeg:number, age:number){
+        this.marka = marka
+        this.probeg = probeg
+        this.age = age
+    }
+    seeCar(){
+        return `Марка:${this.marka}\n Пробег:${this.probeg.toString().padStart(6,'0').padStart(9,'*').padEnd(12,'*')}\n Год:${this.age.toString()}`
     }
 
+}
 
+const bmw1 = new Car('BMW', 3452, 2005)
 
+console.log(bmw1.seeCar())
+
+}
+{
+    let time = setTimeout(()=> console.log('hello'), 3000)
+    let time1 = setInterval(()=> console.log('hello'), 5000)
+}
+{
+    const dateDiv = document.getElementById('date') as HTMLDivElement
+    dateDiv.innerHTML = new Date().toLocaleString()
 }
