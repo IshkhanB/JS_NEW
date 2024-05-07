@@ -1673,7 +1673,7 @@ import './style.scss'
 
     function getWeekDayEU(date: Date) {
 
-        let day = [' ', 'ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
+        let day = [' ', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
         return day[date.getDay() + 1]
     }
     let dateEU = new Date(2024, 4, 2)
