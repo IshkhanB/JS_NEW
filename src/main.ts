@@ -1556,7 +1556,7 @@ import './style.scss'
     const h3 = new HtmlElement('h3', 'Lorem')
     const img = new HtmlElement('img')
     img.setStyle('width', '100%')
-    img.setAtribute('src', '1.gif')
+    img.setAtribute('src', 'vite.svg')
     img.setAtribute('alt', 'Lorem')
     const p = new HtmlElement('p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla assumenda inventore voluptas natus obcaecati mollitia ad eos adipisci delectus quia odit, earum culpa sunt, molestiae doloribus in explicabo! Illo, harum!')
     p.setStyle('text-align', 'justify')
@@ -1627,9 +1627,10 @@ import './style.scss'
     div.setStyle('width', '300px')
     div.setStyle('margin', '10px')
     const h3 = new HtmlElement('h3', 'Lorem')
+    h3.setStyle('text-aligan', 'center')
     const img = new HtmlElement('img')
     img.setStyle('width', '100%')
-    img.setAtribute('src', '1.gif')
+    img.setAtribute('src', 'vite.svg')
     img.setAtribute('alt', 'Lorem')
     const p = new HtmlElement('p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla assumenda inventore voluptas natus obcaecati mollitia ad eos adipisci delectus quia odit, earum culpa sunt, molestiae doloribus in explicabo! Illo, harum!')
     p.setStyle('text-align', 'justify')
@@ -1746,6 +1747,7 @@ class Car{
         this.marka = marka
         this.probeg = probeg
         this.age = age
+        this.seeCar()
     }
     seeCar(){
         return `Марка:${this.marka}\n Пробег:${this.probeg.toString().padStart(6,'0').padStart(9,'*').padEnd(12,'*')}\n Год:${this.age.toString()}`
@@ -1760,9 +1762,13 @@ console.log(bmw1.seeCar())
 }
 {
     let time = setTimeout(()=> console.log('hello'), 3000)
-    let time1 = setInterval(()=> console.log('hello'), 5000)
+    // let time1 = setInterval(()=> console.log('hello'), 5000)
 }
 {
     const dateDiv = document.getElementById('date') as HTMLDivElement
     dateDiv.innerHTML = new Date().toLocaleString()
+    
+}
+{
+    
 }
