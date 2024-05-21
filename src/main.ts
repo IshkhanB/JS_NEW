@@ -52,19 +52,60 @@ import './style.scss'
 // ! DZ 2 Задание Вам необходимо самостоятельно решить, для какого задания какой оператор ветвления лучше использовать: if, switch или тернарный.
 // 1.Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
 {
-    
+    let userAge = 30
+    if (userAge <= 12) {
+        console.log('Ребенок')
+    } else if (userAge > 12 && userAge < 18) {
+        console.log('Подросток')
+    } else if (userAge >= 18 && userAge < 60) {
+        console.log('Взрослый')
+    } else if (userAge >= 60) {
+        console.log('Пенсионер')
+    }
 }
 // 2.Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол, который расположен на этой клавише (1–!,2–@, 3–# и т. д).
 {
-    
+    let front = 3
+    let front1 = front % 10
+    let front2 = (front % 100 - front1) / 10
+    let front3 = (front - (front % 100)) / 100
+    //Первый правильный вариант
+    // if(front1==front2 || front1==front3 || front2==front3){
+    // console.log('Yes')
+    // }else{console.log('No')}
+    //Второй мой вариант
+    if (front3 == front2) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front1 == front3) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front2 == front1) {
+        console.log(`Повторяется ${front2} число`)
+    } else { console.log('Совпадений нет') }
 }
 // 3.Запросить у пользователя трехзначное и число и проверить, есть ли в нем одинаковые цифры.
 {
-    
+    let front = 345
+    let front1 = front % 10
+    let front2 = (front % 100 - front1) / 10
+    let front3 = (front - (front % 100)) / 100
+    //Первый правильный вариант
+    // if(front1==front2 || front1==front3 || front2==front3){
+    // console.log('Yes')
+    // }else{console.log('No')}
+    //Второй мой вариант
+    if (front3 == front2) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front1 == front3) {
+        console.log(`Повторяется ${front3} число`)
+    } else if (front2 == front1) {
+        console.log(`Повторяется ${front2} число`)
+    } else { console.log('Совпадений нет') }
 }
 // 4.Запросить у пользователя год и проверить, високосный он или нет. Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100
 {
-    
+    let yearVis = 2024
+    let resVis = (yearVis % 4 ? "Обычный год" : 'Високосный год')
+    console.log(resVis)
 }
 // 5.Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
 {
@@ -72,10 +113,53 @@ import './style.scss'
 }
 // 6.Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести: EUR, UAN или AZN, и получает в ответ соответствующую сумму.
 {
-    
+    const EUR = 100.44 // 1 Евро = 100,44 Российского рубля
+    const USD = 92.75 // 1 Доллар США = 92,75 Российского рубля
+    const AUD = 60.84 // 1 Австралийский доллар = 60,84 Российского рубля
+    const AZN = 54.56 // 1 Азербайджанский манат = 54,56 Российского рубля
+    const AMD = 0.22 // 1 Армянский драм = 0,22938 Российского рубля
+    const BYN = 28.56 // 1 Белорусский рубль = 28,56 Российского рубля
+    const BGN = 51.26 // 1 Болгарский лев = 51,26 Российского рубля
+    const BRL = 18.81 // 1 Бразильский реал = 18,81 Российского рубля
+    const HUF = 0.25  // 1 Венгерский форинт = 0,259984 Российского рубля
+    const HKD = 11.88 // 1 Гонконгский доллар = 11,88 Российского рубля
+    let numValu = 98
+    let numRub = 3
+    switch (numRub) {
+        case 1: console.log(`${EUR * numValu} рублей`)
+            break;
+        case 2: console.log(`${USD * numValu} рублей`)
+            break;
+        case 3: console.log(`${AUD * numValu} рублей`)
+            break;
+        case 4: console.log(`${AZN * numValu} рублей`)
+            break;
+        case 5: console.log(`${AMD * numValu} рублей`)
+            break;
+        case 6: console.log(`${BYN * numValu} рублей`)
+            break;
+        case 7: console.log(`${BGN * numValu} рублей`)
+            break;
+        case 8: console.log(`${BRL * numValu} рублей`)
+            break;
+        case 9: console.log(`${HUF * numValu} рублей`)
+            break;
+        case 10: console.log(`${HKD * numValu} рублей`)
+            break;
+    }
 }
 // 7.Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
 {
+    let sumUser = 250
+    if (sumUser >= 200 && sumUser < 300) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 3} руб`)
+    }
+    if (sumUser >= 300 && sumUser < 500) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 5} руб`)
+    }
+    if (sumUser > 700) {
+        console.log(`Сумма со скидкой равна ${sumUser - (sumUser / 100) * 7} руб`)
+    }   
     
 }
 // 8.Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
