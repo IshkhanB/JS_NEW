@@ -190,6 +190,15 @@ import './style.scss'
 }
 // 7.Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
 {
+    let num = 1234567
+    let numInput = 3
+    function sdvig(num:number,numInput:number){
+        // num.toString().replace(0,1,)
+        let numb = num.toString().split('').slice(0,numInput)
+        console.log(num)
+        console.log(numb)
+    }
+    console.log(sdvig(num,numInput))
 
 }
 // 8.Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
