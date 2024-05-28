@@ -194,9 +194,12 @@ import './style.scss'
     let numInput = 3
     function sdvig(num:number,numInput:number){
         // num.toString().replace(0,1,)
-        let numb = num.toString().split('').slice(0,numInput)
+        let numb = num.toString().split('').splice(0,numInput)
         console.log(num)
         console.log(numb)
+        // num = num.toString().split('')
+        
+        console.log(num)
     }
     console.log(sdvig(num,numInput))
 
@@ -2159,5 +2162,11 @@ console.log(myObject[2].getId())
 console.log(myObject1[3].getId())
 console.log(MyObject.getCount())
 console.log(MyObject)
+
+}
+{
+    //свойство узлов
+
+
 
 }
