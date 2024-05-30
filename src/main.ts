@@ -192,16 +192,16 @@ import './style.scss'
 {
     let num = 1234567
     let numInput = 3
-    function sdvig(num:number,numInput:number){
+    function sdvig(num: number, numInput: number) {
         // num.toString().replace(0,1,)
-        let numb = num.toString().split('').splice(0,numInput)
+        let numb = num.toString().split('').splice(0, numInput)
         console.log(num)
         console.log(numb)
         // num = num.toString().split('')
-        
+
         console.log(num)
     }
-    console.log(sdvig(num,numInput))
+    console.log(sdvig(num, numInput))
 
 }
 // 8.Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
@@ -2126,42 +2126,42 @@ import './style.scss'
 
 }
 {
-class MyObject {
-    static #_id=0
-    #id:number
-    constructor(){
-        this.#id=MyObject.#_id++
+    class MyObject {
+        static #_id = 0
+        #id: number
+        constructor() {
+            this.#id = MyObject.#_id++
+        }
+        static getCount() {
+            return MyObject.#_id
+        }
+        getId() {
+            return this.#id
+        }
     }
-    static getCount(){
-        return MyObject.#_id
-    }
-    getId(){
-        return this.#id
-    }    
-}
-const myObject = [
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-]
-const myObject1 = [
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-    new MyObject(),
-]
+    const myObject = [
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+    ]
+    const myObject1 = [
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+        new MyObject(),
+    ]
 
-console.log(myObject[2].getId())
-console.log(myObject1[3].getId())
-console.log(MyObject.getCount())
-console.log(MyObject)
+    console.log(myObject[2].getId())
+    console.log(myObject1[3].getId())
+    console.log(MyObject.getCount())
+    console.log(MyObject)
 
 }
 {
@@ -2169,4 +2169,105 @@ console.log(MyObject)
 
 
 
+}
+{
+    // Календарь 
+    // const pmDiv = document.getElementById('pm') as HTMLDivElement
+    // class PrintMachine {
+    //     tag: string
+    //     fSize: string
+    //     color: string
+    //     fFamily: string
+    //     constructor(fSize: string, color: string, fFamily: string, tag = 'p') {
+    //         this.tag = tag
+    //         this.fSize = fSize
+    //         this.color = color
+    //         this.fFamily = fFamily
+    //     }
+    //     print(text: string) {
+    //         pmDiv.innerHTML = `<${this.tag} style = "font-size:${this.fSize};font-fFamily:${this.fFamily};color: ${this.color}">${text}</${this.tag}>`
+    //     }
+    // }
+    // const red = new PrintMachine('5em', 'blue', 'Arial', 'p')
+    // red.print('Hello Patric')
+
+    const calend = document.getElementById('calendar') as HTMLUListElement
+
+    // class PrintTeg {
+    //     tag: string
+    //     constructor(tag = 'ul') {
+    //         this.tag = tag
+    //     }
+    //     print(text: string) {
+    //         calend.innerHTML = `<${this.tag}> ${text}</${this.tag}>`
+    //     }
+    //     apend(text:string){
+
+    //     }
+    // }
+    // const ulvDiv = new PrintTeg('li')
+    // ulvDiv.print('hello')
+
+
+    calend.insertAdjacentHTML("afterbegin", `<ul class="ul1"> Животные 
+     <li>Млекопитающие 
+     <ul class="ul2">
+     <li>Коровы</li>
+     <li>Ослы</li>
+     <li>Собаки</li>
+     <li>Тигры</li>
+     </li> 
+     </ul> 
+     <li></li> <li>Всем пока!</li> 
+     </ul>`)
+
+    // calend.insertAdjacentHTML('append', '<li>Пока</li>')
+
+    let div1 = document.querySelector('#one') as HTMLDivElement
+    div1?.insertAdjacentHTML("afterbegin", `<ul>dasfjakgd</ul>`)
+
+    let div2 = document.querySelector('#two')
+    // function addUlLi(text)
+
+
+
+
+
+
+}
+{
+    let data = {
+        "Рыбы": {
+            "форель": {},
+            "лосось": {}
+        },
+
+        "Деревья": {
+            "Огромные": {
+                "секвойя": {},
+                "дуб": {}
+            },
+            "Цветковые": {
+                "яблоня": {},
+                "магнолия": {}
+            }
+        }
+    } as Record<string, any>
+    let conteiner = document.querySelector('#conteiner ul') as HTMLUListElement
+    function contFree(conteiner: HTMLUListElement, data: Record<string, any>) {
+        for (let key in data) {
+
+            if (Object.keys(data[key]).length){
+                const li =document.createElement('li')
+                li.innerHTML = `${key}<ul></ul>`
+                conteiner.append(li)
+                const ul = li.querySelector('ul') as HTMLUListElement
+                contFree(ul,data[key])
+
+            } else {
+                conteiner.insertAdjacentHTML('beforeend',`<li>${key}</li>`)
+            }
+        }
+    }
+    contFree(conteiner, data)
 }
