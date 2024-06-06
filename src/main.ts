@@ -2253,12 +2253,13 @@ import './style.scss'
             }
         }
     } as Record<string, any>
+
     let conteiner = document.querySelector('#conteiner ul') as HTMLUListElement
     function contFree(conteiner: HTMLUListElement, data: Record<string, any>) {
         for (let key in data) {
 
             if (Object.keys(data[key]).length){
-                const li =document.createElement('li')
+                const li = document.createElement('li')
                 li.innerHTML = `${key}<ul></ul>`
                 conteiner.append(li)
                 const ul = li.querySelector('ul') as HTMLUListElement
@@ -2270,4 +2271,7 @@ import './style.scss'
         }
     }
     contFree(conteiner, data)
+}
+{
+    const trs = document.querySelectorAll('#table tbody tr') as NodeListOf< HTMLTableRowElement>
 }
