@@ -2258,20 +2258,108 @@ import './style.scss'
     function contFree(conteiner: HTMLUListElement, data: Record<string, any>) {
         for (let key in data) {
 
-            if (Object.keys(data[key]).length){
+            if (Object.keys(data[key]).length) {
                 const li = document.createElement('li')
                 li.innerHTML = `${key}<ul></ul>`
                 conteiner.append(li)
                 const ul = li.querySelector('ul') as HTMLUListElement
-                contFree(ul,data[key])
+                contFree(ul, data[key])
 
             } else {
-                conteiner.insertAdjacentHTML('beforeend',`<li>${key}</li>`)
+                conteiner.insertAdjacentHTML('beforeend', `<li>${key}</li>`)
             }
         }
     }
     contFree(conteiner, data)
 }
 {
-    const trs = document.querySelectorAll('#table tbody tr') as NodeListOf< HTMLTableRowElement>
+    const trs = document.querySelectorAll('#table tbody tr') as NodeListOf<HTMLTableRowElement>
+}
+{
+    const tbody = document.querySelector('#table tbody') as HTMLTableSectionElement
+    const thead = document.querySelector('#table thead') as HTMLTableSectionElement
+    const tableData = [
+        { name: 'Ann', lastName: '1dfsd', age: 20 },
+        { name: '2Ann', lastName: '2dfsd', age: 18 },
+        { name: 'zAnn', lastName: '3dfsd', age: 21 },
+        { name: 'WAnn', lastName: 'd4fsd', age: 23 },
+    ]
+
+    function renderTable(tableData: any[], where: HTMLTableSectionElement) {
+        where.innerHTML = ''
+        for (let el of tableData) {
+            where.innerHTML += `<tr><td>${el.name}</td><td>${el.lastName}</td><td>${el.age}</td></tr>`
+        }
+    }
+
+    renderTable(tableData, tbody)
+
+    function sortTable(tableData: any[], where: HTMLTableSectionElement, field: string, order: boolean) {
+        tableData.sort((a, b) => {
+            if (['name', 'lastName'].includes(field)) {
+                return a[field].localeCompare(b[field])
+            } else {
+                return a[field] - b[field]
+            }
+        })
+        if (!order) {
+            tableData.reverse()
+        }
+        renderTable(tableData, where)
+    }
+
+    thead.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement
+        const field = target.dataset.field as string
+        if (target.dataset.sort == 'true') {
+            sortTable(tableData, tbody, field, true)
+            target.dataset.sort = 'false'
+        } else {
+            sortTable(tableData, tbody, field, false)
+            target.dataset.sort = 'true'
+        }
+    })
+    console.log(5 + 4)
+}
+{
+    const clickkk = document.querySelector('#clllik') as HTMLDivElement
+    const start = document.querySelector('#start') as HTMLButtonElement
+
+    // console.log(document.documentElement.clientHeight)
+    // start.innerHTML =this.onclick(window.scrollBy({top:500,left:0,behavior:"smooth"}))
+
+    console.log(start.getBoundingClientRect())
+
+
+
+    let scrollHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+    )
+
+    start.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest"
+    })
+
+    console.log('Полная высота документа с прокручиваемой частью: ' + scrollHeight)
+    console.log(5 + 4)
+}
+{
+    const scrollButton = document.querySelector('#scrol')
+}
+
+{
+    const fieldDataElement = document.querySelector('#filedData') as HTMLDivElement
+    const fieldElement = document.querySelector('#field') as HTMLDivElement
+    const fieldStyle = getComputedStyle(fieldElement)
+    document.addEventListener('scroll',()=>{
+        const rect = fieldElement.getBoundingClientRect()
+        fieldDataElement.innerHTML= `1. <p> clientX: (${rect.left},${rect.top}), clintY:,pageX:,pageY:</p>`
+        fieldDataElement.innerHTML= `2. <p> clientX: (${rect.right},${rect.bottom}), clintY:,pageX:,pageY:</p>`
+        fieldDataElement.innerHTML= `3. <p> clientX: (${rect.left+rect.right},${rect.top+rect.bottom}), clintY:,pageX:,pageY:</p>`
+        fieldDataElement.innerHTML= `4. <p> clientX: (${rect.left},${rect.top}), clintY:,pageX:,pageY:</p>`
+    })
 }
