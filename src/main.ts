@@ -2275,52 +2275,52 @@ import './style.scss'
 {
     const trs = document.querySelectorAll('#table tbody tr') as NodeListOf<HTMLTableRowElement>
 }
-{
-    const tbody = document.querySelector('#table tbody') as HTMLTableSectionElement
-    const thead = document.querySelector('#table thead') as HTMLTableSectionElement
-    const tableData = [
-        { name: 'Ann', lastName: '1dfsd', age: 20 },
-        { name: '2Ann', lastName: '2dfsd', age: 18 },
-        { name: 'zAnn', lastName: '3dfsd', age: 21 },
-        { name: 'WAnn', lastName: 'd4fsd', age: 23 },
-    ]
+// {
+//     const tbody = document.querySelector('#table tbody') as HTMLTableSectionElement
+//     const thead = document.querySelector('#table thead') as HTMLTableSectionElement
+//     const tableData = [
+//         { name: 'Ann', lastName: '1dfsd', age: 20 },
+//         { name: '2Ann', lastName: '2dfsd', age: 18 },
+//         { name: 'zAnn', lastName: '3dfsd', age: 21 },
+//         { name: 'WAnn', lastName: 'd4fsd', age: 23 },
+//     ]
 
-    function renderTable(tableData: any[], where: HTMLTableSectionElement) {
-        where.innerHTML = ''
-        for (let el of tableData) {
-            where.innerHTML += `<tr><td>${el.name}</td><td>${el.lastName}</td><td>${el.age}</td></tr>`
-        }
-    }
+//     function renderTable(tableData: any[], where: HTMLTableSectionElement) {
+//         where.innerHTML = ' '
+//         for (let el of tableData) {
+//             where.innerHTML += `<tr><td>${el.name}</td><td>${el.lastName}</td><td>${el.age}</td></tr>`
+//         }
+//     }
 
-    renderTable(tableData, tbody)
+//     renderTable(tableData, tbody)
 
-    function sortTable(tableData: any[], where: HTMLTableSectionElement, field: string, order: boolean) {
-        tableData.sort((a, b) => {
-            if (['name', 'lastName'].includes(field)) {
-                return a[field].localeCompare(b[field])
-            } else {
-                return a[field] - b[field]
-            }
-        })
-        if (!order) {
-            tableData.reverse()
-        }
-        renderTable(tableData, where)
-    }
+//     function sortTable(tableData: any[], where: HTMLTableSectionElement, field: string, order: boolean) {
+//         tableData.sort((a, b) => {
+//             if (['name', 'lastName'].includes(field)) {
+//                 return a[field].localeCompare(b[field])
+//             } else {
+//                 return a[field] - b[field]
+//             }
+//         })
+//         if (!order) {
+//             tableData.reverse()
+//         }
+//         renderTable(tableData, where)
+//     }
 
-    thead.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement
-        const field = target.dataset.field as string
-        if (target.dataset.sort == 'true') {
-            sortTable(tableData, tbody, field, true)
-            target.dataset.sort = 'false'
-        } else {
-            sortTable(tableData, tbody, field, false)
-            target.dataset.sort = 'true'
-        }
-    })
-    console.log(5 + 4)
-}
+//     thead.addEventListener('click', (e) => {
+//         const target = e.target as HTMLElement
+//         const field = target.dataset.field as string
+//         if (target.dataset.sort == 'true') {
+//             sortTable(tableData, tbody, field, true)
+//             target.dataset.sort = 'false'
+//         } else {
+//             sortTable(tableData, tbody, field, false)
+//             target.dataset.sort = 'true'
+//         }
+//     })
+//     console.log(5 + 4)
+// }
 {
     const clickkk = document.querySelector('#clllik') as HTMLDivElement
     const start = document.querySelector('#start') as HTMLButtonElement
@@ -2357,9 +2357,31 @@ import './style.scss'
     const fieldStyle = getComputedStyle(fieldElement)
     document.addEventListener('scroll',()=>{
         const rect = fieldElement.getBoundingClientRect()
-        fieldDataElement.innerHTML= `1. <p> clientX: (${rect.left},${rect.top}), clintY:,pageX:,pageY:</p>`
-        fieldDataElement.innerHTML= `2. <p> clientX: (${rect.right},${rect.bottom}), clintY:,pageX:,pageY:</p>`
-        fieldDataElement.innerHTML= `3. <p> clientX: (${rect.left+rect.right},${rect.top+rect.bottom}), clintY:,pageX:,pageY:</p>`
-        fieldDataElement.innerHTML= `4. <p> clientX: (${rect.left},${rect.top}), clintY:,pageX:,pageY:</p>`
+        // fieldDataElement.innerHTML= `1. <p> clientX: (${rect.left},${rect.top}), clintY:,pageX:,pageY:</p>`
+        // fieldDataElement.innerHTML= `2. <p> clientX: (${rect.right},${rect.bottom}), clintY:,pageX:,pageY:</p>`
+        // fieldDataElement.innerHTML= `3. <p> clientX: (${rect.left+rect.right},${rect.top+rect.bottom}), clintY:,pageX:,pageY:</p>`
+        // fieldDataElement.innerHTML= `4. <p> clientX: (${rect.left},${rect.top}), clintY:,pageX:,pageY:</p>`
     })
+}
+{//! 13.06.2024
+
+    // document.addEventListener('click',(e)=>{
+    //     console.log(e)
+    // })
+    // document.addEventListener('keydown',(e)=>{
+    //     console.log(e)
+    // })
+    document.addEventListener('mousemove',(e)=>{
+        console.log(e)
+    })
+    
+    const buttonRemuv = document.querySelector('remove-button') as HTMLButtonElement
+    let del = document.querySelectorAll('pane') as HTMLDivElement
+    function pryat(){
+        del.addEventListener(screenX,)
+    }        
+    buttonRemuv.addEventListener('click', pryat)
+
+
+
 }
