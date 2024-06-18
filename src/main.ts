@@ -2355,7 +2355,7 @@ import './style.scss'
     const fieldDataElement = document.querySelector('#filedData') as HTMLDivElement
     const fieldElement = document.querySelector('#field') as HTMLDivElement
     const fieldStyle = getComputedStyle(fieldElement)
-    document.addEventListener('scroll',()=>{
+    document.addEventListener('scroll', () => {
         const rect = fieldElement.getBoundingClientRect()
         // fieldDataElement.innerHTML= `1. <p> clientX: (${rect.left},${rect.top}), clintY:,pageX:,pageY:</p>`
         // fieldDataElement.innerHTML= `2. <p> clientX: (${rect.right},${rect.bottom}), clintY:,pageX:,pageY:</p>`
@@ -2371,16 +2371,31 @@ import './style.scss'
     // document.addEventListener('keydown',(e)=>{
     //     console.log(e)
     // })
-    document.addEventListener('mousemove',(e)=>{
-        console.log(e)
-    })
-    
-    const buttonRemuv = document.querySelector('remove-button') as HTMLButtonElement
-    let del = document.querySelectorAll('pane') as HTMLDivElement
-    function pryat(){
-        del.addEventListener(screenX,)
-    }        
-    buttonRemuv.addEventListener('click', pryat)
+    // document.addEventListener('mousemove', (e) => {
+    //     console.log(e)
+    // })
+
+    // const buttonRemuv = document.querySelector('remove-button') as HTMLButtonElement
+    // // let del = document.querySelectorAll('pane') as HTMLDivElement
+    // function pryat() {
+    //     // del.addEventListener(screenX,)
+    // }
+    // buttonRemuv.addEventListener('click', pryat)
+
+
+
+}
+{
+    const myDiv = document.querySelector('#my_div') as HTMLDivElement
+}
+{
+//     let cknopka = document.querySelector('#container') as HTMLDivElement
+//     let knopka = document.querySelector('.remove-button') as HTMLButtonElement
+//     // const etarget = e.target.closest('#container') as HTMLElement
+//     // if(!etarget){return }
+//     knopka.onclick('clik', (e) => {
+//         if (!e.target)
+// })
 
 
 

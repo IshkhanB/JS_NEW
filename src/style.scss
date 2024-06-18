@@ -122,13 +122,13 @@ button:focus-visible {
       margin: 10px auto;
       width: 470px;
     }
-
+    
     h3>div.poni {
       margin: 0;
       padding-bottom: 0.3em;
       font-size: 1.1em;
     }
-
+    
     p>div.poni {
       margin: 0;
       padding: 0 0 0.5em;
@@ -138,7 +138,7 @@ button:focus-visible {
       padding: 10px 20px 10px;
       border-top: solid 2px #c4df9b;
     }
-
+    
     .remove-button {
       font-size: 110%;
       color: darkred;
@@ -148,10 +148,42 @@ button:focus-visible {
       border: none;
       background: transparent;
       cursor: pointer;
-    
+      
       
       
     }
+    .nextdata {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     
-  
+    
+    
+    
+    body>div#container {
+       margin: 10px auto;
+       width: 470px;
+     }
+    
+    .pane {
+      background: #edf5e1;
+      padding: 10px 20px 10px;
+      border-top: solid 2px #c4df9b;
+      position: relative;
+    }
+    
+    .remove-button {
+      position: absolute;
+      font-size: 110%;
+      top: 0;
+      color: darkred;
+      right: 10px;
+      display: block;
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
 }
