@@ -2403,7 +2403,7 @@ import './style.scss'
 
     if (conteiner1)
     conteiner1.addEventListener('mousedown',function (e){
-        
+
     })
     conteiner1.addEventListener('click', function (event) {
         const target = event.target as HTMLElement
@@ -2431,4 +2431,20 @@ import './style.scss'
 
     // document.addEventListener('click',(e)=>{
     // })
+
+    const conten = document.querySelector('#contents') as HTMLElement
+    conten.addEventListener('click',(e)=>{
+        let target = e.target as HTMLElement
+        let el = target.closest('a')
+        // let elem = new Event('hi')
+        if(!el)return
+        if(el){
+            const answ = confirm('move to '+ el.href+'?')
+            if(!answ){
+                e.preventDefault()
+            }
+        }
+    })
+
+
 }
