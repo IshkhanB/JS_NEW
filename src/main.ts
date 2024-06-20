@@ -2389,14 +2389,46 @@ import './style.scss'
     const myDiv = document.querySelector('#my_div') as HTMLDivElement
 }
 {
-//     let cknopka = document.querySelector('#container') as HTMLDivElement
-//     let knopka = document.querySelector('.remove-button') as HTMLButtonElement
-//     // const etarget = e.target.closest('#container') as HTMLElement
-//     // if(!etarget){return }
-//     knopka.onclick('clik', (e) => {
-//         if (!e.target)
-// })
+    //     let cknopka = document.querySelector('#container') as HTMLDivElement
+    //     let knopka = document.querySelector('.remove-button') as HTMLButtonElement
+    //     // const etarget = e.target.closest('#container') as HTMLElement
+    //     // if(!etarget){return }
+    //     knopka.onclick('clik', (e) => {
+    //         if (!e.target)
+    // })
+}
+{//!20.06.2024.
 
+    const conteiner1 = document.querySelector('#container') as HTMLDivElement
 
+    if (conteiner1)
+    conteiner1.addEventListener('mousedown',function (e){
+        
+    })
+    conteiner1.addEventListener('click', function (event) {
+        const target = event.target as HTMLElement
+        const el = target.closest('.remove-button')
+        if (el) {
+            el.parentElement?.remove()
+        }
+        if(target.tagName == 'H3'){
+            target.style.color = 'blue'
+            const sibling = target!.nextElementSibling as HTMLElement
+            sibling.style.color = 'green'
+        }
+        if(target.tagName == 'P'){
+            target.style.color = 'red'
+            const sibling1 = target!.previousElementSibling as HTMLElement
+            sibling1.style.color = 'green'
+        }
+    })
 
+}
+{
+    // document.addEventListener('contextmenu',(e)=>{
+    //     e.preventDefault()
+    // })
+
+    // document.addEventListener('click',(e)=>{
+    // })
 }
