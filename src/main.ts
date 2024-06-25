@@ -2402,21 +2402,21 @@ import './style.scss'
     const conteiner1 = document.querySelector('#container') as HTMLDivElement
 
     if (conteiner1)
-    conteiner1.addEventListener('mousedown',function (e){
+        conteiner1.addEventListener('mousedown', function (e) {
 
-    })
+        })
     conteiner1.addEventListener('click', function (event) {
         const target = event.target as HTMLElement
         const el = target.closest('.remove-button')
         if (el) {
             el.parentElement?.remove()
         }
-        if(target.tagName == 'H3'){
-            target.style.color = 'blue'
+        if (target.tagName == 'H3') {
+            target.style.width += '5px'
             const sibling = target!.nextElementSibling as HTMLElement
             sibling.style.color = 'green'
         }
-        if(target.tagName == 'P'){
+        if (target.tagName == 'P') {
             target.style.color = 'red'
             const sibling1 = target!.previousElementSibling as HTMLElement
             sibling1.style.color = 'green'
@@ -2433,18 +2433,28 @@ import './style.scss'
     // })
 
     const conten = document.querySelector('#contents') as HTMLElement
-    conten.addEventListener('click',(e)=>{
+    conten.addEventListener('click', (e) => {
         let target = e.target as HTMLElement
         let el = target.closest('a')
         // let elem = new Event('hi')
-        if(!el)return
-        if(el){
-            const answ = confirm('move to '+ el.href+'?')
-            if(!answ){
+        if (!el) return
+        if (el) {
+            const answ = confirm('move to ' + el.href + '?')
+            if (!answ) {
                 e.preventDefault()
             }
         }
     })
 
 
+}
+
+
+{
+    const load = document.querySelector('#loading') as HTMLDivElement
+
+    const loadClick = document.querySelector('#loadingClick') as HTMLElement
+    loadClick.addEventListener('click', (e) => {
+        load.style.width = parseFloat(load.style.width) + 10 + '%'
+    })
 }
