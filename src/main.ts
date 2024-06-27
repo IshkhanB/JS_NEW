@@ -2450,11 +2450,73 @@ import './style.scss'
 }
 
 
-{
+{// ! (1) Нужно ограничить увеличение (2) нужно добавить кнопку для сброса
+
     const load = document.querySelector('#loading') as HTMLDivElement
 
     const loadClick = document.querySelector('#loadingClick') as HTMLElement
-    loadClick.addEventListener('click', (e) => {
-        load.style.width = parseFloat(load.style.width) + 10 + '%'
+    loadClick.addEventListener('click', () => {
+        if (parseFloat(load.style.width) <= 100) {
+
+            load.style.width = parseFloat(load.style.width) + 10 + '%'
+        } if (parseFloat(load.style.width) > 100) {
+            load.style.width = 100 + '%'
+        }
     })
+}
+{
+    function runOnKeys(fn: Function, ...args: string[]) {
+        const keys = {} as Record<string, boolean>
+        for (let key of args) {
+            keys[key] = false
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.code in keys) {
+                keys[e.code] = true
+            }
+            const vals = Object.values(keys)
+            if (vals.every(el => el)) {
+                fn()
+                for (let key in keys){
+                    keys[key] = false
+                }
+            }
+        })
+        document.addEventListener('keyup', (e) => {
+            if (e.code in keys) {
+                keys[e.code] = false
+            }
+        })
+    }
+    runOnKeys(() => alert("Привет!"), "KeyQ", "KeyW")
+    runOnKeys(() => alert("Bay!"), "KeyQ", "KeyA")
+}
+{
+    // const combinations = [] as any
+    // function runOnKeys(fn: Function, ...args: string[]) {
+    //     const keys = {} as Record<string, boolean>
+    //     for (let key of args) {
+    //         keys[key] = false
+    //     }
+    //     combinations.append({keys,fn})
+    //     document.addEventListener('keydown', (e) => {
+    //         if (e.code in keys) {
+    //             keys[e.code] = true
+    //         }
+    //         const vals = Object.values(keys)
+    //         if (vals.every(el => el)) {
+    //             fn()
+    //             for (let key in keys){
+    //                 keys[key] = false
+    //             }
+    //         }
+    //     })
+    //     document.addEventListener('keyup', (e) => {
+    //         if (e.code in keys) {
+    //             keys[e.code] = false
+    //         }
+    //     })
+    // }
+    // runOnKeys(() => alert("Привет!"), "KeyQ", "KeyW")
+    // runOnKeys(() => alert("Bay!"), "KeyQ", "KeyA")
 }
