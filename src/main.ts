@@ -2453,15 +2453,19 @@ import './style.scss'
 {// ! (1) Нужно ограничить увеличение (2) нужно добавить кнопку для сброса
 
     const load = document.querySelector('#loading') as HTMLDivElement
+    load.style.border = 'solid' + 5 + 'px' + '#000000'
 
-    const loadClick = document.querySelector('#loadingClick') as HTMLElement
+    const loadClose = document.querySelector('#loadingClick1') as HTMLButtonElement
+    const loadClick = document.querySelector('#loadingClick') as HTMLButtonElement
     loadClick.addEventListener('click', () => {
-        if (parseFloat(load.style.width) <= 100) {
-
-            load.style.width = parseFloat(load.style.width) + 10 + '%'
-        } if (parseFloat(load.style.width) > 100) {
-            load.style.width = 100 + '%'
+        if (parseFloat(load.style.width) <= 1000) {
+            load.style.width = parseFloat(load.style.width) + 50 + 'px'
+        } if (parseFloat(load.style.width) > 1000) {
+            load.style.width = 1000 + 'px'
         }
+    })
+    loadClose.addEventListener('click', () => {
+        load.style.width = 0 + 'px'
     })
 }
 {
@@ -2477,7 +2481,7 @@ import './style.scss'
             const vals = Object.values(keys)
             if (vals.every(el => el)) {
                 fn()
-                for (let key in keys){
+                for (let key in keys) {
                     keys[key] = false
                 }
             }
@@ -2519,4 +2523,39 @@ import './style.scss'
     // }
     // runOnKeys(() => alert("Привет!"), "KeyQ", "KeyW")
     // runOnKeys(() => alert("Bay!"), "KeyQ", "KeyA")
+}
+{//!02.07.2024.
+
+    const opBat = document.querySelector('#openButton') as HTMLButtonElement
+    opBat.addEventListener('click', () => {
+        const div = document.createElement('div')
+        div.innerHTML = `<div><p>Домашняя лошадь - животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p><button>close</button></div>`
+        document.body.append(div)
+        div.className = 'overlay'
+        document.body.style.overflow = 'hidden'
+        div.onclick = (e) => {
+            const target = e.target as HTMLElement
+            if (target == e.currentTarget || target.tagName == 'BUTTON') {
+                div.remove()
+                div.onclick = null
+                document.body.style.overflow = ''
+            }
+        }
+    })
+
+
+}
+{
+    const traf = document.querySelector('#traff') as HTMLDivElement
+    const but = document.createElement('button')
+    traf.innerHTML = '<div></div> <div></div> <div></div>'
+    traf.append(but)
+    traf.style.height = 100 + 'px'
+    traf.style.display = 'flex'
+    const cilTraf = traf.childElementCount as any
+    cilTraf.className = 'divKrug'
+
+
+
+
 }
