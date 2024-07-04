@@ -2529,6 +2529,7 @@ import './style.scss'
     const opBat = document.querySelector('#openButton') as HTMLButtonElement
     opBat.addEventListener('click', () => {
         const div = document.createElement('div')
+
         div.innerHTML = `<div><p>Домашняя лошадь - животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p><button>close</button></div>`
         document.body.append(div)
         div.className = 'overlay'
@@ -2546,16 +2547,33 @@ import './style.scss'
 
 }
 {
-    const traf = document.querySelector('#traff') as HTMLDivElement
-    const but = document.createElement('button')
-    traf.innerHTML = '<div></div> <div></div> <div></div>'
-    traf.append(but)
-    traf.style.height = 100 + 'px'
-    traf.style.display = 'flex'
-    const cilTraf = traf.childElementCount as any
-    cilTraf.className = 'divKrug'
+    // const traf = document.querySelector('#traff') as HTMLDivElement
+    // const but = document.createElement('button')
+    // traf.innerHTML = '<div></div> <div></div> <div></div>'
+    // traf.append(but)
+    // traf.style.height = 100 + 'px'
+    // traf.style.display = 'flex'
+    // const cilTraf = traf.childElementCount as any
+    // cilTraf.className = 'divKrug'
 
 
 
+
+}
+{// ! Создать html-страницу с галереей. В один момент времени на экране отображается одно изображение и две кнопки: Назад и Вперед. При нажатии на кнопки изображения должны переключатся в указанном порядке. Когда следующего/предыдущего изображения нет, то соответствующую кнопку необходимо блокировать. Изображения хранить в заранее подготовленном массиве.
+
+    const divImg = document.querySelector('#imgSlaid') as HTMLDivElement
+    const imgArr= ['1.jpg','2.png','3.jpg','4.jpg','5.avif','6.avif']
+    const leftButton = document.querySelector('#buttonLeftImg') as HTMLButtonElement
+    const rightButton = document.querySelector('#buttonRightImg') as HTMLButtonElement
+    divImg.innerHTML = ''
+    for (let el of imgArr) {
+        divImg.innerHTML += `<img src="pics/${el}">`
+    }
+    leftButton.addEventListener('click',()=>{
+        
+    })
+
+    
 
 }

@@ -217,4 +217,23 @@ button:focus-visible {
       border-radius: 50%;
       background-color: #00ff00;
     }
+    .imageSlide {
+      position: fixed;
+      left: 0;
+      top:0;
+      width: 100%;
+      height: 100%;
+      background-color: #1a1a1a48;
+    }
+    .imageSlide img{
+      width: 400px;
+      height: 400px;
+      padding: 20px;
+      // background-color: #646cff;
+      position: relative;
+      top:50%;
+      left: 50%;
+      width: 30%;
+      transform: translate(-50%,-50%);
+    }
 }
