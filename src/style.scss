@@ -225,7 +225,7 @@ button:focus-visible {
       height: 100%;
       background-color: #1a1a1a48;
     }
-    .imageSlide img{
+    .imageSlide img {
       width: 400px;
       height: 400px;
       padding: 20px;
@@ -235,5 +235,16 @@ button:focus-visible {
       left: 50%;
       width: 30%;
       transform: translate(-50%,-50%);
+    }
+    #imgSlaid {
+      height: 300px;
+      width: 320px;
+      overflow: hidden;
+    }
+    #imgSlaid img {
+      height: 300px;
+      width: 320px;
+      object-fit: cover;
+      object-position: center;
     }
 }

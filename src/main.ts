@@ -2562,18 +2562,30 @@ import './style.scss'
 }
 {// ! Создать html-страницу с галереей. В один момент времени на экране отображается одно изображение и две кнопки: Назад и Вперед. При нажатии на кнопки изображения должны переключатся в указанном порядке. Когда следующего/предыдущего изображения нет, то соответствующую кнопку необходимо блокировать. Изображения хранить в заранее подготовленном массиве.
 
+    const divSlide = document.querySelector('#SlideImg') as HTMLDivElement
     const divImg = document.querySelector('#imgSlaid') as HTMLDivElement
-    const imgArr= ['1.jpg','2.png','3.jpg','4.jpg','5.avif','6.avif']
+    const imgArr = ['1.jpg', '2.png', '3.jpg', '4.jpg', '5.avif', '6.avif']
     const leftButton = document.querySelector('#buttonLeftImg') as HTMLButtonElement
     const rightButton = document.querySelector('#buttonRightImg') as HTMLButtonElement
-    divImg.innerHTML = ''
-    for (let el of imgArr) {
-        divImg.innerHTML += `<img src="pics/${el}">`
-    }
-    leftButton.addEventListener('click',()=>{
-        
+    divSlide.style.display = 'flex'
+    let i = 0
+    divImg.innerHTML = `<img src="public/pics/${imgArr[i]}">`
+    leftButton.addEventListener('click', () => {
+        if (i >= 1) {
+            i--
+            divImg.innerHTML = `<img src="public/pics/${imgArr[i]}">`
+        }
+
+    })
+    rightButton.addEventListener('click', () => {
+        if ((imgArr.length - 1) > i) {
+            i++
+            divImg.innerHTML = `<img src="public/pics/${imgArr[i]}">`
+        }
     })
 
-    
 
+}
+{//! 16.07.24.
+    // Веб вью
 }
