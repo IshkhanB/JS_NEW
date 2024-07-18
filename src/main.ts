@@ -2589,3 +2589,58 @@ import './style.scss'
 {//! 16.07.24.
     // Веб вью
 }
+{//! 18.07.24.
+    let promise = fetch('localhost:5173/JS_NEW/')
+
+    fetch('/article/promise-chaining/user.json')
+        // Загружаем данные в формате json
+        .then(response => response.json())
+        // Делаем запрос к GitHub
+        .then(user => fetch(`https://api.github.com/users/${user.name}`))
+        // Загружаем ответ в формате json
+        .then(response => response.json())
+        // Показываем аватар (githubUser.avatar_url) в течение 3 секунд (возможно, с анимацией)
+        .then(githubUser => {
+            let img = document.createElement('img')
+            img.src = githubUser.avatar_url;
+            img.className = "promise-avatar-example"
+            document.body.append(img)
+            // setTimeout(() => img.remove(), 3000); // (*)
+        });
+}
+{
+    // function loadJson('localhost:5173/JS_NEW/') {
+    //     return fetch('localhost:5173/JS_NEW/')
+    //       .then(response => response.json())
+    //   }
+      
+    //   function loadGithubUser(name:any {
+    //     return fetch(`https://api.github.com/users/${name}`)
+    //       .then(response => response.json())
+    //   }
+      
+    //   function showAvatar(githubUser:any) {
+    //     return new Promise(function(resolve, reject) {
+    //       let img = document.createElement('img')
+    //       img.src = githubUser.avatar_url
+    //       img.className = "promise-avatar-example"
+    //       document.body.append(img)
+      
+    //       setTimeout(() => {
+    //         img.remove()
+    //         resolve(githubUser)
+    //       }, 3000)
+    //     }) 
+    //   }
+      
+    //   // Используем их:
+    //   loadJson('/article/promise-chaining/user.json')
+    //     .then(user => loadGithubUser(user.name))
+    //     .then(showAvatar)
+    //     .then(githubUser => alert(`Показ аватара ${githubUser.name} завершён`))
+    Promise.all([
+        new Promise(resolve => setTimeout(() => resolve(1), 3000)), // 1
+        new Promise(resolve => setTimeout(() => resolve(2), 2000)), // 2
+        new Promise(resolve => setTimeout(() => resolve(3), 1000))  // 3
+      ]).then(console.log); // когда все промисы выполнятся, результат будет 1,2,3
+}
