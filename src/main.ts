@@ -2590,49 +2590,49 @@ import './style.scss'
     // Веб вью
 }
 {//! 18.07.24.
-    let promise = fetch('localhost:5173/JS_NEW/')
+    // let promise = fetch('localhost:5173/JS_NEW/')
 
-    fetch('/article/promise-chaining/user.json')
-        // Загружаем данные в формате json
-        .then(response => response.json())
-        // Делаем запрос к GitHub
-        .then(user => fetch(`https://api.github.com/users/${user.name}`))
-        // Загружаем ответ в формате json
-        .then(response => response.json())
-        // Показываем аватар (githubUser.avatar_url) в течение 3 секунд (возможно, с анимацией)
-        .then(githubUser => {
-            let img = document.createElement('img')
-            img.src = githubUser.avatar_url;
-            img.className = "promise-avatar-example"
-            document.body.append(img)
-            // setTimeout(() => img.remove(), 3000); // (*)
-        });
+    // fetch('/article/promise-chaining/user.json')
+    //     // Загружаем данные в формате json
+    //     .then(response => response.json())
+    //     // Делаем запрос к GitHub
+    //     .then(user => fetch(`https://api.github.com/users/${user.name}`))
+    //     // Загружаем ответ в формате json
+    //     .then(response => response.json())
+    //     // Показываем аватар (githubUser.avatar_url) в течение 3 секунд (возможно, с анимацией)
+    //     .then(githubUser => {
+    //         let img = document.createElement('img')
+    //         img.src = githubUser.avatar_url;
+    //         img.className = "promise-avatar-example"
+    //         document.body.append(img)
+    //         // setTimeout(() => img.remove(), 3000); // (*)
+    //     });
 }
 {
     // function loadJson('localhost:5173/JS_NEW/') {
     //     return fetch('localhost:5173/JS_NEW/')
     //       .then(response => response.json())
     //   }
-      
+
     //   function loadGithubUser(name:any {
     //     return fetch(`https://api.github.com/users/${name}`)
     //       .then(response => response.json())
     //   }
-      
+
     //   function showAvatar(githubUser:any) {
     //     return new Promise(function(resolve, reject) {
     //       let img = document.createElement('img')
     //       img.src = githubUser.avatar_url
     //       img.className = "promise-avatar-example"
     //       document.body.append(img)
-      
+
     //       setTimeout(() => {
     //         img.remove()
     //         resolve(githubUser)
     //       }, 3000)
     //     }) 
     //   }
-      
+
     //   // Используем их:
     //   loadJson('/article/promise-chaining/user.json')
     //     .then(user => loadGithubUser(user.name))
@@ -2642,6 +2642,55 @@ import './style.scss'
         new Promise(resolve => setTimeout(() => resolve(1), 3000)), // 1
         new Promise(resolve => setTimeout(() => resolve(2), 2000)), // 2
         new Promise(resolve => setTimeout(() => resolve(3), 1000))  // 3
-      ]).then(console.log); // когда все промисы выполнятся, результат будет 1,2,3
-      //https://learn.javascript.ru/event-loop
+    ]).then(console.log); // когда все промисы выполнятся, результат будет 1,2,3
+    //https://learn.javascript.ru/event-loop
+}
+{
+    async function f() {
+
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("готово!"), 1000)
+        });
+
+        let result = await promise; // будет ждать, пока промис не выполнится (*)
+
+        console.log(result); // "готово!"
+    }
+
+    f();
+
+
+}
+{
+    // function loadJson(url) {
+    //     return fetch(url)
+    //       .then(response => {
+    //         if (response.status == 200) {
+    //           return response.json();
+    //         } else {
+    //           throw new Error(response.status);
+    //         }
+    //       })
+    //   }
+
+    //   loadJson('no-such-user.json') // (3)
+    //     .catch(alert); // Error: 404
+
+
+    async function loadJson() {
+        const response = await fetch('https://api.github.com/users/IshkhanB')
+
+        if (response.status == 200) {
+            console.log(response.status)
+            return response.json();
+        } else {
+            console.log(response.status)
+            throw new Error(String(response.status));
+        }
+
+    }
+    loadJson().then(user=>console.log(user)).catch(e=>console.log(e))
+
+    //   loadJson('no-such-user.json') // (3)
+    //     .catch(alert); // Error: 404
 }
