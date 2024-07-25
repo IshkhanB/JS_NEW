@@ -1,5 +1,6 @@
 import { Value } from 'sass'
 import './style.scss'
+import axios from 'axios'
 
 // ! DZ 2 Задание Вам необходимо самостоятельно решить, для какого задания какой оператор ветвления лучше использовать: if, switch или тернарный.
 // 1.Запросить у пользователя его возраст и определить, кем он является: ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...).
@@ -1903,7 +1904,7 @@ import './style.scss'
     const h3 = new HtmlElement('h3', 'Lorem')
     const img = new HtmlElement('img')
     img.setStyle('width', '100%')
-    img.setAtribute('src', 'vite.svg')
+    img.setAtribute('src', '1.jpg')
     img.setAtribute('alt', 'Lorem')
     const p = new HtmlElement('p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla assumenda inventore voluptas natus obcaecati mollitia ad eos adipisci delectus quia odit, earum culpa sunt, molestiae doloribus in explicabo! Illo, harum!')
     p.setStyle('text-align', 'justify')
@@ -1977,7 +1978,7 @@ import './style.scss'
     h3.setStyle('text-aligan', 'center')
     const img = new HtmlElement('img')
     img.setStyle('width', '100%')
-    img.setAtribute('src', 'vite.svg')
+    img.setAtribute('src', 'pics/1.jpg')
     img.setAtribute('alt', 'Lorem')
     const p = new HtmlElement('p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla assumenda inventore voluptas natus obcaecati mollitia ad eos adipisci delectus quia odit, earum culpa sunt, molestiae doloribus in explicabo! Illo, harum!')
     p.setStyle('text-align', 'justify')
@@ -2689,8 +2690,27 @@ import './style.scss'
         }
 
     }
-    loadJson().then(user=>console.log(user)).catch(e=>console.log(e))
+    loadJson().then(user => console.log(user)).catch(e => console.log(e))
 
     //   loadJson('no-such-user.json') // (3)
     //     .catch(alert); // Error: 404
+}
+{
+    axios('http:..localhost:5173/web36js/').then((resp) => console.log(resp))
+}
+
+{
+    const move = document.querySelector('#moviOMDBAPI') as HTMLDivElement
+    move.style.height = '600px'
+    move.style.width = '600px'
+    move.style.backgroundColor = '#0000ff21'
+    move.innerHTML = `<div><p><p> </div>`
+    move.innerHTML = `<form id = "moveForm"></form>`
+    const moveForm = document.querySelector('#moveForm') as HTMLFormElement
+   moveForm.innerHTML = `<lable id="lableId"> Hello </lable><input id="inputMove" placeholder="Введите текст"> <lable id="lableId2"> Hello </lable> <input id="inputMove2" placeholder="Введите текст">`
+
+}
+{
+    const serch = 'five element'
+    axios(`http://www.omdbapi.com/?apikey=383529d9&s=${serch}`).then((resp)=>console.log(resp.data))
 }
