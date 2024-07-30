@@ -2707,10 +2707,22 @@ import axios from 'axios'
     move.innerHTML = `<div><p><p> </div>`
     move.innerHTML = `<form id = "moveForm"></form>`
     const moveForm = document.querySelector('#moveForm') as HTMLFormElement
-   moveForm.innerHTML = `<lable id="lableId"> Hello </lable><input id="inputMove" placeholder="Введите текст"> <lable id="lableId2"> Hello </lable> <input id="inputMove2" placeholder="Введите текст">`
+    moveForm.innerHTML = `<lable id="lableId"> Hello </lable><input id="inputMove" placeholder="Введите текст"> <lable id="lableId2"> Hello </lable> <input id="inputMove2" placeholder="Введите текст"> <button id="buttonMov">Отправить</button>`
+    const buttonMovi = document.querySelector('#buttonMov') as HTMLButtonElement
+    buttonMovi.style.margin = '10px'
+
+    buttonMovi.addEventListener('click',()=>{
+
+
+        axios(`http://www.omdbapi.com/?apikey=383529d9&s=${'five'}`)
+    })
+
 
 }
 {
     const serch = 'five element'
-    axios(`http://www.omdbapi.com/?apikey=383529d9&s=${serch}`).then((resp)=>console.log(resp.data))
+    axios(`http://www.omdbapi.com/?apikey=383529d9&s=${serch}`).then((resp) => console.log(resp.data))
+}
+{
+
 }
