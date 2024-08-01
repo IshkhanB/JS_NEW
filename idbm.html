@@ -26,6 +26,44 @@
       border-radius: 10px;
 
     } */
+    /*******************************************************************************/
+    /* .flex {
+      display: flex;
+      gap: 10px;
+    }
+    .fdc {
+      flex-direction: column;
+    }
+    .jcc {
+      justify-content: center;
+    }
+    .aic {
+      align-items: center;
+    }
+    select {
+      height: 22px;
+    }
+    form {
+      background-color:blanchedalmond;
+      border: 1px dashed blue;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    #content {
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }  
+    #content>div {
+      display: flex;
+      width: 250px;
+      height: 170px;
+      gap: 10px;
+      background-color:blanchedalmond;
+      border: 1px dashed blue;
+      border-radius: 10px;
+      padding: 20px;
+    } */
+    /* ********************************************************************************** */
     .flex {
       display: flex;
       gap: 10px;
@@ -62,6 +100,22 @@
       border-radius: 10px;
       padding: 20px;
     }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #00000050;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal {
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
@@ -81,6 +135,24 @@
    -->
     <!-- <a href="https://github.com/IshkhanB">Мой github</a> -->
   <!-- </form> -->
+  <!-- ************************************************** -->
+
+  <!-- <div class="flex jcc aic">
+    <form class="flex fdc">
+      <input type="text" placeholder="title">
+      <select>
+        <option value="movie">movie</option>
+        <option value="series">series</option>
+        <option value="episode">episode</option>
+      </select>
+      <input type="submit" value="Find!">
+    </form>
+  </div>
+  
+  <div id="content" class="flex jcc"></div>
+  <div id="pagination" class="flex jcc"></div> -->
+  
+  <!-- ************************************************** -->
   <div class="flex jcc aic">
     <form class="flex fdc">
       <input type="text" placeholder="title">
@@ -95,5 +167,6 @@
 
   <div id="content" class="flex jcc"></div>
   <div id="pagination" class="flex jcc"></div>
+
 </body>
 </html>
